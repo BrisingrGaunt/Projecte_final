@@ -1,0 +1,33 @@
+MILLORES:
+
+
+M03
+En la part de Java, en el moment d'ajustar les cel·les:
+
+TableColumnModel colModel=taula.getColumnModel();
+for(int i=0;i<taula.getColumnCount()-1;i++){
+	//per cada camp es mira la dimensió de totes les cel·les
+	int size=0;
+	for(int j=0;j<taula.getRowCount();j++){
+		String text=(String)taula.getValueAt(j, i);
+		System.out.println(text);
+		if(text.length()>size){
+			size=text.length();
+		}
+	}
+	
+	taula.setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
+	size+=10;
+	System.out.println(size);
+	colModel.getColumn(i).setPreferredWidth(size);
+}
+
+//Adaptació de les diferents cel·les
+//colModel.getColumn(0).setResizable(true);
+//colModel.getColumn(0).setPreferredWidth(170);
+//colModel.getColumn(2).setPreferredWidth(31);
+		
+No sembla funcionar correctament.
+
+***************************
+Como poner saltos de línea entre un textfield y un label??
