@@ -7,6 +7,8 @@ package Main;
 
 import GestioEmpreses.Gestio;
 import Login.Login;
+import Connexio.Connexio;
+import java.sql.Connection;
 
 /**
  *
@@ -19,8 +21,10 @@ public class Gestio_empreses {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Gestio g=new Gestio();
-        //Login l=new Login();
+        //Gestio g=new Gestio();
+        Login l=new Login();
+//        Connexio c=new Connexio();
+//        Connection c1=c.getConnexio();
     }
     
 }
