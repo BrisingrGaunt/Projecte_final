@@ -49,7 +49,8 @@ public class Login {
         f=new JFrame("Gestió empreses -- Login");
         l=new GridLayout(2,2,10,10);
         p=new JPanel();
-        label=new JLabel("Nom del software quan el tingui (algun logo o banderes de idiomas)");
+        label=new JLabel("BrisingrGaunt Productions, SL");
+        label.setFont(new Font(label.getFont().getFontName(),Font.PLAIN,16));
         p.add(label);
         f.add(p,BorderLayout.NORTH);
         p=new JPanel();

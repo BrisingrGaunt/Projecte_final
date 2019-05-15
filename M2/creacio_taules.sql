@@ -55,13 +55,15 @@ CREATE TABLE `client` (
 -- Estructura de la taula `empresa`
 --
 
+DROP TABLE IF EXISTS `empresa`;
 CREATE TABLE `empresa` (
   `id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `nom` varchar(80) NOT NULL,
   `direccio` varchar(210) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `visibilitat` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='password';
 
 -- --------------------------------------------------------

@@ -5,6 +5,7 @@
  */
 package GestioEmpreses;
 
+import Connexio.Connexio;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -15,7 +16,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -49,22 +60,12 @@ public final class Gestio {
     JTable taulaEmpreses;
     JTable taulaTasts;
     String[] nomColumEmpreses = {"CIF","Nom comercial","Adreça","Tasts realitzats"};
-    String[] nomColumnTasts={"Empresa","Producte","Dia i hora","Valoració"};
-    Object[][] dataEmpreses = new Object[][] {
-        {"E1XO", "Arya's Feasts", "The House of Black & White, Bravos", 3},
-        {"LSDX", "Bey's Homecoming", "Houston, Texas baby!", 1},
-        {"MEDE12", "Hogwarts's free Elves", "The kitchens, Hogwarts", 0 }
-    };
-    
-    Object[][] dataTasts=new Object[][]{
-        {"E1XO","Patates",new Date(),4},
-        {"E1XO","Acelgas",new Date(),2},
-        {"E1XO","Atún",new Date(),0},
-        {"LSDX","Kikos",new Date(),5}
-    };
+    String[] nomColumnTasts={"Empresa","Producte","Dia i hora","Valoració mitja"};
+    Object[][] dataEmpreses=null;
+    Object[][] dataTasts=null;
     
     Class[] columnClassTasts=new Class[]{
-        String.class,String.class,Date.class,String.class
+        String.class,String.class,String.class,String.class
     };
    
     Class[] columnClassEmpreses = new Class[] {
@@ -101,7 +102,6 @@ public final class Gestio {
         crear_taula("emp");
         crear_taula("tasts");
         // Omplir de dades la taulaEmpreses 
-        // S'haurà de llegir de BDD!!!
         estatInicialTaulaEmpreses();
             
         //Panell superior
@@ -180,27 +180,46 @@ public final class Gestio {
     }
 
     public void mostrarTasts(){
-        //Primer es neteja la taula de Tasts
-        buidar_taula(modelTasts);
-        //Aquí s'obtindrien les dades de la BDD
-        int fila_seleccionada=taulaEmpreses.getSelectedRow();
-        //Ens quedem amb l'empresa seleccionada
-        String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
-        int elements=0;
-        for(int i=0;i<dataTasts.length;i++){
-            if(dataTasts[i][0].equals(empresa)){
-                try{
-                    int valoracio=(Integer)dataTasts[i][3];
-                    dataTasts[i][3]=valoracio_to_stars(valoracio);
-                }catch(ClassCastException ex){
-                   //Aquest problema no el tindré un cop es faci la lectura de la BDD perquè s'haurà de convertir sempre
+        try {
+            //Primer es neteja la taula de Tasts
+            buidar_taula(modelTasts);
+            //Aquí s'obtindrien les dades de la BDD
+            int fila_seleccionada=taulaEmpreses.getSelectedRow();
+            //Ens quedem amb l'empresa seleccionada
+            String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);            
+            Connection con=new Connexio().getConnexio();
+            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.empresa=c.empresa and pa.cata=c.id and c.empresa like ? group by c.empresa, p.nom, c.data";
+            PreparedStatement st = con.prepareStatement(s2);
+            st.setString(1,empresa);
+            ResultSet rs = st.executeQuery();
+            rs.last();
+            //Obtenim la quantitat de resultats per generar la taula
+            int qt_resultats=rs.getRow();
+            dataTasts=new Object[qt_resultats][4];
+            rs.beforeFirst();
+            int j=0;
+            while(rs.next()){
+                for(int i=0;i<4;i++){
+                    if(i==2){
+                        SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm");
+                        dataTasts[j][i]=sdf.format(rs.getTimestamp(3));
+                    }
+                    else if(i==3){
+                        dataTasts[j][i]=valoracio_to_stars(rs.getInt(4));
+                    }
+                    else{
+                        dataTasts[j][i]=rs.getString((1+i));
+                    }
                 }
-                modelTasts.insertRow(elements, dataTasts[i]);
-                elements++;
-            }  
-        }
-        if(elements==0){
-            crear_missatge("Aquesta empresa no ha realitzat cap tast encara.",WARNING_MESSAGE);
+                modelTasts.insertRow(j, dataTasts[j]);
+                j++;
+            }
+            if(j==0){
+                crear_missatge("Aquesta empresa no ha realitzat cap tast encara.",WARNING_MESSAGE);
+            }
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Gestio.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -300,17 +319,36 @@ public final class Gestio {
                 crear_missatge("Selecciona la fila que vols esborrar primer", ERROR_MESSAGE);
             }
             else{
-                //System.out.println(fila_seleccionada);
-                int qt_tasts=(Integer)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 3);
-                //System.out.println(qt_tasts);
-                if(qt_tasts>0){
+                String qt_tasts=String.valueOf(taulaEmpreses.getModel().getValueAt(fila_seleccionada, 3));
+                boolean esborrar=false;
+                if(qt_tasts.equals("0")==false){
                     int confirmacio=JOptionPane.showConfirmDialog(null, "Estàs segur de voler esborrar aquesta empresa i els seus tasts?" ,"Warning",JOptionPane.YES_NO_OPTION);
                     System.out.println(confirmacio);
                     if(confirmacio==JOptionPane.YES_OPTION){
-                        /*
-                            Se procede a eliminar de la tabla pero no de la base de datos
-                            (cambiando el estado de visibilidad por ejemplo)                        
-                        */
+                        esborrar=true;
+                    }
+                }
+                else{
+                    //Si no té tasts realitzats aquesta empresa es pot eliminar
+                    esborrar=true;
+                }
+                if(esborrar){
+                    try {
+                        Connection con=new Connexio().getConnexio();
+                        String sql="update empresa set visibilitat=1 where id like ?";
+                        PreparedStatement st = con.prepareStatement(sql);
+                        //st = con.prepareStatement(sql);
+                        String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
+                        st.setString(1,empresa);
+                        int n=st.executeUpdate();
+                        
+                        if(n==1){
+                            //si s'ha realitzat bé la modificació es netegen les taules i es tornen a mostrar
+                            estatInicialTaulaEmpreses();
+                        }
+                        con.close();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Gestio.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 //model.setValueAt(Integer.parseInt(id.getText()), fila, 0);
@@ -320,10 +358,35 @@ public final class Gestio {
     //ÚTILS
     
     private void estatInicialTaulaEmpreses(){
-        buidar_taula(modelEmpreses);
-        buidar_taula(modelTasts);
-        for(int i=0;i<dataEmpreses.length;i++){           
-            modelEmpreses.insertRow(i, dataEmpreses[i]);             
+        try {
+            buidar_taula(modelEmpreses);
+            buidar_taula(modelTasts);
+            Connection con=new Connexio().getConnexio();
+            Statement st = con.createStatement();
+            String sql="select e.id, e.nom, e.direccio, count(c.id) from empresa e left join cata c on c.empresa=e.id where e.visibilitat=0 group by e.id, e.nom, e.direccio";
+            ResultSet rs = st.executeQuery(sql);
+            rs.last();
+            //guardem la quantitat de registres per incialitzar la matriu dataEmpreses
+            int qt_registres=rs.getRow();
+            //ens situem al principi del resultSet
+            rs.beforeFirst();
+            int k=0;
+            dataEmpreses=new Object[qt_registres][4];
+            while(rs.next()){
+                //omplim les dades obtingudes a la select
+                for(int j=1;j<5;j++){
+                    dataEmpreses[k][(j-1)]=rs.getString(j);
+                }
+                k++;
+            }
+            rs.close();
+            con.close();
+            //omplim la taula
+            for(int i=0;i<dataEmpreses.length;i++){             
+                modelEmpreses.insertRow(i, dataEmpreses[i]);
+            }
+        } catch (SQLException ex) {
+            crear_missatge("Error al executar la consulta de selecció d'empreses", ERROR_MESSAGE);
         }
     }
     
