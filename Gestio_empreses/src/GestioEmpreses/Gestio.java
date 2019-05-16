@@ -76,8 +76,7 @@ public final class Gestio {
     static JButton btnEditar = new JButton("Editar");
     static JButton btnModificar = new JButton("Modificar");
     static JButton btnEsborrar = new JButton("Esborrar");
-    static JButton btnAfegir = new JButton("+");
-    static JButton btnAlta = new JButton("Alta");   
+    static JButton btnAfegir = new JButton("+");  
     static JButton btnCerca = new JButton();
     static JButton btnReset = new JButton();
     
@@ -235,6 +234,7 @@ public final class Gestio {
         btnCerca.addActionListener(new clickCercar());
         btnReset.addActionListener(new clickReset());
         btnEditar.addActionListener(new clickEditar());
+        btnAfegir.addActionListener(new clickAfegir());
         btnEsborrar.addActionListener(new clickEsborrar());
         taulaEmpreses.addMouseListener(new MouseAdapter(){
             @Override
@@ -263,6 +263,15 @@ public final class Gestio {
         }
     
     }
+    public class clickAfegir implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            f.dispose();
+            new Afegir_Modificar(0);
+        }
+    }
+    
     public class clickCercar implements ActionListener{
 
         @Override
@@ -275,7 +284,6 @@ public final class Gestio {
                     crear_missatge("Si us plau, indica mínim 4 paraules per poder realitzar la cerca.",INFORMATION_MESSAGE);
                 }
                 else{
-                    System.out.println(filtre.getText());
                     //Primer es buiden les dues taules
                     buidar_taula(modelEmpreses);
                     buidar_taula(modelTasts);
@@ -306,7 +314,9 @@ public final class Gestio {
                 crear_missatge("Selecciona la fila que vols editar primer", ERROR_MESSAGE);
             }
             else{
-                System.out.println(fila_seleccionada);
+                f.dispose();
+                String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
+                new Afegir_Modificar(Integer.parseInt(empresa));
             }
         }
     }
@@ -323,7 +333,6 @@ public final class Gestio {
                 boolean esborrar=false;
                 if(qt_tasts.equals("0")==false){
                     int confirmacio=JOptionPane.showConfirmDialog(null, "Estàs segur de voler esborrar aquesta empresa i els seus tasts?" ,"Warning",JOptionPane.YES_NO_OPTION);
-                    System.out.println(confirmacio);
                     if(confirmacio==JOptionPane.YES_OPTION){
                         esborrar=true;
                     }
@@ -401,7 +410,7 @@ public final class Gestio {
         1 Informació
         2 Warning
     */
-    private void crear_missatge(String missatge, int tipus){
+    public static void crear_missatge(String missatge, int tipus){
         JOptionPane info=new JOptionPane();
         info.setMessage(missatge);
         info.setMessageType(tipus);
