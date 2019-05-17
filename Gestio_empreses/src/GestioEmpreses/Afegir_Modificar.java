@@ -171,23 +171,18 @@ public class Afegir_Modificar {
                             //Si estem modificant passem l'últim paràmetre (el del where)
                             st.setString(6,String.valueOf(id_empresa));
                         }
-                        int operacio=0;
-                        if(operacio==0){
-                            int n=st.executeUpdate();
-                            String accio=id_empresa==0?"Inserció":"Modificació";
-                            con.close();
-                            st.close();
-                            if(n==1){
-                                Gestio.crear_missatge(accio+" realitzada correctament.", 1);
-                            }
-                            else{
-                                Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
-                            }
-                            f.dispose();
-                            new Gestio();
+                        int n=st.executeUpdate();
+                        String accio=id_empresa==0?"Inserció":"Modificació";
+                        con.close();
+                        st.close();
+                        if(n==1){
+                            Gestio.crear_missatge(accio+" realitzada correctament.", 1);
                         }
-                       
-                        
+                        else{
+                            Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
+                        }
+                        f.dispose();
+                        new Gestio();
                     } catch (SQLException ex) {
                         Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
                     }

@@ -4,12 +4,12 @@ window.addEventListener('load',function(){
     {
         inputs[i].addEventListener('keyup', comprovarMajuscula);
     }
-    barra.value=0;
-    mostrarPass.addEventListener('click', mostrarContrasenya);
-    contrasenya.addEventListener('keyup', comprovarSeguretat);
-    cred.addEventListener('click',desarCredencials);
+    //barra.value=0;
+    //mostrarPass.addEventListener('click', mostrarContrasenya);
+    //contrasenya.addEventListener('keyup', comprovarSeguretat);
+    //cred.addEventListener('click',desarCredencials);
     let ruta='https://api.idescat.cat/emex/v1/nodes.json?tipus=com';
-    let peticio = $.post(arxiuDelServidor);  
+    let peticio = $.post(ruta);  
     peticio.done(exit);
     peticio.fail(fracas);
 });
@@ -30,10 +30,12 @@ let pass="";
 
 function comprovarMajuscula(ev){
     if(ev.getModifierState("CapsLock")==true){
-        info.innerHTML="Majúscules activades";
+        console.info("Majúscules activades");
+        //info.innerHTML="Majúscules activades";
     }
     else{
-        info.innerHTML="";
+        console.info("Majúscules desactivades");
+        //info.innerHTML="";
     }
 }
 
