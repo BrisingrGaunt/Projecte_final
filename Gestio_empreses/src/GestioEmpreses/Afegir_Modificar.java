@@ -81,32 +81,29 @@ public class Afegir_Modificar {
                 //editar empresa
                 tipusAccio="Modificar empresa";
                 //es fa el populate dels camps del formulari
-                String s2="select nom, direccio, email, username, password from empresa where id like ?";
+                String s2="select nom, tipusVia, direccio, numDireccio, email, username, password from empresa where id like ?";
                 Connection con=new Connexio().getConnexio();
                 PreparedStatement st=con.prepareStatement(s2);
                 st.setString(1, String.valueOf(id_empresa));
                 ResultSet rs=st.executeQuery();
                 //Només tornarà un registre per tant ens estalviem el bucle rs.next()
                 rs.first();
-                String direccio[]=rs.getString(2).split(",");
                 //Es selecciona l'element del dropdown
                 for(i=0;i<selVia.getItemCount();i++){
-                    if(direccio[0].equals(selVia.getItemAt(i))==true){
+                    if(rs.getString(2).equals(selVia.getItemAt(i))==true){
                         selVia.setSelectedIndex(i);
                     }
                 }
                 //S'omplen els JTextField
-                for(i=0;i<6;i++){
-                    if(i==1){
-                        filtres[1].setText(direccio[1]);
-                        filtres[2].setText(direccio[2]);
-                        i=3;
-                    }
-                    if(i<3){
-                        filtres[i].setText(rs.getString(i+1));
+                int j=3;
+                for(i=0;i<filtres.length;i++){
+                    if(i!=0){
+                       filtres[i].setText(rs.getString(j));
+                        j++;
                     }
                     else{
-                        filtres[i].setText(rs.getString(i));
+                        filtres[i].setText(rs.getString((i+1)));
+                        
                     }
                 }  
                 con.close();
@@ -148,28 +145,28 @@ public class Afegir_Modificar {
                         String sql="";
                         Connection con=new Connexio().getConnexio();
                         if(id_empresa==0){
-                            sql="insert into empresa (nom, direccio, email, username, password) values (?,?,?,?,?)";
+                            sql="insert into empresa (nom, tipusVia, direccio, numDireccio, email, username, password) values (?,?,?,?,?,?,?)";
                         }
                         else{
-                            sql="update empresa set nom=?, direccio=?, email=?, username=?, password=? where id=?";
+                            sql="update empresa set nom=?, tipusVia=?, direccio=?, numDireccio=?, email=?, username=?, password=? where id=?";
                         }
-                        //Obtenim els valors del formulari
+                        PreparedStatement st = con.prepareStatement(sql);
+                        
+                        //Lliguem els valors del formulari
                         String valors_formulari[]=new String[filtres.length];
-                        int i=0;
+                        int i=1;
                         for(JTextField filtre:filtres){
-                            valors_formulari[i]=filtre.getText();
+                            if(i==2){
+                                //Agafem el valor del dropdown
+                                st.setString(i,String.valueOf(selVia.getSelectedItem()));
+                                i++;                                
+                            }
+                            st.setString(i, filtre.getText());
                             i++;
                         }
-                        String direccio=selVia.getSelectedItem()+", "+valors_formulari[1]+", "+valors_formulari[2];
-                        PreparedStatement st = con.prepareStatement(sql);
-                        st.setString(1,valors_formulari[0]);
-                        st.setString(2, direccio);
-                        st.setString(3,valors_formulari[3]);
-                        st.setString(4, valors_formulari[4]);
-                        st.setString(5, valors_formulari[5]);
                         if(id_empresa!=0){
                             //Si estem modificant passem l'últim paràmetre (el del where)
-                            st.setString(6,String.valueOf(id_empresa));
+                            st.setString(8,String.valueOf(id_empresa));
                         }
                         int n=st.executeUpdate();
                         String accio=id_empresa==0?"Inserció":"Modificació";
@@ -181,8 +178,11 @@ public class Afegir_Modificar {
                         else{
                             Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
                         }
-                        f.dispose();
-                        new Gestio();
+                        //f.dispose();
+                        //System.exit(0);
+                       f.setVisible(false);
+                       f.dispose();
+                        //Gestio g=new Gestio();
                     } catch (SQLException ex) {
                         Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
                     }

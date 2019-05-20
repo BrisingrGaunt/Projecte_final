@@ -32,7 +32,8 @@
 
 .register .register-form{
     padding: 10%;
-    margin-top: 10%;
+    padding-bottom: 0;
+    margin-top: 8%;
 }
 .btnRegister{
     float: right;
@@ -66,7 +67,7 @@
     border: none;
 }
 .register .nav-tabs .nav-link.active{
-    width: 100px;
+    width: 120px;
     color: #0062cc;
     border: 2px solid #0062cc;
     border-top-left-radius: 1.5rem;

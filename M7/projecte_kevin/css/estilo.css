@@ -61,7 +61,8 @@
 }
 .ampolles {
   display: flex;
-  margin-top: 100%;
+  margin-top: 45px;
+  margin-bottom: 35px;
 }
 body {
   background-color: lavender;
@@ -74,4 +75,103 @@ body {
   padding: 10px;
   width: 300px;
   height: 120px;
+}
+#login_empresa {
+  display: block;
+  border: 10 px solid red;
+}
+#registre_empresa,
+#registre_usuari {
+  display: none;
+}
+#avisos {
+  height: 40vh;
+  color: #333;
+  width: 280px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Satisfy;
+  box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.46);
+  position: relative;
+  background: #eae672;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+#avisos .pin {
+  background-color: #aaa;
+  display: block;
+  height: 32px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  z-index: 1;
+}
+#avisos .pin:after {
+  background-color: #A31;
+  background-image: radial-gradient(25% 25%, circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 3px 3px 3px rgba(255, 255, 255, 0.2), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 23px 20px 3px rgba(0, 0, 0, 0.15);
+  content: '';
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+#avisos .pin:before {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+  content: '';
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  -moz-transform: rotate(57.5deg);
+  -webkit-transform: rotate(57.5deg);
+  -o-transform: rotate(57.5deg);
+  -ms-transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+}
+#avisos #info {
+  font-size: 15px;
+}
+.botoAccio {
+  margin-top: 35px;
+  margin-left: 33%;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 15px;
+  background: #0062cc;
+  color: #fff;
+  font-weight: 600;
+  width: 20%;
+  margin: auto;
+  cursor: pointer;
+}
+label {
+  font-weight: bolder;
+}
+#tabEmpresa,
+#tabUsuari {
+  position: absolute;
+  bottom: 15px;
+  left: 75px;
+}
+.posicionat {
+  position: absolute;
+  bottom: 50px;
+  width: 21%;
+  height: 5%;
+  line-height: 5%;
+  right: 150px;
 }

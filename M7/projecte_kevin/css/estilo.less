@@ -80,7 +80,8 @@
 
 .ampolles {
     display: flex;
-    margin-top: 100%;
+    margin-top: 45px;
+    margin-bottom: 35px;
 }
 
 body {
@@ -90,6 +91,7 @@ body {
 .missatge {
     position: absolute;
     bottom: 0px;
+
     svg {
         padding: 10px;
         width: 300px;
@@ -97,4 +99,123 @@ body {
     }
 }
 
+#login_empresa {
+    display: block;
+    border: 10 px solid red;
+}
 
+#registre_empresa,
+#registre_usuari {
+    display: none;
+}
+
+#avisos {
+    height: 40vh;
+    color: #333;
+    position: relative;
+    width: 280px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Satisfy;
+    box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.46);
+    position: relative;
+    background: #eae672;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    transform: rotate(2deg);
+
+    .pin {
+        background-color: #aaa;
+        display: block;
+        height: 32px;
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        z-index: 1;
+    }
+
+    .pin:after {
+        background-color: #A31;
+        background-image: radial-gradient(25% 25%, circle, hsla(0, 0%, 100%, .3), hsla(0, 0%, 0%, .3));
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, .1),
+            inset 3px 3px 3px hsla(0, 0%, 100%, .2),
+            inset -3px -3px 3px hsla(0, 0%, 0%, .2),
+            23px 20px 3px hsla(0, 0%, 0%, .15);
+        content: '';
+        height: 12px;
+        left: -5px;
+        position: absolute;
+        top: -10px;
+        width: 12px;
+    }
+
+    .pin:before {
+        background-color: hsla(0, 0%, 0%, 0.1);
+        box-shadow: 0 0 .25em hsla(0, 0%, 0%, .1);
+        content: '';
+
+        height: 24px;
+        width: 2px;
+        left: 0;
+        position: absolute;
+        top: 8px;
+
+        transform: rotate(57.5deg);
+        -moz-transform: rotate(57.5deg);
+        -webkit-transform: rotate(57.5deg);
+        -o-transform: rotate(57.5deg);
+        -ms-transform: rotate(57.5deg);
+
+        transform-origin: 50% 100%;
+        -moz-transform-origin: 50% 100%;
+        -webkit-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+        -o-transform-origin: 50% 100%;
+    }
+    
+    #info{
+        font-size: 15px;
+        
+    }
+}
+
+.botoAccio {
+    //float: right;
+    margin-top: 35px;
+    margin-left: 33%;
+    //margin: auto;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 15px;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 20%;
+    margin: auto;
+    cursor: pointer;
+}
+
+label {
+    font-weight: bolder;
+}
+
+#tabEmpresa,
+#tabUsuari {
+    //margin-right: 65%;
+    position: absolute;
+    bottom: 15px;
+    left: 75px;
+}
+
+.posicionat {
+    position: absolute;
+    bottom: 50px;
+    width: 21%;
+    height: 5%;
+    line-height: 5%;
+    right: 150px;
+}

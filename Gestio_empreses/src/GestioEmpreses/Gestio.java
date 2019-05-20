@@ -7,6 +7,7 @@ package GestioEmpreses;
 
 import Connexio.Connexio;
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -42,6 +43,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 
 /**
@@ -125,6 +128,7 @@ public final class Gestio {
         
         //Finalització del JFrame
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.pack();
         f.setSize(900, 500);
         f.setLocationRelativeTo(null);
@@ -160,7 +164,7 @@ public final class Gestio {
         JScrollPane scroll=new JScrollPane(
                 taula,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER
         );
         
         //Assignació de scroll a la taulaEmpreses per defecte
@@ -187,7 +191,7 @@ public final class Gestio {
             //Ens quedem amb l'empresa seleccionada
             String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);            
             Connection con=new Connexio().getConnexio();
-            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.empresa=c.empresa and pa.cata=c.id and c.empresa like ? group by c.empresa, p.nom, c.data";
+            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.cata=c.id and c.empresa like ? group by c.empresa, p.nom, c.data";
             PreparedStatement st = con.prepareStatement(s2);
             st.setString(1,empresa);
             ResultSet rs = st.executeQuery();
@@ -267,6 +271,7 @@ public final class Gestio {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            f.setVisible(false);
             f.dispose();
             new Afegir_Modificar(0);
         }
@@ -372,7 +377,8 @@ public final class Gestio {
             buidar_taula(modelTasts);
             Connection con=new Connexio().getConnexio();
             Statement st = con.createStatement();
-            String sql="select e.id, e.nom, e.direccio, count(c.id) from empresa e left join cata c on c.empresa=e.id where e.visibilitat=0 group by e.id, e.nom, e.direccio";
+            //String sql="select e.id, e.nom, count(c.id), e.tipusVia, e.direccio, e.numDireccio from empresa e left join cata c on c.empresa=e.id where e.visibilitat=0 group by e.id, e.nom, e.tipusVia, e.direccio, e.numDireccio";
+            String sql="select e.id, e.nom, tasts.realitzats, e.tipusVia, e.direccio, e.numDireccio from empresa e left join (select count(c.id) as realitzats, e.id as emp from empresa e left join cata c on c.empresa=e.id where estat=1 group by e.id) as tasts on tasts.emp=e.id";
             ResultSet rs = st.executeQuery(sql);
             rs.last();
             //guardem la quantitat de registres per incialitzar la matriu dataEmpreses
@@ -383,9 +389,12 @@ public final class Gestio {
             dataEmpreses=new Object[qt_registres][4];
             while(rs.next()){
                 //omplim les dades obtingudes a la select
-                for(int j=1;j<5;j++){
+                for(int j=1;j<3;j++){
                     dataEmpreses[k][(j-1)]=rs.getString(j);
                 }
+                String direccio=rs.getString(4)+" "+rs.getString(5)+", "+rs.getString(6);
+                dataEmpreses[k][2]=direccio;
+                dataEmpreses[k][3]=rs.getString(3)==null?"0":rs.getString(3);
                 k++;
             }
             rs.close();
@@ -394,11 +403,37 @@ public final class Gestio {
             for(int i=0;i<dataEmpreses.length;i++){             
                 modelEmpreses.insertRow(i, dataEmpreses[i]);
             }
+            //ajustem el tamany de les cel·les
+            ajustarTaula(taulaEmpreses);
         } catch (SQLException ex) {
             crear_missatge("Error al executar la consulta de selecció d'empreses", ERROR_MESSAGE);
         }
     }
     
+    private void ajustarTaula(JTable taula){
+        taula.setAutoResizeMode( JTable.AUTO_RESIZE_OFF );
+
+        for (int column = 0; column < taula.getColumnCount(); column++)
+        {
+            TableColumn tableColumn = taula.getColumnModel().getColumn(column);
+            int preferredWidth = tableColumn.getMinWidth();
+            int maxWidth = tableColumn.getMaxWidth();
+
+            for (int row = 0; row < taula.getRowCount(); row++)
+            {
+                TableCellRenderer cellRenderer = taula.getCellRenderer(row, column);
+                Component c = taula.prepareRenderer(cellRenderer, row, column);
+                int width = c.getPreferredSize().width + taula.getIntercellSpacing().width;
+                preferredWidth = Math.max(preferredWidth, width);
+                if (preferredWidth >= maxWidth)
+                {
+                    preferredWidth = maxWidth;
+                    break;
+                }
+            }
+            tableColumn.setPreferredWidth( preferredWidth<100?preferredWidth+74:preferredWidth+80 );
+        }
+    }
     
     private boolean es_buit(JTextField jt){
         return jt.getText().length()==0;
@@ -414,7 +449,7 @@ public final class Gestio {
         JOptionPane info=new JOptionPane();
         info.setMessage(missatge);
         info.setMessageType(tipus);
-        JDialog dialog = info.createDialog(null, "Error");
+        JDialog dialog = info.createDialog(null, "Informació");
         dialog.setVisible(true);
     }
 
