@@ -39,6 +39,11 @@
                     <div class="row" id="avisos">
                         <i class="pin"></i>
                         <p id='info'></p>
+                        <?php 
+                            if(isset($info)){
+                                echo $info;
+                            }
+                        ?>
                     </div>
                     <div class="row">
                         <div class="missatge">

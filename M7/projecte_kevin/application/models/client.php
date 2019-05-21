@@ -14,15 +14,25 @@ class Client extends CI_Model {
     
     public function login($post) {
         $taula=$this->preparar($post);
-		//$query = $this->db->get('comanda');
         //var_dump($taula);
-        //exit;
-		return $query->result_array();	
+        $query=$this->db->get_where('client',array('password'=>$taula['password']));
+        $this->db->or_where('username' ,$taula['username']);
+        $this->db->or_where('email', $taula['username']);
+        if($query->num_rows()==0){
+            return 0;
+        }
+        return $query->result_array()[0];
 	}
     
     public function registre($post){
+        //Primer comprovarem que no existeixi el client que es vol inserir
         $data=$this->preparar($post);
+        $query = $this->db->get_where('client', array('email' => $data['email'],'username'=>$data['username']));
+        if($query->num_rows()!=0){
+            return "No s'ha pogut realitzar l'alta d'usuari degut a que ja existeix a l'aplicació";
+        }
         $this->db->insert('client',$data);
+        return "Registre realitzat correctament";
     }
     
     public function getComanda($com){

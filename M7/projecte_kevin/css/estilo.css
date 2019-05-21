@@ -84,6 +84,7 @@ body {
 #registre_usuari {
   display: none;
 }
+.avisos,
 #avisos {
   height: 40vh;
   color: #333;
@@ -100,6 +101,7 @@ body {
   -ms-transform: rotate(2deg);
   transform: rotate(2deg);
 }
+.avisos .pin,
 #avisos .pin {
   background-color: #aaa;
   display: block;
@@ -110,6 +112,7 @@ body {
   top: -10px;
   z-index: 1;
 }
+.avisos .pin:after,
 #avisos .pin:after {
   background-color: #A31;
   background-image: radial-gradient(25% 25%, circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
@@ -122,6 +125,7 @@ body {
   top: -10px;
   width: 12px;
 }
+.avisos .pin:before,
 #avisos .pin:before {
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
@@ -142,6 +146,7 @@ body {
   -ms-transform-origin: 50% 100%;
   -o-transform-origin: 50% 100%;
 }
+.avisos #info,
 #avisos #info {
   font-size: 15px;
 }

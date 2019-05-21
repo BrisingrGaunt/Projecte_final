@@ -15,15 +15,42 @@ class Inici extends CI_Controller {
         //var_dump($accio);
         //var_dump($model);
         $this->load->model($model);
+        $data=array();
         if(sizeof($_POST)==3){
-            $this->$model->login($_POST);
+            $info=$this->$model->login($_POST);
+            if($info==0){
+                //Si no hi ha cap usuari amb aquests credencials
+                $data['info']="Credencials errònies, comprova les dades";
+                //$this->load->view
+            }
+            else{
+                var_dump($info);
+                $this->session->set_flashdata('informacio', $info);
+                if(sizeof($info)==3){
+                    // Part client
+                    $_SESSION['client']=$info['email'];
+                    redirect('Client');
+                }
+                else{
+                    // Part empresa
+                    $_SESSION['empresa']=$info['id'];
+                    redirect('Empresa');
+                }
+            }
         }
         else{
-            $this->$model->registre($_POST);
+            $missatge=$this->$model->registre($_POST);
+            $data['info']=$missatge;
         }
-        var_dump(sizeof($_POST));
+        $this->load->view('inici',$data);
+        /*var_dump($missatge);
         foreach($_POST as $clau => $valor){
             echo $clau." ".$valor."<br>";
-        }
+        }*/
+    }
+    
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('Inici');
     }
 }
