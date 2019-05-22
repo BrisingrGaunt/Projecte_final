@@ -41,24 +41,33 @@
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                <form method="post" action="<?php echo site_url('Empresa/pujar_producte');?>">
+                                <form method="post" action="<?php echo site_url('Empresa/programar_cata');?>">
                                     <input type="hidden" name="empresa" value="<?php echo $info_empresa['id']?>" />
+                                    <?php if(isset($editar_cata)){?>
+                                    <input type="hidden" name='id' value="<?php echo $editar_cata['id'];?>"/>
+                                    <?php } ?>
                                     <div class="form-group">
                                         <label for="nom_producte">Producte *</label><br>
                                         <select name="producte" id="nom_producte">
                                             <option value="-1">Selecciona un producte</option>
                                             <?php 
                                                 foreach($productes as $p){
-                                                    echo "<option value='".$p['codi']."'>".$p['nom']."</option>";
+                                                    echo "<option value='".$p['codi']."'";
+                                                    if(isset($editar_cata)){
+                                                        if($editar_cata['codi']==$p['codi']){
+                                                            echo " selected ";
+                                                        }
+                                                    }
+                                                    echo ">".$p['nom']."</option>";
                                                 }
                                             ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="data_event">Data i hora *</label><br>
-                                        <input type="datetime-local" name="data" id="data_event">
+                                        <input type="datetime-local" name="data" id="data_event" <?php if(isset($editar_cata)){echo "value='".$editar_cata['data']."'";}?>>
                                     </div>
-                                    <input type="button" id="afegirCata" class="btnRegister" value="Afegir cata" />
+                                    <input type="button" id="afegirCata" class="btnRegister" <?php if(isset($editar_cata)){echo "value='Modificar cata'";}?> />
                                 </form>
                             </div>
                             <div class="col-md-3"></div>

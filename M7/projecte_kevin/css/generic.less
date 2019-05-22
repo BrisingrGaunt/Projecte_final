@@ -1,13 +1,23 @@
 .principal{
    background-color:blanchedalmond;
+
+}
+
+#contingut{
+   // overflow: hidden;
+    //overflow-y: scroll;
+   // margin: 0;
+    //padding: 0;
+
 }
 
 .cata{
    // border:1px solid green;
+    position: relative;
     padding: 15px;
-    margin-top: 15px;
+    margin-top: 25px;
     background: #eae672;
-    height: 35vh;
+    height: 34vh;
 }
 
 .row{
@@ -25,4 +35,62 @@ h2{
 .descripcio{
     font-style: italic;
     text-align: center;
+}
+
+.peu{
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+}
+
+.valoracio{
+   // border: 1px solid red;
+   // padding: 15px;
+    padding: 30px;
+    background-color:darkkhaki;
+    box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.46);
+    margin-bottom: 45px;
+}
+
+.estrelles{
+    color:darkcyan;
+    span{
+        color:darkslateblue;
+    }
+    line-height: 30px;
+}
+
+.info_cata{
+    //height:110%;
+    padding-bottom: 100px;
+   
+}
+
+.valoracions{
+    //taula on es mostren les valoracions
+   
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    tr:nth-child(odd){
+        background-color:lightskyblue;
+    }
+    th{
+        background-color: lightgreen;
+        width:150px;
+    }
+    th:first-child{
+        width: 40px;
+    }
+    tr{
+        height: 30px;
+    }
+    background-color: lightblue;
+}
+
+.participacio{//div que contindrà tota la informació de les participacions
+   // border: 1px solid red;
+    overflow-y: scroll;
+    height: 100%;
+   // background-color: white;
 }

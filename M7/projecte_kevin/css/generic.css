@@ -3,10 +3,11 @@
   background-color: blanchedalmond;
 }
 .cata {
+  position: relative;
   padding: 15px;
-  margin-top: 15px;
+  margin-top: 25px;
   background: #eae672;
-  height: 35vh;
+  height: 34vh;
 }
 h1 {
   text-align: center;
@@ -17,4 +18,48 @@ h2 {
 .descripcio {
   font-style: italic;
   text-align: center;
+}
+.peu {
+  position: absolute;
+  right: 15px;
+  bottom: 0px;
+}
+.valoracio {
+  padding: 30px;
+  background-color: darkkhaki;
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.46);
+  margin-bottom: 45px;
+}
+.estrelles {
+  color: darkcyan;
+  line-height: 30px;
+}
+.estrelles span {
+  color: darkslateblue;
+}
+.info_cata {
+  padding-bottom: 100px;
+}
+.valoracions {
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+  background-color: lightblue;
+}
+.valoracions tr:nth-child(odd) {
+  background-color: lightskyblue;
+}
+.valoracions th {
+  background-color: lightgreen;
+  width: 150px;
+}
+.valoracions th:first-child {
+  width: 40px;
+}
+.valoracions tr {
+  height: 30px;
+}
+.participacio {
+  overflow-y: scroll;
+  height: 100%;
 }

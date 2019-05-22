@@ -38,9 +38,11 @@
                         </div>
                         <?php
                             if(isset($cates)){
+                                
                                 $i=0;
                                 echo "<div class='row'>";
                                 foreach($cates as $c){
+                                    
                                     if($i<4){
                                         if($i==2){
                                             echo "</div><div class='row'>";
@@ -61,7 +63,22 @@
                                 else{
                                     $estat="Tancada";
                                 }
-                                echo "<b>Estat: </b>".$estat?></p>
+                                echo "<b>Estat: </b>".$estat;?></p>
+                            <p class="peu">
+                                
+                                <?php
+                                    echo "<a href='";
+                                   if($c['estat']==0){
+                                        echo site_url('Empresa/modificar_cata/?id='.$c['id'])."'>Modificar cata</a>";
+                                    }
+                                    else{
+                                         echo site_url('Empresa/veure_valoracions/?id='.$c['id'])."'>Veure valoracions</a>";
+                                    }     
+
+                                    ?>
+                            
+                            </p>
+                                
                         </div>
                         <div class="col-md-1"></div>
                         <?php

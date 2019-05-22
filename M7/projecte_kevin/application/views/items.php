@@ -77,10 +77,10 @@ $barra_empresa="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
                                     <a class='nav-link' href='".site_url('Empresa/Programar_cata')."'>Programar cata</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a class='nav-link' href='".site_url('Empresa/Veure_valoracions')."'>Visualitzar valoracions</a>
+                                    <a class='nav-link' href='".site_url('Empresa/Veure_valoracions')."'>Visualitzar events</a>
                                 </li>
                             </ul>
-                            <a class='nav-link nav-item' href='<?php echo site_url('Inici/logout');?>'>
+                            <a class='nav-link nav-item' href='".site_url('Inici/logout')."'>
                                 Sortir
                             </a>
                         </div></nav>";
