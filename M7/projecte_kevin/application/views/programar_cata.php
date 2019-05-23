@@ -41,10 +41,12 @@
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                <form method="post" action="<?php echo site_url('Empresa/programar_cata');?>">
+                                <form method="post" action="<?php if(isset($editar_cata)){echo site_url('Empresa/modificar_cata');}else{echo site_url('Empresa/programar_cata');}?>">
                                     <input type="hidden" name="empresa" value="<?php echo $info_empresa['id']?>" />
                                     <?php if(isset($editar_cata)){?>
-                                    <input type="hidden" name='id' value="<?php echo $editar_cata['id'];?>"/>
+                                    <input type="hidden" name='id' value="<?php echo $editar_cata['id'];?>" />
+                                    <input type="hidden" name='producte_vell' value="<?php echo $editar_cata['codi'];?>"/>
+                                    <input type="hidden" name="data_vella" value="<?php echo $editar_cata['data'];?>"/>
                                     <?php } ?>
                                     <div class="form-group">
                                         <label for="nom_producte">Producte *</label><br>
@@ -65,9 +67,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="data_event">Data i hora *</label><br>
-                                        <input type="datetime-local" name="data" id="data_event" <?php if(isset($editar_cata)){echo "value='".$editar_cata['data']."'";}?>>
+                                        <input type="datetime-local" name="data" id="data_event" <?php if(isset($editar_cata)){                                           
+                                        echo "value='".str_replace(" ","T",$editar_cata['data'])."'";}?> />
                                     </div>
-                                    <input type="button" id="afegirCata" class="btnRegister" <?php if(isset($editar_cata)){echo "value='Modificar cata'";}?> />
+                                    <?php if(isset($editar_cata)){ ?>
+                                        <input type='submit' id="eliminarCata" class="btnRegister"  style="margin-left:35px;width:175px;" value="Eliminar cata" name='eliminar'>
+                                        <input type='button' id='modificarCata' class="btnRegister" style="width:175px;" value="Modificar cata" name="modificar">
+                                    <?php }else{?>
+                                    <input type="button" id="afegirCata" class="btnRegister" value="Afegir">
+                                    <?php }?>
                                 </form>
                             </div>
                             <div class="col-md-3"></div>

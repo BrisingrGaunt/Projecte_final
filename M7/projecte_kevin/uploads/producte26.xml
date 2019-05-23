@@ -1,0 +1,10 @@
+<productes>
+    <producte empresa='16'>
+        <nom>Producte 1</nom>
+        <descripcio>Descripció asdasdasdsd</descripcio>
+    </producte>
+    <producte empresa='16'>
+        <nom>Liberty Scars</nom>
+        <descripcio>yeah yeah </descripcio>
+    </producte>
+</productes>

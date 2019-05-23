@@ -13,7 +13,7 @@ class Participacio extends CI_Model {
         $this->db->join('client cl','cl.email=pa.client');
         $this->db->join('producte p','p.codi=c.producte');
         $this->db->join('empresa e','e.id=c.empresa');*/
-        $this->db->select('p.nom, pa.valoracio, cl.username, c.estat,c.data, pa.cata');
+        $this->db->select('p.nom, pa.valoracio, cl.username, c.estat,c.data, pa.cata, pa.client');
         $this->db->from('participacio pa');
         $this->db->join('cata c', 'c.id = pa.cata');
         $this->db->join('client cl','cl.email=pa.client');
