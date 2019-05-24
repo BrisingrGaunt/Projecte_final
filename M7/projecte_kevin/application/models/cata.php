@@ -14,6 +14,16 @@ class Cata extends CI_Model {
         return $query->result_array();
     }
     
+    public function getAllDetallat(){
+        $this->db->select('p.nom,p.descripcio, c.data, c.estat, c.id, p.codi, e.nom as empresa, e.direccio, e.numDireccio, e.comarca, e.tipusVia');
+        $this->db->from('cata c');
+        $this->db->join('producte p', 'p.codi = c.producte'); 
+        $this->db->join('empresa e','e.id=c.empresa');
+        $this->db->order_by('c.data','desc');
+        $query=$this->db->get();
+        return $query->result_array();
+    }
+    
     public function programar_cata($dades){
         // comprovem que la cata sigui programada en el futur
         if($dades['data']<date('Y-m-d H:i')){

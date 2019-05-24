@@ -12,8 +12,6 @@ class Inici extends CI_Controller {
         $valors=explode('_',$_POST['accio']);
         $accio=$valors[0];
         $model=$valors[1];
-        //var_dump($accio);
-        //var_dump($model);
         $this->load->model($model);
         $data=array();
         if(sizeof($_POST)==3){
@@ -24,12 +22,13 @@ class Inici extends CI_Controller {
                 //$this->load->view
             }
             else{
-                var_dump($info);
+                //var_dump($info);
+                //exit;
                 $this->session->set_flashdata('informacio', $info);
                 if(sizeof($info)==3){
                     // Part client
                     $_SESSION['client']=$info['email'];
-                    redirect('Client');
+                    redirect('Cliente');
                 }
                 else{
                     // Part empresa

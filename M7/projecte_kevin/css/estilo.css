@@ -67,6 +67,10 @@
 body {
   background-color: lavender;
 }
+#contingut {
+  overflow-y: scroll;
+  height: 100%;
+}
 .missatge {
   position: absolute;
   bottom: 0px;

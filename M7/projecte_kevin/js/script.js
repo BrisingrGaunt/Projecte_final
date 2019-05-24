@@ -17,7 +17,8 @@ window.addEventListener('load', function () {
     
     document.getElementById('profile-tab').addEventListener('click', function () {
         login_empresa.style.display = 'block';
-    })
+    });
+    
     checks = document.getElementsByName("mostrarPass");
     for (let i = 0; i < checks.length; i++) {
         checks[i].addEventListener('click', mostrarContrasenya);

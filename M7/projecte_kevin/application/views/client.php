@@ -5,9 +5,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Empresa</title>
+    <title>Client</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -52,7 +53,27 @@
                     </div>
                 </div>
                 <div class="col-md-9 register-right">
-                    <?php //var_dump($info_client);?>
+                    <?php echo $barra_client; ?>
+                    <div id='contingut'>
+                        <h1>Benvolgut <?php echo $info_client['username']; ?></h1>
+                        <h2>Estàs inscrit a <?php echo $qt_participacions; ?> events.</h2>
+                        <h2>Pròxim event: </h2>
+                        <h2>Quin producte? <?php echo $propera_cata['producte'];?></h2>
+                        <h2>Quan? <?php echo date("d-m-Y H:i", strtotime($propera_cata['data']));?></h2>
+                        <h2>On? <?php 
+                                    echo $propera_cata['tipusVia']." ".$propera_cata['direccio'].", ".$propera_cata['numDireccio']." (".$propera_cata['comarca'].")";
+                           ?></h2>
+                        <h2>Qui ho organitza? <?php echo $propera_cata['empresa'];?></h2>
+                    </div>
+                    <!-- Footer -->
+                    <footer class="page-footer font-small">
+                        <!-- Copyright -->
+                        <div class="footer-copyright text-center">© 2019 Copyright --
+                            BrisingrGaunt Productions
+                        </div>
+                        <!-- Copyright -->
+                    </footer>
+                    <!-- Footer -->
                 </div>
             </div>
         </div>

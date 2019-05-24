@@ -85,4 +85,27 @@ $barra_empresa="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
                             </a>
                         </div></nav>";
 }
+
+if(isset($info_client)){
+    $barra_client="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+                        <a class='navbar-brand' href='#'></a>
+                        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span class='navbar-toggler-icon'></span>
+                        </button><div class='collapse navbar-collapse' id='navbarText'>
+                            <ul class='navbar-nav mr-auto'>
+                                <li class='nav-item active'>
+                                    <a class='nav-link' href='".site_url('Cliente')."'>".$info_client['username']."<span class='sr-only'>(current)</span></a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='".site_url('Cliente/apuntar')."'>Apuntar-se a un event</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' href='".site_url('Cliente/meusEvents')."'>Els meus events</a>
+                                </li>
+                            </ul>
+                            <a class='nav-link nav-item' href='".site_url('Inici/logout')."'>
+                                Sortir
+                            </a>
+                        </div></nav>";
+}
 ?>
