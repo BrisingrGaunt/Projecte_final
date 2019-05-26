@@ -13,17 +13,18 @@ class Participacio extends CI_Model {
         $this->db->join('client cl','cl.email=pa.client');
         $this->db->join('producte p','p.codi=c.producte');
         $this->db->join('empresa e','e.id=c.empresa');*/
-        $this->db->select('p.nom, pa.valoracio, cl.username, c.estat,c.data, pa.cata, pa.client');
+        $this->db->select('p.nom, pa.valoracio, cl.username, c.estat,c.data, pa.cata, pa.client, e.nom as empresa');
         $this->db->from('participacio pa');
         $this->db->join('cata c', 'c.id = pa.cata');
         $this->db->join('client cl','cl.email=pa.client');
         $this->db->join('producte p','p.codi=c.producte');
+        $this->db->join('empresa e','e.id=c.empresa');
         $this->db->where($filtre);
         $query=$this->db->get();
         if($query->num_rows()==0){
             return 0;
         }
-        return $query->result_array();
+        return $query->result_array()[0];
     }
     
     public function getAllEmpresa($empresa){
@@ -53,7 +54,14 @@ class Participacio extends CI_Model {
     }
     
     public function valorar($dades){
-        $this->db->update('participacio', $dades);
+        //primer es comprova que l'usuari estigui apuntat a la cata que vol valorar en cas que es vulgui fer el lio per URL
+        $resultat=$this->db->get_where('participacio',array('cata'=>$dades['cata'],'client'=>$dades['client']));
+        if($resultat->num_rows()==0){
+            return "No pots valorar una cata en la que no estàs apuntat!!";
+        }
+        //si tot correcte, llavors es puntua
+        $this->db->where(array('cata'=>$dades['cata'],'client'=>$dades['client']));
+        $this->db->update('participacio', array('valoracio'=>$dades['valoracio']));
         return "Valoració realitzada, gràcies.";
     }
     

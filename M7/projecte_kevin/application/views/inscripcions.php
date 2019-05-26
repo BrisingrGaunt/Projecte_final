@@ -8,27 +8,31 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Client</title>
+    <title>Inscripcions</title>
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="<?php echo base_url();?>/js/script.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/barra_nav.css">
+
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
 </head>
 
 <body>
-    <div id="container">
-        <div class="container" style="max-width:100%">
+    <header>
+        <?php echo $barra_client;?>
+    </header>
+    <main>
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 register-right">
-                    <?php echo $barra_client; ?>
-                    <div id='contingut'>
-                        <h1>Cates</h1>
-                        
+                <div class="col-md-1 col-12">
+                    <?php if(isset($info)){
+    echo $info;
+}?>
+                
+                </div>
+                <div class="col-md-11 col-12">
+                        <h1>Totes les cates</h1>
                         <?php
                             $i=0;
                         echo "<div class='row'>";
@@ -38,8 +42,8 @@
                                     $i=0;
                                 }
                         ?>
-                            <div class="col-md-1"></div>
-                        <div class="cata col-md-4 avisos">
+                        <div class="col-md-1 col-1"></div>
+                        <div class="cata col-md-4 col-10 nota">
                             <i class="pin"></i>
                             <h2><?php echo $c['nom'];?></h2>
                             <p class="descripcio">"<?php echo $c['descripcio'];?>"</p>
@@ -55,10 +59,8 @@
                                 }
                                 echo "<b>Estat: </b>".$estat;?></p>
                             <p class="peu">
-                                
+
                                 <?php
-                                //var_dump(gettype(array_search($c['id'],explode(":",$participacions['cates']))));
-                                //exit;
                                     echo "<a href='";
                                    if($c['estat']==1 && gettype(array_search($c['id'],explode(":",$participacions['cates'])))=="integer"){
                                        //si la cata està finalitzada i l'usuari ha participat
@@ -73,39 +75,37 @@
                                         echo site_url('Cliente/gestio_inscripcio/?id='.$c['id'].'&accio=desapuntar')."'>Desapuntar-se</a>";
                                     }
                                     else{
-                                        
-                                        
                                          //cata oberta usari NO apuntat 
                                         echo site_url('Cliente/gestio_inscripcio/?id='.$c['id'].'&accio=apuntar')."'>Apuntar-se</a>";
                                     }
 
                                     ?>
-                            
-                            </p>     
+
+                            </p>
                         </div>
-                        <div class="col-md-1"></div>
-                            
+                        <div class="col-md-1 col-1"></div>
+
                         <?php 
                              $i++;   
                             }
         
                             echo " </div>";
                         ?>
-                       
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+    </main>
+
     <!-- Footer -->
-                    <footer class="page-footer font-small">
-                        <!-- Copyright -->
-                        <div class="footer-copyright text-center">© 2019 Copyright --
-                            BrisingrGaunt Productions
-                        </div>
-                        <!-- Copyright -->
-                    </footer>
-                    <!-- Footer -->
+    <footer class="page-footer font-small">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center">© 2019 Copyright --
+            BrisingrGaunt Productions
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>

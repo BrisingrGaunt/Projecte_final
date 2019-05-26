@@ -6,7 +6,12 @@ class Empresa extends CI_Model {
         $taula=[];
         foreach($post as $clau => $valor){
             if($clau!="accio"){
-                $taula[$clau]=$valor;
+                if($clau=="password"){
+                    $taula[$clau]=md5($valor);
+                }
+                else{
+                    $taula[$clau]=$valor;
+                }
             }
         }
         return $taula;
@@ -21,6 +26,24 @@ class Empresa extends CI_Model {
         }
         $this->db->insert('empresa',$data);
         return "Registre realitzat correctament";
+    }
+    
+    public function getDireccio($id){
+        $this->db->select('tipusVia, direccio, numDireccio, comarca');
+        $this->db->from('empresa');
+        $this->db->where(array('id'=>$id));
+        $resultat=$this->db->get();
+        $info=$resultat->result_array()[0];
+        $direccio=$info['tipusVia']." ".$info['direccio']." ".$info['numDireccio']." ".$info['comarca'];
+        return $direccio;
+    }
+    
+    public function getNom($id){
+        $this->db->select('nom');
+        $this->db->from('empresa');
+        $this->db->where(array('id'=>$id));
+        $resultat=$this->db->get();
+        return $resultat->result_array()[0]['nom'];
     }
     
     public function login($post){

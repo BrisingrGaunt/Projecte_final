@@ -95,12 +95,18 @@ class Empresa extends CI_Controller {
     }
     
     public function modificar_cata(){
-        $this->load->model('cata');
+        //$this->load->model('cata');
         $this->load->model('producte');
         if(isset($_GET['id'])){
             $filtre=array('id'=>$_GET['id']);
-            $dades=$this->cata->getAllFiltre($filtre);
-            $data['editar_cata']=$dades[0];
+            $curl=curl_init("http://127.0.0.1/projecte_kevin_webservice/index.php/api/Server/mostrarCatesFiltre");
+            curl_setopt($curl,CURLOPT_TIMEOUT,20);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query(array('filtre'=>$filtre)));
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+            $resultat=json_decode(curl_exec($curl),true);
+            curl_close($curl);
+            $data['editar_cata']=$resultat[0];
         }
         else{
             //entrem per post (modificar o eliminar)

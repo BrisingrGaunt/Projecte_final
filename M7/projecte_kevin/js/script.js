@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
     //mostrarPass.addEventListener('click', mostrarContrasenya);
     // contrasenya.addEventListener('keyup', comprovarSeguretat);
     //cred.addEventListener('click',desarCredencials);
-    let ruta = 'https://api.idescat.cat/emex/v1/nodes.json?tipus=com';
+    let ruta = 'https://api.idescat.cat/emex/v1/nodes.json?tipus=mun';
     let peticio = $.post(ruta);
     peticio.done(exit);
     peticio.fail(fracas);
@@ -49,7 +49,7 @@ function validarCamps(){
     // 1 - Registre d'usuari (es comprova llargades, seguretat de password, i email correcte)
     // 2 - Registre d'empresa (es comprova llargades, seguretat de password, email correcte i la resta de dades del formulari)
     
-    let validacions=[[/\w{6,}/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/,/\w{6,}/,/^((?!Tipus via).)*$/,/\w{6,}/,/^\d{1,}$/,/^((?!Comarca).)*$/]];
+    let validacions=[[/\w{6,}/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/,/\w{6,}/,/^((?!Tipus via).)*$/,/\w{6,}/,/^\d{1,}$/,/^((?!Població).)*$/]];
     
     let errors_text=['Camp usuari',"Camp email","Camp nom", "Camp tipusVia", "Camp direccio","Camp num", "Camp comarca",'Contrasenya: mínim 8 caràcters, 1 núm, 1 majus, 1 minus i 1 símbol'];
 
@@ -126,7 +126,7 @@ function obrirPestanya(evt) {
 }
 
 function exit(dades) {
-    let cadena = "<option class='hidden' selected disabled>Comarca</option>";
+    let cadena = "<option class='hidden' selected disabled>Població</option>";
     for (let i = 0; i < dades.fitxes.v.length; i++) {
         cadena += "<option value='" + dades.fitxes.v[i].content + "'>" + dades.fitxes.v[i].content + "</option>";
     }

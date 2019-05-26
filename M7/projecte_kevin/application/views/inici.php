@@ -23,7 +23,7 @@
     <div id="container">
         <div class="container register" style="max-width:100%">
             <div class="row">
-                <div class="col-md-3 register-left">
+                <div class="col-md-3 col-12 register-left">
                     <div class="row ampolles">
                         <div class="bottle1">
                             <?php
@@ -49,6 +49,7 @@
                         <div class="missatge">
                             <?php echo $welcome;?>
                         </div>
+                        <h1><a href='<?php echo site_url();?>'>TORNAR</a></h1>
                     </div>
                 </div>
                 <div class="col-md-9 register-right">
@@ -165,7 +166,7 @@
                                                 <input type="number" class="form-control" name="numDireccio" id="num" placeholder="Número" value="" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="comarca">Comarca *</label>
+                                                <label for="comarca">Població *</label>
                                                 <select class="form-control" id="comarca" name="comarca">
 
                                                 </select>

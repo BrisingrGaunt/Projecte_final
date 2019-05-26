@@ -4,7 +4,12 @@
         $taula=[];
         foreach($post as $clau => $valor){
             if($clau!="accio"){
-                $taula[$clau]=$valor;
+                if($clau=="password"){
+                    $taula[$clau]=md5($valor);
+                }
+                else{
+                    $taula[$clau]=$valor;    
+                }
             }
         }
         return $taula;

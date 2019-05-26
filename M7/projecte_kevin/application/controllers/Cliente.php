@@ -23,16 +23,13 @@ class Cliente extends CI_Controller {
     public function apuntar(){
         $data['info_client']=$_SESSION['info_client'];
         $data['info']="";
+        if($this->session->flashdata('info')){
+            $data['info']=$this->session->flashdata('info');
+        }
         $this->load->model("cata");
         $this->load->model("participacio");
         $data['cates']=$this->cata->getAllDetallat();
-        //var_dump($data['cates']);
-        //exit;
-        //var_dump($_SESSION['info_client']);
-        //exit;
         $data['participacions']=$this->participacio->getAllUsuari(array('pa.client'=>$_SESSION['info_client']['email']));
-        //var_dump(array_search(5,explode(":",$data['participacions']['cates'])));
-        //exit;
         $this->load->view('inscripcions',$data);
     }
     
@@ -46,24 +43,39 @@ class Cliente extends CI_Controller {
             else{
                 $resultat=$this->participacio->desapuntar($dades);
             }
+            $this->session->set_flashdata('info',$resultat);
+            //exit;
+            redirect('Cliente/apuntar');
         }
-         redirect('Cliente');
+        redirect('Cliente');
     }
     
     public function valora(){
-        if(isset($_GET)){
-            //var_dump($_GET['id']);
-            //exit;
-            //$this->load->model('cata');
-            //$this->cata->getOne($_GET['id']);
-            $this->load->view('valoracio');
+        $data['info_client']=$_SESSION['info_client'];
+        $this->load->model('participacio');
+        if($this->input->post()){
+            //echo "jeje";
+                //$this->load->model('participacio');
+                $resultat=$this->participacio->valorar($_POST);
+                $data['info']=$resultat;
+                $filtre=array('pa.cata'=>$_POST['cata'],'pa.client'=>$_SESSION['info_client']['email']);
+                $data['valoracio']=$this->participacio->getValoracionsUna($filtre);
+            //var_dump($resultat);
+                //exit;
         }
         else{
-            if($this->input->post()){
-                $this->load->model('participacio');
-                $this->participacio->valorar($dades);
+            if(isset($_GET)){
+                $filtre=array('pa.cata'=>$_GET['id'],'pa.client'=>$_SESSION['info_client']['email']);
+                $data['valoracio']=$this->participacio->getValoracionsUna($filtre);
+                //var_dump( $data['valoracio']);
+                //exit;
+                //$this->load->model('cata');
+                //$this->cata->getOne($_GET['id']);
+                //$this->load->view('valoracio',$data);
+                
             }            
         }
+         $this->load->view('valoracio',$data);
     }
 }
 
