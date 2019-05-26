@@ -21,12 +21,7 @@ public class Gestio_empreses {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Gestio g=new Gestio();
-        //Afegir_Modificar m=new Afegir_Modificar(0);
-        //Login l=new Login();
-//        Connexio c=new Connexio();
-//        Connection c1=c.getConnexio();
+        Login l=new Login();
     }
     
 }

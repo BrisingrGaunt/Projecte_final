@@ -8,6 +8,7 @@ package GestioEmpreses;
 import Connexio.Connexio;
 import static Login.Login.neteja;
 import GestioEmpreses.Gestio;
+import static GestioEmpreses.Gestio.crear_missatge;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -20,6 +21,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -34,23 +37,26 @@ import javax.swing.border.EmptyBorder;
  * @author Kevin
  */
 public class Afegir_Modificar {
-    JFrame f = new JFrame();
-    JPanel pTop = new JPanel();
-    JPanel pCenter = new JPanel();
-    JPanel pBottom = new JPanel();
-    int id_empresa;
-    LayoutManager l=new GridLayout(7,2);
+    static JFrame fAccio = null;
+    static JPanel pTop = new JPanel();
+    static JPanel pCenter = new JPanel();
+    static JPanel pBottom = new JPanel();
+    static int id_empresa;
+    static LayoutManager l=new GridLayout(8,2);
     static JButton btnAccio=new JButton();
-    JComboBox selVia=new JComboBox<>(new String[]{"Via","Carrer","Avinguda"});
-    String [] valorsLabel={"Nom","Tipus via","Adreça","Número","Correu electrònic","Usuari","Contrasenya"};
-    JTextField filtres[]=new JTextField[valorsLabel.length-1];
+    static JComboBox selVia=new JComboBox<>(new String[]{"Via","Carrer","Avinguda"});
+    static String [] valorsLabel={"Nom","Tipus via","Adreça","Número","Població","Correu electrònic","Usuari","Contrasenya"};
+    static JTextField filtres[]=new JTextField[valorsLabel.length-1];
     
     public Afegir_Modificar(int empresa) {
         crear_interficie(empresa);
         set_escoltador();
     }
 
-    private void crear_interficie(int empresa) {
+    public void crear_interficie(int empresa) {
+        if(fAccio==null){
+            fAccio=new JFrame();
+        }
         pCenter.setLayout(l);
         id_empresa=empresa;
         int i=0;
@@ -77,11 +83,123 @@ public class Afegir_Modificar {
             tipusAccio="Afegir empresa";
         }
         else{
-            try {
+            tipusAccio="Modificar empresa";
+            carregarDades(empresa);
+        }
+        fAccio.setTitle(tipusAccio);
+        btnAccio.setText(tipusAccio);
+        JLabel titol=new JLabel("BrisingrGaunt Productions, SL");
+        titol.setFont(new Font(titol.getFont().getFontName(),Font.PLAIN,16));
+        pTop.add(titol);
+        //label.setFont(new Font(label.getFont().getFontName(),Font.PLAIN,16));
+        fAccio.add(pTop,BorderLayout.NORTH);
+        pTop.setBorder(new EmptyBorder(20,100,20,100));
+        pCenter.setBorder(new EmptyBorder(20,100,20,100));
+        fAccio.add(pCenter,BorderLayout.CENTER);
+        
+        pBottom.add(btnAccio);
+        pBottom.setBorder(new EmptyBorder(20,100,20,100));
+        fAccio.add(pBottom,BorderLayout.SOUTH);
+        fAccio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fAccio.pack();
+        fAccio.setSize(550, 500);
+        fAccio.setLocationRelativeTo(null);
+        fAccio.setVisible(true);
+        fAccio.setResizable(false);
+    }
+
+    private void set_escoltador() {
+        btnAccio.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                boolean correcte=comprovar_camps();
+                if(correcte){
+                    try {
+                        String sql="";
+                        Connection con=new Connexio().getConnexio();
+                        if(id_empresa==0){
+                            sql="insert into empresa (nom, tipusVia, direccio, numDireccio, comarca, email, username, password) values (?,?,?,?,?,?,?,?)";
+                        }
+                        else{
+                            sql="update empresa set nom=?, tipusVia=?, direccio=?, numDireccio=?, comarca=?, email=?, username=?, password=? where id=?";
+                        }
+                        PreparedStatement st = con.prepareStatement(sql);
+                        
+                        //Lliguem els valors del formulari
+                        String valors_formulari[]=new String[filtres.length];
+                        int i=1;
+                        for(JTextField filtre:filtres){
+                           
+                            if(i==2){
+                                //Agafem el valor del dropdown
+                                st.setString(i,String.valueOf(selVia.getSelectedItem()));
+                                i++;                                
+                            }
+                            st.setString(i, filtre.getText());
+                            i++;
+                        }
+                        if(id_empresa!=0){
+                            //Si estem modificant passem l'últim paràmetre (el del where)
+                            st.setString(9,String.valueOf(id_empresa));
+                        }
+                        int n=st.executeUpdate();
+                        String accio=id_empresa==0?"Inserció":"Modificació";
+                        con.close();
+                        st.close();
+                        if(n==1){
+                            Gestio.crear_missatge(accio+" realitzada correctament.", 1);
+                        }
+                        else{
+                            Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
+                        }
+                        //f.dispose();
+                        //System.exit(0);
+                       fAccio.setVisible(false);
+                       Gestio.estatInicialTaulaEmpreses();
+                       Gestio.fGestio.setVisible(true);
+                       //fAccio.dispose();
+                        //Gestio g=new Gestio();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+    }
+    
+    private boolean comprovar_camps(){
+        String expressions[]={"^\\w{5,}","^\\d","^[\\w\\.]{6,}@\\w{4,}\\.[a-z]{2,5}$","^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"};
+        String errors[]={"Nom","Adreça","Número","Població","Correu electrònic","Usuari","La contrasenya ha d'incloure 1 majúscula, 1 minúscula, 1 número, 1 símbol, no pot tenir espais i llargària mínima de 8 caràcters"};
+        int posicio=0;
+        int i=0;
+        boolean correcte=true;
+        String validacio="Hi ha errors en els següents camps: ";
+        for(JTextField filtre:filtres){
+            if(posicio%2==0 && posicio!=0){
+                i=posicio/2;
+            }
+            else{
+                i=0;
+            }
+            Pattern p=Pattern.compile(expressions[i]);
+            Matcher m=p.matcher(filtre.getText());
+            if(!m.find()){
+                correcte=false;
+                validacio+="\n\t - "+errors[posicio];
+            }
+            posicio++;        
+        }
+        if(!correcte){
+            crear_missatge(validacio,1);
+        }
+        return correcte;
+    }
+    
+    public static void carregarDades(int empresa){
+        try {
                 //editar empresa
-                tipusAccio="Modificar empresa";
                 //es fa el populate dels camps del formulari
-                String s2="select nom, tipusVia, direccio, numDireccio, email, username, password from empresa where id like ?";
+                String s2="select nom, tipusVia, direccio, numDireccio, comarca, email, username, password from empresa where id like ?";
                 Connection con=new Connexio().getConnexio();
                 PreparedStatement st=con.prepareStatement(s2);
                 st.setString(1, String.valueOf(id_empresa));
@@ -89,14 +207,14 @@ public class Afegir_Modificar {
                 //Només tornarà un registre per tant ens estalviem el bucle rs.next()
                 rs.first();
                 //Es selecciona l'element del dropdown
-                for(i=0;i<selVia.getItemCount();i++){
+                for(int i=0;i<selVia.getItemCount();i++){
                     if(rs.getString(2).equals(selVia.getItemAt(i))==true){
                         selVia.setSelectedIndex(i);
                     }
                 }
                 //S'omplen els JTextField
                 int j=3;
-                for(i=0;i<filtres.length;i++){
+                for(int i=0;i<filtres.length;i++){
                     if(i!=0){
                        filtres[i].setText(rs.getString(j));
                         j++;
@@ -111,96 +229,19 @@ public class Afegir_Modificar {
             } catch (SQLException ex) {
                 Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        f.setTitle(tipusAccio);
-        btnAccio.setText(tipusAccio);
+    }
+    
+    public static void setEstat(int empresa){
         id_empresa=empresa;
-        JLabel titol=new JLabel("BrisingrGaunt Productions, SL");
-        titol.setFont(new Font(titol.getFont().getFontName(),Font.PLAIN,16));
-        pTop.add(titol);
-        //label.setFont(new Font(label.getFont().getFontName(),Font.PLAIN,16));
-        f.add(pTop,BorderLayout.NORTH);
-        pTop.setBorder(new EmptyBorder(20,100,20,100));
-        pCenter.setBorder(new EmptyBorder(20,100,20,100));
-        f.add(pCenter,BorderLayout.CENTER);
-        
-        pBottom.add(btnAccio);
-        pBottom.setBorder(new EmptyBorder(20,100,20,100));
-        f.add(pBottom,BorderLayout.SOUTH);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.pack();
-        f.setSize(550, 500);
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-        f.setResizable(false);
-    }
-
-    private void set_escoltador() {
-        btnAccio.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                boolean correcte=comprovar_camps();
-                if(correcte){
-                    try {
-                        String sql="";
-                        Connection con=new Connexio().getConnexio();
-                        if(id_empresa==0){
-                            sql="insert into empresa (nom, tipusVia, direccio, numDireccio, email, username, password) values (?,?,?,?,?,?,?)";
-                        }
-                        else{
-                            sql="update empresa set nom=?, tipusVia=?, direccio=?, numDireccio=?, email=?, username=?, password=? where id=?";
-                        }
-                        PreparedStatement st = con.prepareStatement(sql);
-                        
-                        //Lliguem els valors del formulari
-                        String valors_formulari[]=new String[filtres.length];
-                        int i=1;
-                        for(JTextField filtre:filtres){
-                            if(i==2){
-                                //Agafem el valor del dropdown
-                                st.setString(i,String.valueOf(selVia.getSelectedItem()));
-                                i++;                                
-                            }
-                            st.setString(i, filtre.getText());
-                            i++;
-                        }
-                        if(id_empresa!=0){
-                            //Si estem modificant passem l'últim paràmetre (el del where)
-                            st.setString(8,String.valueOf(id_empresa));
-                        }
-                        int n=st.executeUpdate();
-                        String accio=id_empresa==0?"Inserció":"Modificació";
-                        con.close();
-                        st.close();
-                        if(n==1){
-                            Gestio.crear_missatge(accio+" realitzada correctament.", 1);
-                        }
-                        else{
-                            Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
-                        }
-                        //f.dispose();
-                        //System.exit(0);
-                       f.setVisible(false);
-                       f.dispose();
-                        //Gestio g=new Gestio();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }else{
-                    //control d'errors de validació de formulari
-                }
+        if(empresa==0){
+            for(JTextField camp: filtres){
+                camp.setText("");  
             }
-        });
+            btnAccio.setText("Afegir empresa");
+        }
+        else{
+            carregarDades(empresa);
+            btnAccio.setText("Modificar empresa");
+        }
     }
-    
-    private boolean comprovar_camps(){
-//        for(JTextField filtre:filtres){
-//            if(filtre.getText().length()==0){
-//                return false;
-//            }
-//        }
-        return true;
-    }
-    
-    
 }

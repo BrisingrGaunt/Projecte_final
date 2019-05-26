@@ -52,19 +52,19 @@ import javax.swing.table.TableColumn;
  * @author Kevin
  */
 public final class Gestio {
-    JFrame f = new JFrame("Gestió empreses -- Info empreses");
+    static JFrame fGestio = new JFrame("Gestió empreses -- Info empreses");
     JPanel pBottom = new JPanel();
     JPanel pTop= new JPanel();
     JPanel pLeft = new JPanel();
     JPanel pRight = new JPanel();
     JTextField filtre=new JTextField(30);
-    DefaultTableModel modelEmpreses;
-    DefaultTableModel modelTasts;
-    JTable taulaEmpreses;
+    static DefaultTableModel modelEmpreses;
+    static DefaultTableModel modelTasts;
+    static JTable taulaEmpreses;
     JTable taulaTasts;
     String[] nomColumEmpreses = {"CIF","Nom comercial","Adreça","Tasts realitzats"};
     String[] nomColumnTasts={"Empresa","Producte","Dia i hora","Valoració mitja"};
-    Object[][] dataEmpreses=null;
+    static Object[][] dataEmpreses=null;
     Object[][] dataTasts=null;
     
     Class[] columnClassTasts=new Class[]{
@@ -82,6 +82,7 @@ public final class Gestio {
     static JButton btnAfegir = new JButton("+");  
     static JButton btnCerca = new JButton();
     static JButton btnReset = new JButton();
+    static JButton btnCercaUbicacio = new JButton();
     
     
     //Elements bottom
@@ -111,11 +112,15 @@ public final class Gestio {
         pTop.add(new JLabel("Cercar per nom: "));
         pTop.add(filtre);
         btnCerca.setIcon(new ImageIcon("./lupa.png"));
+        btnCerca.setActionCommand("nom");
         pTop.add(btnCerca);
+        btnCercaUbicacio.setIcon(new ImageIcon("./ubicate.png"));
+        btnCercaUbicacio.setActionCommand("ubicacio");
+        pTop.add(btnCercaUbicacio);
         btnReset.setIcon(new ImageIcon("./reset1.png"));
         pTop.add(btnReset);
         
-        f.add(pTop,BorderLayout.NORTH);
+        fGestio.add(pTop,BorderLayout.NORTH);
       
         //Panell dreta
         pRight.setLayout(new GridLayout(14,1));
@@ -124,16 +129,16 @@ public final class Gestio {
         pRight.add(btnEditar);
         pRight.add(btnEsborrar);
         pRight.setBorder(BorderFactory.createEmptyBorder(20, 0, 0, 20)); 
-        f.add(pRight,BorderLayout.EAST);
+        fGestio.add(pRight,BorderLayout.EAST);
         
         //Finalització del JFrame
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fGestio.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        f.pack();
-        f.setSize(900, 500);
-        f.setLocationRelativeTo(null);
-        f.setVisible(true);
-        f.setResizable(false);
+        fGestio.pack();
+        fGestio.setSize(900, 500);
+        fGestio.setLocationRelativeTo(null);
+        fGestio.setVisible(true);
+        fGestio.setResizable(false);
     }
     
     public void crear_taula(String nom_taula){
@@ -171,7 +176,7 @@ public final class Gestio {
         scroll.setPreferredSize(new Dimension(700,150));
         pLeft.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         pLeft.add(scroll);
-        f.add(pLeft,BorderLayout.CENTER); 
+        fGestio.add(pLeft,BorderLayout.CENTER); 
         if(nom_taula.equals("emp")==true){
             modelEmpreses=model;
             taulaEmpreses=taula;
@@ -191,7 +196,7 @@ public final class Gestio {
             //Ens quedem amb l'empresa seleccionada
             String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);            
             Connection con=new Connexio().getConnexio();
-            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.cata=c.id and c.empresa like ? group by c.empresa, p.nom, c.data";
+            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.cata=c.id and c.empresa like ? and pa.valoracio is not null group by c.empresa, p.nom, c.data";
             PreparedStatement st = con.prepareStatement(s2);
             st.setString(1,empresa);
             ResultSet rs = st.executeQuery();
@@ -226,7 +231,7 @@ public final class Gestio {
         }
     }
     
-    private void buidar_taula(DefaultTableModel model){
+    static void buidar_taula(DefaultTableModel model){
         int i=model.getRowCount();
         while(model.getRowCount()!=0){
             model.removeRow(i-1);
@@ -236,6 +241,7 @@ public final class Gestio {
     
     private void set_escoltadors() {
         btnCerca.addActionListener(new clickCercar());
+        btnCercaUbicacio.addActionListener(new clickCercar());
         btnReset.addActionListener(new clickReset());
         btnEditar.addActionListener(new clickEditar());
         btnAfegir.addActionListener(new clickAfegir());
@@ -271,9 +277,19 @@ public final class Gestio {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            f.setVisible(false);
-            f.dispose();
-            new Afegir_Modificar(0);
+            //fGestio.setVisible(false);
+            //fGestio.dispose();
+            //new Afegir_Modificar(0);
+            fGestio.setVisible(false);
+                //fGestio.dispose();
+            if(Afegir_Modificar.fAccio==null){
+                new Afegir_Modificar(0);
+            }
+            else{
+                //Afegir_Modificar.crear_interficie(0);
+                Afegir_Modificar.setEstat(0);
+                Afegir_Modificar.fAccio.setVisible(true);
+            }
         }
     }
     
@@ -295,8 +311,9 @@ public final class Gestio {
                     //se tendrán que mostrar solo los que coinciden con el filtro
                     int elements=0;
                     for(int i=0;i<dataEmpreses.length;i++){
-                        String nom_comercial=String.valueOf(dataEmpreses[i][1]);
-                        if(nom_comercial.toLowerCase().indexOf(filtre.getText().toLowerCase())!=-1){
+                        //si s'ha clicat el botó de la lupa es cerca per nom sinó es cerca pel camp de direcció   
+                        String colReferencia=e.getActionCommand()=="nom"?String.valueOf(dataEmpreses[i][1]):String.valueOf(dataEmpreses[i][2]);
+                        if(colReferencia.toLowerCase().indexOf(filtre.getText().toLowerCase())!=-1){
                             modelEmpreses.insertRow(elements, dataEmpreses[i]);
                             elements++;
                         }  
@@ -319,9 +336,16 @@ public final class Gestio {
                 crear_missatge("Selecciona la fila que vols editar primer", ERROR_MESSAGE);
             }
             else{
-                f.dispose();
+                fGestio.setVisible(false);
+                //fGestio.dispose();
                 String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
-                new Afegir_Modificar(Integer.parseInt(empresa));
+                if(Afegir_Modificar.fAccio==null){
+                    new Afegir_Modificar(Integer.parseInt(empresa));
+                }
+                else{
+                    Afegir_Modificar.setEstat(Integer.parseInt(empresa));
+                    Afegir_Modificar.fAccio.setVisible(true);
+                }
             }
         }
     }
@@ -355,7 +379,6 @@ public final class Gestio {
                         String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
                         st.setString(1,empresa);
                         int n=st.executeUpdate();
-                        
                         if(n==1){
                             //si s'ha realitzat bé la modificació es netegen les taules i es tornen a mostrar
                             estatInicialTaulaEmpreses();
@@ -371,14 +394,13 @@ public final class Gestio {
     }
     //ÚTILS
     
-    private void estatInicialTaulaEmpreses(){
+    public static void estatInicialTaulaEmpreses(){
         try {
             buidar_taula(modelEmpreses);
             buidar_taula(modelTasts);
             Connection con=new Connexio().getConnexio();
             Statement st = con.createStatement();
-            //String sql="select e.id, e.nom, count(c.id), e.tipusVia, e.direccio, e.numDireccio from empresa e left join cata c on c.empresa=e.id where e.visibilitat=0 group by e.id, e.nom, e.tipusVia, e.direccio, e.numDireccio";
-            String sql="select e.id, e.nom, tasts.realitzats, e.tipusVia, e.direccio, e.numDireccio from empresa e left join (select count(c.id) as realitzats, e.id as emp from empresa e left join cata c on c.empresa=e.id where estat=1 group by e.id) as tasts on tasts.emp=e.id";
+            String sql="select e.id, e.nom, tasts.realitzats, e.tipusVia, e.direccio, e.numDireccio, e.comarca from empresa e left join (select count(c.id) as realitzats, e.id as emp from empresa e left join cata c on c.empresa=e.id where estat=1 group by e.id) as tasts on tasts.emp=e.id where e.visibilitat=0 order by tasts.realitzats desc";
             ResultSet rs = st.executeQuery(sql);
             rs.last();
             //guardem la quantitat de registres per incialitzar la matriu dataEmpreses
@@ -392,7 +414,7 @@ public final class Gestio {
                 for(int j=1;j<3;j++){
                     dataEmpreses[k][(j-1)]=rs.getString(j);
                 }
-                String direccio=rs.getString(4)+" "+rs.getString(5)+", "+rs.getString(6);
+                String direccio=rs.getString(4)+" "+rs.getString(5)+", "+rs.getString(6)+" ("+rs.getString(7)+")";
                 dataEmpreses[k][2]=direccio;
                 dataEmpreses[k][3]=rs.getString(3)==null?"0":rs.getString(3);
                 k++;
@@ -410,7 +432,7 @@ public final class Gestio {
         }
     }
     
-    private void ajustarTaula(JTable taula){
+    static void ajustarTaula(JTable taula){
         taula.setAutoResizeMode( JTable.AUTO_RESIZE_OFF );
 
         for (int column = 0; column < taula.getColumnCount(); column++)
@@ -431,7 +453,7 @@ public final class Gestio {
                     break;
                 }
             }
-            tableColumn.setPreferredWidth( preferredWidth<100?preferredWidth+74:preferredWidth+80 );
+            tableColumn.setPreferredWidth( preferredWidth<100?preferredWidth+74:preferredWidth+73 );
         }
     }
     
