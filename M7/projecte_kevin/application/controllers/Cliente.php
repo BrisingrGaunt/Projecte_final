@@ -10,6 +10,7 @@ class Cliente extends CI_Controller {
             $_SESSION['info_client']=$info;
         }
         else{
+            $this->comprovacions_client();
             $info=$_SESSION['info_client'];
         }
         $this->load->model("client");
@@ -17,10 +18,18 @@ class Cliente extends CI_Controller {
         //Obtenim la propera cata per mostrar en la pàgina principal
         $data['propera_cata']=$this->client->getProperEvent(array('c.data >'=>date('Y-m-d H:i')));
         $data['info_client']=$info;
+        //exit;
 		$this->load->view('client',$data);
 	}
     
+    public function comprovacions_client(){
+        if(!isset($_SESSION['info_client'])){
+            redirect('Inici/logout');
+        }
+    }
+    
     public function apuntar(){
+        $this->comprovacions_client();
         $data['info_client']=$_SESSION['info_client'];
         $data['info']="";
         if($this->session->flashdata('info')){
@@ -34,6 +43,7 @@ class Cliente extends CI_Controller {
     }
     
     public function gestio_inscripcio(){
+        $this->comprovacions_client();
         if(isset($_GET)){
             $this->load->model('participacio');
             $dades=array('cata'=>$_GET['id'],'client'=>$_SESSION['info_client']['email']);
@@ -51,6 +61,7 @@ class Cliente extends CI_Controller {
     }
     
     public function valora(){
+        $this->comprovacions_client();
         $data['info_client']=$_SESSION['info_client'];
         $this->load->model('participacio');
         if($this->input->post()){

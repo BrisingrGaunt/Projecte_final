@@ -5,6 +5,8 @@ window.addEventListener('load', function () {
         inputs[i].addEventListener('keyup', comprovarSeguretat);
     }
     
+    let tabs=document.getElementsByClassName("")
+    
     document.getElementById('home-tab').addEventListener('click', function () {
         login_usuari.style.display = 'block';
     });
@@ -112,8 +114,10 @@ function obrirPestanya(evt) {
         barres[i].value = 0;
     }
     let id = evt.currentTarget.id.split("-")[0];
-    //console.info(id);
+    console.info(evt.currentTarget);
+    console.info(id);
     let opcions = document.getElementsByClassName("content");
+    console.info(opcions);
     for (let i = 0; i < opcions.length; i++) {
         opcions[i].style.display = 'none';
     }

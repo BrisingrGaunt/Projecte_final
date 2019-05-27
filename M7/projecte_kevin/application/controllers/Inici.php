@@ -35,19 +35,12 @@ class Inici extends CI_Controller {
     }
     
     function getCoordinates($address){
-$address = str_replace(" ", "+", $address); // replace all the white space with "+" sign to match with google search pattern
+        $address = str_replace(" ", "+", $address); // replace all the white space with "+" sign to match with google search pattern
         //echo $address;
- 
-$url = "https://maps.google.com/maps/api/geocode/json?sensor=false&key=AIzaSyBhIshCfsCDpxZj2EmDQcyRUw3sczEiTJE&address=$address";
- 
-$response = file_get_contents($url);
-        
-        //var_dump($response);
- 
-$json = json_decode($response,TRUE); //generate array object from the response from the web
- 
-return ($json['results'][0]['geometry']['location']['lat'].",".$json['results'][0]['geometry']['location']['lng']);
- 
+        $url = "https://maps.google.com/maps/api/geocode/json?sensor=false&key=AIzaSyBhIshCfsCDpxZj2EmDQcyRUw3sczEiTJE&address=$address";
+        $response = file_get_contents($url);
+        $json = json_decode($response,TRUE); //generate array object from the response from the web
+        return ($json['results'][0]['geometry']['location']['lat'].",".$json['results'][0]['geometry']['location']['lng']);
 }
     
     public function accio(){

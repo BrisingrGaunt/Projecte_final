@@ -10,6 +10,7 @@ class Empresa extends CI_Controller {
             $_SESSION['info_empresa']=$info;
         }
         else{
+            $this->comprovacionsEmpresa();
             $info=$_SESSION['info_empresa'];
         }
         $this->load->model('cata');
@@ -23,7 +24,14 @@ class Empresa extends CI_Controller {
 		$this->load->view('empresa',$data);
 	}
     
+    public function comprovacionsEmpresa(){
+        if(!isset($_SESSION['info_empresa'])){
+            redirect('Inici/logout');
+        }
+    }
+    
     public function carregaXML(){
+        $this->comprovacionsEmpresa();
         $data['info_empresa']=$_SESSION['info_empresa'];
         $data['info']="";
         
@@ -62,7 +70,7 @@ class Empresa extends CI_Controller {
     }
     
     public function pujar_producte(){
-        
+        $this->comprovacionsEmpresa();
         $data['info']="";
         if($this->input->post()){
             //var_dump($_POST);
@@ -80,6 +88,7 @@ class Empresa extends CI_Controller {
     }
     
     public function veure_valoracions(){
+        $this->comprovacionsEmpresa();
         $this->load->model('participacio');
         if(isset($_GET['id'])){
             $filtre=array('pa.cata'=>$_GET['id']);
@@ -95,6 +104,7 @@ class Empresa extends CI_Controller {
     }
     
     public function modificar_cata(){
+        $this->comprovacionsEmpresa();
         //$this->load->model('cata');
         $this->load->model('producte');
         if(isset($_GET['id'])){
@@ -164,6 +174,7 @@ class Empresa extends CI_Controller {
     }
     
     public function programar_cata(){
+        $this->comprovacionsEmpresa();
         $data['info']="";
         if($this->input->post()){
             $this->load->model('cata');
