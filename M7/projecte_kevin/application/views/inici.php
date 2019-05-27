@@ -163,18 +163,6 @@
                                             <div class="col-md-2 d-none d-sm-block"></div>
                                         </div>
                                     </div>
-                                    <div class="row pestanya">
-                                        <div class="col-md-12 col-12">
-                                            <ul class="nav nav-tabs nav-justified" id="tabUsuari" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active opcio_inici" id="login_usuari-tab" data-toggle="tab" href="#login_usuari" role="tab" aria-controls="home" aria-selected="true">Iniciar sessió</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link opcio_inici" id="registre_usuari-tab" data-toggle="tab" href="#registre_usuari" role="tab" aria-controls="profile" aria-selected="false">Registrar-se</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <h3 class="register-heading">Perfil Empresa</h3>
@@ -227,7 +215,7 @@
                                                     </div>
                                                      <div class="form-group">
                                                         <div class="col-md-8">
-                                                         <input type="button" class="btnRegister" value="Registra't" />
+                                                         <input type="button" class="btnRegister" value="Registra't" name="registre_emp"/>
                                                          </div>
                                                     
                                                         </div>
@@ -272,10 +260,10 @@
                             <div class="col-md-12 col-12">
                                 <ul class="nav nav-tabs nav-justified" id="tabEmpresa" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active opcio_inici" id="login_empresa-tab" data-toggle="tab" href="#login_empresa" role="tab" aria-controls="home" aria-selected="true">Iniciar sessió</a>
+                                        <a class="nav-link active opcio_inici" id="login_empresa-tab" data-toggle="tab" href="#login_usuari" role="tab" aria-controls="home" aria-selected="true">Iniciar sessió</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link opcio_inici" id="registre_empresa-tab" data-toggle="tab" href="#registre_empresa" role="tab" aria-controls="profile" aria-selected="false">Registrar-se</a>
+                                        <a class="nav-link opcio_inici" id="registre_empresa-tab" data-toggle="tab" href="#registre_usuari" role="tab" aria-controls="profile" aria-selected="false">Registrar-se</a>
                                     </li>
                                 </ul>
                             </div>

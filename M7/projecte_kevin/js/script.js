@@ -5,7 +5,11 @@ window.addEventListener('load', function () {
         inputs[i].addEventListener('keyup', comprovarSeguretat);
     }
     
-    let tabs=document.getElementsByClassName("")
+    let opcions_acces=document.getElementsByClassName("opcions");
+    //console.info(tabs);
+    for(let i=0;i<opcions_acces.length;i++){
+        opcions_acces[i].addEventListener('click', canviarAmbit);
+    }
     
     document.getElementById('home-tab').addEventListener('click', function () {
         login_usuari.style.display = 'block';
@@ -42,9 +46,31 @@ window.addEventListener('load', function () {
     }
 });
 
+function canviarAmbit(){
+    let opcions=document.getElementsByClassName("opcio_inici");
+    let tipusAcces=this.innerHTML.toLowerCase();
+    /*if(this.innerHTML=="Empresa"){
+        tipusAcces="empresa";
+    }
+    else{
+        tipusAcces="usuari";
+    }*/
+    opcions[0].href="#login_"+tipusAcces;
+    opcions[1].href="#registre_"+tipusAcces;
+    console.info(opcions[0].href);
+    console.info(this);
+    console.info(this.innerHTML);
+}
+
 function validarCamps(){
     //Ens quedem amb el formulari al qual pertany el botó que ha sigut clicat
-    let form=this.parentElement; 
+    let form;
+    if(this.name=="registre_emp"){
+        form=this.parentElement.parentElement.parentElement.parentElement.parentElement;
+    }
+    else{
+        form=this.parentElement.parentElement.parentElement;         
+    }
     //El nom del formulari ens indicarà el tipus de validació que aplicarem:
     // Valors:
     // 0 - Login (només es comprovarà que els inputs no siguin buits)
@@ -55,9 +81,8 @@ function validarCamps(){
     
     let errors_text=['Camp usuari',"Camp email","Camp nom", "Camp tipusVia", "Camp direccio","Camp num", "Camp comarca",'Contrasenya: mínim 8 caràcters, 1 núm, 1 majus, 1 minus i 1 símbol'];
 
-    let elements_form=this.parentElement.elements;
+    let elements_form=form.elements;
     let valid=true;
-    
     let index=0;
     let errors=[];
     for(let i=0;i<elements_form.length;i++){
@@ -106,18 +131,17 @@ let inputs;
 let checks;
 
 function obrirPestanya(evt) {
-    // console.info(inputs);
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
     }
     for (let i = 0; i < barres.length; i++) {
         barres[i].value = 0;
     }
-    let id = evt.currentTarget.id.split("-")[0];
-    console.info(evt.currentTarget);
+    let id = evt.currentTarget.href.split("#")[1];
+   // console.info(evt.currentTarget);
     console.info(id);
     let opcions = document.getElementsByClassName("content");
-    console.info(opcions);
+//console.info(opcions);
     for (let i = 0; i < opcions.length; i++) {
         opcions[i].style.display = 'none';
     }
