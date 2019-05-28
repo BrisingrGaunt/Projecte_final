@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="namespace_login" kind="namespace" language="Java">
+    <compoundname>Login</compoundname>
+    <innerclass refid="class_login_1_1_login" prot="public">Login::Login</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="6" column="1"/>
+  </compounddef>
+</doxygen>

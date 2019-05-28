@@ -16,16 +16,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
@@ -50,6 +46,8 @@ import javax.swing.table.TableColumn;
 /**
  *
  * @author Kevin
+ * @brief Clase que permet realitzar les operaciones CRUD sobre la taula empresa de la Base de dades\n mostra també
+ * les cates associades a l'empresa
  */
 public final class Gestio {
     static JFrame fGestio = new JFrame("Gestió empreses -- Info empreses");
@@ -94,12 +92,21 @@ public final class Gestio {
     JTextField cif;
     JTextField nom;
     JTextField adreca;
-
+    
+    /**
+     * Constructor de la clase Gestio
+     * utilitza els mètodes crear_interficie i set_escoltadors
+     * @see crear_interficie()
+     * @see set_escoltadors()
+     */
     public Gestio() {
         this.crear_interficie();  
         this.set_escoltadors();
     }
     
+    /**
+     * Funció que realitza la part gràfica de la clase Gestio
+     */
     public void crear_interficie(){
         //Inicialització de les taules
         crear_taula("emp");
@@ -141,10 +148,13 @@ public final class Gestio {
         fGestio.setResizable(false);
     }
     
+    /**
+     * Funció que crea un objecte JTable a partir d'un string
+     * @param nom_taula indica el nom que tindrà l'objecte JTable un cop creat
+     */
     public void crear_taula(String nom_taula){
         JTable taula=new JTable();
         DefaultTableModel model=new DefaultTableModel();
-        //modelEmpreses=new DefaultTableModel();
         taula=new JTable(model){
             @Override
             public boolean isCellEditable(int row, int column){
@@ -186,7 +196,9 @@ public final class Gestio {
             taulaTasts=taula;
         }
     }
-
+    /**
+     * Funció que omple la taula taulaEmpreses amb les dades obtingudes a partir de l'empresa seleccionada
+     */
     public void mostrarTasts(){
         try {
             //Primer es neteja la taula de Tasts
@@ -231,6 +243,10 @@ public final class Gestio {
         }
     }
     
+    /**
+     * Funció que esborra l'informació del model que es pasa per paràmetre
+     * @param model Model en el que s'eliminarà les dades
+     */
     static void buidar_taula(DefaultTableModel model){
         int i=model.getRowCount();
         while(model.getRowCount()!=0){
@@ -238,7 +254,9 @@ public final class Gestio {
             i--;
         }
     }
-    
+    /**
+     * Funció privada que assigna els events als botons creats
+     */
     private void set_escoltadors() {
         btnCerca.addActionListener(new clickCercar());
         btnCercaUbicacio.addActionListener(new clickCercar());
@@ -256,14 +274,13 @@ public final class Gestio {
             }
         });
     }
-    /*static JButton btnEditar = new JButton("Editar");
-    static JButton btnModificar = new JButton("Modificar");
-    static JButton btnEsborrar = new JButton("Esborrar");
-    static JButton btnAfegir = new JButton("+");
-    static JButton btnAlta = new JButton("Alta");   
-    static JButton btnCerca = new JButton();*/
     
     //ESCOLTADORS
+    
+    /**
+     * Clase que s'utilitza per deixar l'aplicatiu a l'estat inicial
+     * @implements ActionListener
+     */
     private class clickReset implements ActionListener{
 
         @Override
@@ -271,28 +288,31 @@ public final class Gestio {
             estatInicialTaulaEmpreses();
             filtre.setText("");
         }
-    
     }
+    
+    /**
+     * Clase que obre una instància de l'objecte Afegir_Modificar en mode afegir
+     * @implements ActionListener
+     */
     public class clickAfegir implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            //fGestio.setVisible(false);
-            //fGestio.dispose();
-            //new Afegir_Modificar(0);
             fGestio.setVisible(false);
-                //fGestio.dispose();
             if(Afegir_Modificar.fAccio==null){
                 new Afegir_Modificar(0);
             }
             else{
-                //Afegir_Modificar.crear_interficie(0);
                 Afegir_Modificar.setEstat(0);
                 Afegir_Modificar.fAccio.setVisible(true);
             }
         }
     }
     
+    /**
+     * Clase que filtra
+     * @implements ActionListener
+     */
     public class clickCercar implements ActionListener{
 
         @Override
@@ -308,7 +328,7 @@ public final class Gestio {
                     //Primer es buiden les dues taules
                     buidar_taula(modelEmpreses);
                     buidar_taula(modelTasts);
-                    //se tendrán que mostrar solo los que coinciden con el filtro
+                    //es mostren només els que coincideixen amb el tipus de filtre
                     int elements=0;
                     for(int i=0;i<dataEmpreses.length;i++){
                         //si s'ha clicat el botó de la lupa es cerca per nom sinó es cerca pel camp de direcció   
@@ -327,6 +347,10 @@ public final class Gestio {
         }
     }
 
+    /**
+     * Clase que obre un objecte del tipus Afegir_Modificar en format editar
+     * @implements ActionListener
+     */
     public class clickEditar implements ActionListener{
 
         @Override
@@ -337,7 +361,6 @@ public final class Gestio {
             }
             else{
                 fGestio.setVisible(false);
-                //fGestio.dispose();
                 String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
                 if(Afegir_Modificar.fAccio==null){
                     new Afegir_Modificar(Integer.parseInt(empresa));
@@ -350,6 +373,10 @@ public final class Gestio {
         }
     }
     
+    /**
+     * Clase que permet esborrar una fila de la taulaEmpreses 
+     * @implements ActionListener
+     */
     public class clickEsborrar implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -375,7 +402,6 @@ public final class Gestio {
                         Connection con=new Connexio().getConnexio();
                         String sql="update empresa set visibilitat=1 where id like ?";
                         PreparedStatement st = con.prepareStatement(sql);
-                        //st = con.prepareStatement(sql);
                         String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);
                         st.setString(1,empresa);
                         int n=st.executeUpdate();
@@ -388,12 +414,14 @@ public final class Gestio {
                         Logger.getLogger(Gestio.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-                //model.setValueAt(Integer.parseInt(id.getText()), fila, 0);
             }
         }
     }
     //ÚTILS
     
+    /**
+     * Funció que deixa l'aplicatiu al seu estat original (sense mostrar la taula de tasts i netejant possibles filtres aplicats a la taula d'empreses)
+     */
     public static void estatInicialTaulaEmpreses(){
         try {
             buidar_taula(modelEmpreses);
@@ -425,13 +453,17 @@ public final class Gestio {
             for(int i=0;i<dataEmpreses.length;i++){             
                 modelEmpreses.insertRow(i, dataEmpreses[i]);
             }
-            //ajustem el tamany de les cel·les
+            //ajustem la mida de les cel·les
             ajustarTaula(taulaEmpreses);
         } catch (SQLException ex) {
             crear_missatge("Error al executar la consulta de selecció d'empreses", ERROR_MESSAGE);
         }
     }
     
+    /**
+     * Funció que ajusta el contingut d'una taula en funció al contingut de les seves cel·les
+     * @param taula Taula a ajustar
+     */
     static void ajustarTaula(JTable taula){
         taula.setAutoResizeMode( JTable.AUTO_RESIZE_OFF );
 
@@ -457,16 +489,20 @@ public final class Gestio {
         }
     }
     
+    /**
+     * Funció que determina si un JTextField està buit o no
+     * @param jt JTextField a comprovar
+     * @return false si el JTextField és buit o true si està ple
+     */
     private boolean es_buit(JTextField jt){
         return jt.getText().length()==0;
     }
     
-    /*
-    Tipus:
-        0 Error
-        1 Informació
-        2 Warning
-    */
+    /**
+     * Funció que crea un popup de missatge
+     * @param missatge cadena que indica el contingut del missatge
+     * @param tipus pot prendre tres valors: 0 Error, 1 Informació, 2 Warning
+     */
     public static void crear_missatge(String missatge, int tipus){
         JOptionPane info=new JOptionPane();
         info.setMessage(missatge);
@@ -474,7 +510,12 @@ public final class Gestio {
         JDialog dialog = info.createDialog(null, "Informació");
         dialog.setVisible(true);
     }
-
+    
+    /**
+     * Mètode que transforma la valoració numèrica en string d'estrelles
+     * @param valoracio número d'estrelles que té la valoració mínim 0 màxim 5
+     * @return cadena d'estrelles formada
+     */
     private String valoracio_to_stars(int valoracio){
         String estrelles="";
         for(int i=0;i<valoracio;i++){

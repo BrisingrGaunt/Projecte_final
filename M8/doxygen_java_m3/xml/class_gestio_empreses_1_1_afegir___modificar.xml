@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_afegir___modificar" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Afegir_Modificar</compoundname>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1a8e108918b2df99e785882fbb6030051e" prot="package" static="yes" mutable="no">
+        <type>JFrame</type>
+        <definition>JFrame GestioEmpreses.Afegir_Modificar.fAccio</definition>
+        <argsstring></argsstring>
+        <name>fAccio</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="41" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1a4ec0de263df76d05549ef4c06436e9a7" prot="package" static="yes" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Afegir_Modificar.pTop</definition>
+        <argsstring></argsstring>
+        <name>pTop</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="42" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1aa5537c1ff04fcf4beec45721767468f0" prot="package" static="yes" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Afegir_Modificar.pCenter</definition>
+        <argsstring></argsstring>
+        <name>pCenter</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="43" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1a2328f899875c62694c2e0fa098d0b2c5" prot="package" static="yes" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Afegir_Modificar.pBottom</definition>
+        <argsstring></argsstring>
+        <name>pBottom</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="44" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1aabfbafd0bb6601ba13c2e218dba71d6c" prot="package" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int GestioEmpreses.Afegir_Modificar.id_empresa</definition>
+        <argsstring></argsstring>
+        <name>id_empresa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="45" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1a929261797115d12791a55814bfac9e3c" prot="package" static="yes" mutable="no">
+        <type>LayoutManager</type>
+        <definition>LayoutManager GestioEmpreses.Afegir_Modificar.l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <initializer>=new GridLayout(8,2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="46" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1a11f8f9d3cd42d58130d39547d5c9305d" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Afegir_Modificar.btnAccio</definition>
+        <argsstring></argsstring>
+        <name>btnAccio</name>
+        <initializer>=new JButton()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="47" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1aa0ae2ff13b7de6beb4b4a1cc90e6fd0b" prot="package" static="yes" mutable="no">
+        <type>JComboBox</type>
+        <definition>JComboBox GestioEmpreses.Afegir_Modificar.selVia</definition>
+        <argsstring></argsstring>
+        <name>selVia</name>
+        <initializer>=new JComboBox&lt;&gt;(new String[]{&quot;Via&quot;,&quot;Carrer&quot;,&quot;Avinguda&quot;})</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="48" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1ad4b8887e0ad4094adf4b85c5f3744138" prot="package" static="yes" mutable="no">
+        <type>String []</type>
+        <definition>String [] GestioEmpreses.Afegir_Modificar.valorsLabel</definition>
+        <argsstring></argsstring>
+        <name>valorsLabel</name>
+        <initializer>={&quot;Nom&quot;,&quot;Tipus via&quot;,&quot;Adreça&quot;,&quot;Número&quot;,&quot;Població&quot;,&quot;Correu electrònic&quot;,&quot;Usuari&quot;,&quot;Contrasenya&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="49" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_afegir___modificar_1aaf12e5241ad20afec6bbab5b3c2f58ec" prot="package" static="yes" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField GestioEmpreses.Afegir_Modificar.filtres[]</definition>
+        <argsstring>[]</argsstring>
+        <name>filtres</name>
+        <initializer>=new JTextField[valorsLabel.length-1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="50" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1a5a9fe23eba7323eb0068cf645ab9db2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GestioEmpreses.Afegir_Modificar.Afegir_Modificar</definition>
+        <argsstring>(int empresa)</argsstring>
+        <name>Afegir_Modificar</name>
+        <param>
+          <type>int</type>
+          <declname>empresa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor de la clase <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>empresa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si el valor és diferent a 0 entra en mode &apos;Editar&apos; en cas contrari, el mètode es &apos;Afegir&apos; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="56" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1ad0541b1f19a81b372bbe41d5f34e3bdb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Afegir_Modificar.crear_interficie</definition>
+        <argsstring>(int empresa)</argsstring>
+        <name>crear_interficie</name>
+        <param>
+          <type>int</type>
+          <declname>empresa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que crea l&apos;interficie gràfica de la clase <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>empresa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si té valor 0 els camps seràn buits sinó, seran plens amb l&apos;informació obtinguda a la BDD a través de l&apos;id empresa pasat per paràmetre </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="65" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="65" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1ab6eb4ab09c8f73d2f630dd346e3e6e79" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Afegir_Modificar.set_escoltador</definition>
+        <argsstring>()</argsstring>
+        <name>set_escoltador</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Col·loca un escoltador a l&apos;únic botó de l&apos;aplicació </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="121" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="121" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1ac1621b35e0ecd7abe82e702d123b4b49" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean GestioEmpreses.Afegir_Modificar.comprovar_camps</definition>
+        <argsstring>()</argsstring>
+        <name>comprovar_camps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que comprova que el contingut dels JTextFields siguin els adequats <simplesect kind="return"><para>true si el contingut dels JTextField ha pasat per les expressions regulars amb èxit o fals si no s&apos;ha trobat cap coincidència </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="180" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="180" bodyend="206"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1a43a503c514d5e5c8a18f0c542ddf5e51" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Afegir_Modificar.carregarDades</definition>
+        <argsstring>(int empresa)</argsstring>
+        <name>carregarDades</name>
+        <param>
+          <type>int</type>
+          <declname>empresa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que carrega l&apos;informació d&apos;una empresa en els JTextField en cas que s&apos;entri per mètode &apos;Editar&apos; <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>empresa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id de l&apos;empresa a recuperar les dades </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="212" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="212" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_afegir___modificar_1a73d48ab3748504cd141dae3ec8a7796d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Afegir_Modificar.setEstat</definition>
+        <argsstring>(int empresa)</argsstring>
+        <name>setEstat</name>
+        <param>
+          <type>int</type>
+          <declname>empresa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Canvia l&apos;estat de l&apos;instància de la clase <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref>, és un mètode emprat en la clase Gestió <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>empresa</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="252" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="252" bodyend="264"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Clase <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref> on s&apos;implementen les funcions d&apos;afegir o editar depenent de com ha siguit cridat en la clase <ref refid="class_gestio_empreses_1_1_gestio" kindref="compound">Gestio</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kevin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>JPanel</label>
+      </node>
+      <node id="6">
+        <label>JComboBox</label>
+      </node>
+      <node id="4">
+        <label>LayoutManager</label>
+      </node>
+      <node id="1">
+        <label>GestioEmpreses.Afegir_Modificar</label>
+        <link refid="class_gestio_empreses_1_1_afegir___modificar"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>btnAccio</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>filtres</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>l</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>fAccio</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>selVia</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>pCenter</edgelabel>
+          <edgelabel>pTop</edgelabel>
+          <edgelabel>pBottom</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>JFrame</label>
+      </node>
+      <node id="3">
+        <label>JTextField</label>
+      </node>
+      <node id="2">
+        <label>JButton</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" line="40" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Afegir_Modificar.java" bodystart="40" bodyend="265"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a5a9fe23eba7323eb0068cf645ab9db2e" prot="public" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>Afegir_Modificar</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a11f8f9d3cd42d58130d39547d5c9305d" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>btnAccio</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a43a503c514d5e5c8a18f0c542ddf5e51" prot="public" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>carregarDades</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1ac1621b35e0ecd7abe82e702d123b4b49" prot="private" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>comprovar_camps</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1ad0541b1f19a81b372bbe41d5f34e3bdb" prot="public" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>crear_interficie</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a8e108918b2df99e785882fbb6030051e" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>fAccio</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1aaf12e5241ad20afec6bbab5b3c2f58ec" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>filtres</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1aabfbafd0bb6601ba13c2e218dba71d6c" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>id_empresa</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a929261797115d12791a55814bfac9e3c" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>l</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a2328f899875c62694c2e0fa098d0b2c5" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>pBottom</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1aa5537c1ff04fcf4beec45721767468f0" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>pCenter</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a4ec0de263df76d05549ef4c06436e9a7" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>pTop</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1aa0ae2ff13b7de6beb4b4a1cc90e6fd0b" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>selVia</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1ab6eb4ab09c8f73d2f630dd346e3e6e79" prot="private" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>set_escoltador</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1a73d48ab3748504cd141dae3ec8a7796d" prot="public" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>setEstat</name></member>
+      <member refid="class_gestio_empreses_1_1_afegir___modificar_1ad4b8887e0ad4094adf4b85c5f3744138" prot="package" virt="non-virtual"><scope>GestioEmpreses::Afegir_Modificar</scope><name>valorsLabel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

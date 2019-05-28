@@ -10,12 +10,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * @brief Clase que facilita la connexió a la Base de dades projecte_kevin
  * @author Kevin Medina
  */
 public class Connexio {
     Connection con = null;
-    
+    /**
+     * Constructor de l'objecte Connexio
+     */
     public Connexio() {
         try {
             String url = "jdbc:mysql://localhost:3306/projecte_kevin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";//?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
@@ -25,6 +27,10 @@ public class Connexio {
         }
     }
     
+    /**
+     * Mètode que retorna un objecte amb la connexió establerta
+     * @return l'objecte de tipus Connection
+     */
     public Connection getConnexio(){
         return con;
     }

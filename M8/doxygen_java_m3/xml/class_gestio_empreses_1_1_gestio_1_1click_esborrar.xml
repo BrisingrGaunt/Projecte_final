@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_gestio_1_1click_esborrar" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Gestio::clickEsborrar</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1_1click_esborrar_1a402840944eeff89e86bdd342955ca2c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.clickEsborrar.actionPerformed</definition>
+        <argsstring>(ActionEvent e)</argsstring>
+        <name>actionPerformed</name>
+        <param>
+          <type>ActionEvent</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="382" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="382" bodyend="418"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Clase que permet esborrar una fila de la taulaEmpreses </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="20">
+        <label>GestioEmpreses.Gestio.clickEsborrar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>ActionListener</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22">
+        <label>GestioEmpreses.Gestio.clickEsborrar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ActionListener</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="380" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="380" bodyend="419"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar_1a402840944eeff89e86bdd342955ca2c4" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio::clickEsborrar</scope><name>actionPerformed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

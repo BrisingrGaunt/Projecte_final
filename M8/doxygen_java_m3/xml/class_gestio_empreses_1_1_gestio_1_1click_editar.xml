@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_gestio_1_1click_editar" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Gestio::clickEditar</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1_1click_editar_1a995ad7359066a18e290a7d465a6af0c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.clickEditar.actionPerformed</definition>
+        <argsstring>(ActionEvent e)</argsstring>
+        <name>actionPerformed</name>
+        <param>
+          <type>ActionEvent</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="357" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="357" bodyend="373"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Clase que obre un objecte del tipus <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref> en format editar </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>ActionListener</label>
+      </node>
+      <node id="16">
+        <label>GestioEmpreses.Gestio.clickEditar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_editar"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="19">
+        <label>ActionListener</label>
+      </node>
+      <node id="18">
+        <label>GestioEmpreses.Gestio.clickEditar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_editar"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="354" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="354" bodyend="374"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_gestio_1_1click_editar_1a995ad7359066a18e290a7d465a6af0c0" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio::clickEditar</scope><name>actionPerformed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

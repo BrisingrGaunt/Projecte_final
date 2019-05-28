@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.15">
+  <compound refid="class_gestio_empreses_1_1_afegir___modificar" kind="class"><name>GestioEmpreses::Afegir_Modificar</name>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a8e108918b2df99e785882fbb6030051e" kind="variable"><name>fAccio</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a4ec0de263df76d05549ef4c06436e9a7" kind="variable"><name>pTop</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1aa5537c1ff04fcf4beec45721767468f0" kind="variable"><name>pCenter</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a2328f899875c62694c2e0fa098d0b2c5" kind="variable"><name>pBottom</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1aabfbafd0bb6601ba13c2e218dba71d6c" kind="variable"><name>id_empresa</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a929261797115d12791a55814bfac9e3c" kind="variable"><name>l</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a11f8f9d3cd42d58130d39547d5c9305d" kind="variable"><name>btnAccio</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1aa0ae2ff13b7de6beb4b4a1cc90e6fd0b" kind="variable"><name>selVia</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1ad4b8887e0ad4094adf4b85c5f3744138" kind="variable"><name>valorsLabel</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1aaf12e5241ad20afec6bbab5b3c2f58ec" kind="variable"><name>filtres</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a5a9fe23eba7323eb0068cf645ab9db2e" kind="function"><name>Afegir_Modificar</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1ad0541b1f19a81b372bbe41d5f34e3bdb" kind="function"><name>crear_interficie</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1ab6eb4ab09c8f73d2f630dd346e3e6e79" kind="function"><name>set_escoltador</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1ac1621b35e0ecd7abe82e702d123b4b49" kind="function"><name>comprovar_camps</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a43a503c514d5e5c8a18f0c542ddf5e51" kind="function"><name>carregarDades</name></member>
+    <member refid="class_gestio_empreses_1_1_afegir___modificar_1a73d48ab3748504cd141dae3ec8a7796d" kind="function"><name>setEstat</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio_1_1click_afegir" kind="class"><name>GestioEmpreses::Gestio::clickAfegir</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1_1click_afegir_1ab398da6d59ddb2275d210cb17a528f7c" kind="function"><name>actionPerformed</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio_1_1click_cercar" kind="class"><name>GestioEmpreses::Gestio::clickCercar</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1_1click_cercar_1a1cf8698b479518e017048bd31a62305c" kind="function"><name>actionPerformed</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio_1_1click_editar" kind="class"><name>GestioEmpreses::Gestio::clickEditar</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1_1click_editar_1a995ad7359066a18e290a7d465a6af0c0" kind="function"><name>actionPerformed</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar" kind="class"><name>GestioEmpreses::Gestio::clickEsborrar</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar_1a402840944eeff89e86bdd342955ca2c4" kind="function"><name>actionPerformed</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio_1_1click_reset" kind="class"><name>GestioEmpreses::Gestio::clickReset</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1_1click_reset_1a6b2be1ae521b96efd751bb9b51ae0b7a" kind="function"><name>actionPerformed</name></member>
+  </compound>
+  <compound refid="class_connexio_1_1_connexio" kind="class"><name>Connexio::Connexio</name>
+    <member refid="class_connexio_1_1_connexio_1ae021c74ea52f4f9a5b9fd3b08b5228d9" kind="variable"><name>con</name></member>
+    <member refid="class_connexio_1_1_connexio_1af54a589e94ff116f56c3a0d308c0b158" kind="function"><name>Connexio</name></member>
+    <member refid="class_connexio_1_1_connexio_1a32d5077179258391ba99699a87a4cff2" kind="function"><name>getConnexio</name></member>
+  </compound>
+  <compound refid="class_gestio_empreses_1_1_gestio" kind="class"><name>GestioEmpreses::Gestio</name>
+    <member refid="class_gestio_empreses_1_1_gestio_1a1c7e876b0547a6e619f6487921e5a99d" kind="variable"><name>fGestio</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ab74de94c20a6adb7d25e3b8339515862" kind="variable"><name>modelEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1aa58ca78e43e9904ade39f1bc86f3977f" kind="variable"><name>modelTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a16c0b2324927380d52dc3df67d869fe7" kind="variable"><name>taulaEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a0f30d13a2a3e64a4960c79b2f324d0bc" kind="variable"><name>dataEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a62c07e480bd5132d71b6eabbc8912107" kind="variable"><name>btnEditar</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a2aecace8ce9c1de1e24011014d82ef50" kind="variable"><name>btnModificar</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a8e4323d9f2cc5aba0a9da907217c3534" kind="variable"><name>btnEsborrar</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1aa76d65889fcb8f2913fbd4957619bc7e" kind="variable"><name>btnAfegir</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a64722d61e52de0c7ff7de9b9595fae19" kind="variable"><name>btnCerca</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a36601bd5f6a1dfe916f646c2e5ffe152" kind="variable"><name>btnReset</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a04217be0bbec31805217971531e034a5" kind="variable"><name>btnCercaUbicacio</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ae09b9ecc313afba8c6069a7a5f287a82" kind="variable"><name>pBottom</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ab5eb9f8043058b5eac0295452cd8c1ed" kind="variable"><name>pTop</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ad25baefefe5115546be466c75ae6ed7d" kind="variable"><name>pLeft</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a5d70570c72244ee534c6c6c64a69e70e" kind="variable"><name>pRight</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ada32ad4665cd66e6c424104e68ac4170" kind="variable"><name>filtre</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ac467f952671b10b700d809590f7829ea" kind="variable"><name>taulaTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ad4861e458013070d4d5e50a848fdbd83" kind="variable"><name>nomColumEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a7047babb3d1309b216c538345fcfc41d" kind="variable"><name>nomColumnTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a7e337194f6b0405139f32c9be1abaf10" kind="variable"><name>dataTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a545766600d3e6f4d0314f360770922f2" kind="variable"><name>columnClassTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ae591dac1014507b85b0bd985fb86eae7" kind="variable"><name>columnClassEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ac28a2e5944d6dbbdbc30ce213f0835e8" kind="variable"><name>cifLabel</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a010492253f2343f566623f4aab5eb465" kind="variable"><name>nomLabel</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a3759c3391eaed82b2803b5c491b94c04" kind="variable"><name>adrecaLabel</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1adf415de82303f582aca8801cd1fff6e1" kind="variable"><name>countLabel</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1acee55a3cedd11ca0c6bec0d75837e1cb" kind="variable"><name>cif</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1abfaf2c69e7220d42f9ad23aef597d06f" kind="variable"><name>nom</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1af8d9f4840e7e09706a377c33dacc07e0" kind="variable"><name>adreca</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a91ba56ea47931cbd57490803f1d4fe9a" kind="function"><name>Gestio</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a7e8574e7ebd38ba4e7ad4dc5076c4754" kind="function"><name>crear_interficie</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a172cc64fe5471a5e56a1a631842122ba" kind="function"><name>crear_taula</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a0c06f01a8b873ec71a0e35ed57dcc572" kind="function"><name>mostrarTasts</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a9c361a8fee75f06bb17bdfb4e681896b" kind="function"><name>buidar_taula</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ac4ca8840e8cd984712c11d4fc6263153" kind="function"><name>ajustarTaula</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1ad7dc31f78960cac1aab9caa2e6819583" kind="function"><name>set_escoltadors</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a57dc2217eb0b6e55bfa3f9ee80bb3f26" kind="function"><name>es_buit</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a8f259e251a5e7fb335da9d4d8d005b19" kind="function"><name>valoracio_to_stars</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a24868c8e57f3dc1b25d863a71080af44" kind="function"><name>estatInicialTaulaEmpreses</name></member>
+    <member refid="class_gestio_empreses_1_1_gestio_1a38fd5f7b16dcdfcf9d6ab5fb2e71e607" kind="function"><name>crear_missatge</name></member>
+  </compound>
+  <compound refid="class_main_1_1_gestio__empreses" kind="class"><name>Main::Gestio_empreses</name>
+    <member refid="class_main_1_1_gestio__empreses_1a42da147e659ca5acb8218e0eb2517589" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="class_login_1_1_login" kind="class"><name>Login::Login</name>
+    <member refid="class_login_1_1_login_1a414fe19b8648ac4dce0509fc807bf5f4" kind="variable"><name>f</name></member>
+    <member refid="class_login_1_1_login_1a542c7f413001e2fc158aca1013837d34" kind="variable"><name>user</name></member>
+    <member refid="class_login_1_1_login_1a731401744bd9989acba67d6823ed04de" kind="variable"><name>pass</name></member>
+    <member refid="class_login_1_1_login_1a432bb052716b63ba35d5cfc8df2df6f9" kind="variable"><name>l</name></member>
+    <member refid="class_login_1_1_login_1a6b7f2f87a4d8ca8c56a457209cbedf62" kind="variable"><name>label</name></member>
+    <member refid="class_login_1_1_login_1ad88e0445f948f5a462da633af50d249a" kind="variable"><name>p</name></member>
+    <member refid="class_login_1_1_login_1af786fd64e6f4bad13869ca92cf1440e7" kind="variable"><name>b_inici</name></member>
+    <member refid="class_login_1_1_login_1ae92290e420cb8bcd7f4642b5407d4d49" kind="variable"><name>b_reset</name></member>
+    <member refid="class_login_1_1_login_1a685e9c305b50efcb21f02403e88a9878" kind="function"><name>Login</name></member>
+    <member refid="class_login_1_1_login_1aa9981e21cf8c86768d4b9f0c60ba9d0b" kind="function"><name>create_login</name></member>
+    <member refid="class_login_1_1_login_1a7c91c541e711e0c6960e979cbca9762c" kind="function"><name>set_escoltadors</name></member>
+    <member refid="class_login_1_1_login_1ab9a57c87d4e69a7e680e73d3f6493f93" kind="function"><name>neteja</name></member>
+    <member refid="class_login_1_1_login_1a206a680beeee1f655925c36eeceb231e" kind="function"><name>validar_camps</name></member>
+  </compound>
+  <compound refid="namespace_connexio" kind="namespace"><name>Connexio</name>
+  </compound>
+  <compound refid="namespace_gestio_empreses" kind="namespace"><name>GestioEmpreses</name>
+  </compound>
+  <compound refid="namespace_login" kind="namespace"><name>Login</name>
+  </compound>
+  <compound refid="namespace_main" kind="namespace"><name>Main</name>
+  </compound>
+  <compound refid="_connexio_8java" kind="file"><name>Connexio.java</name>
+  </compound>
+  <compound refid="_afegir___modificar_8java" kind="file"><name>Afegir_Modificar.java</name>
+  </compound>
+  <compound refid="_gestio_8java" kind="file"><name>Gestio.java</name>
+  </compound>
+  <compound refid="_login_8java" kind="file"><name>Login.java</name>
+  </compound>
+  <compound refid="_gestio__empreses_8java" kind="file"><name>Gestio_empreses.java</name>
+  </compound>
+  <compound refid="dir_6ed21e7335f6f006295e75923a6907c1" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio</name>
+  </compound>
+  <compound refid="dir_bf18ccbcfc43ee4e353607afc839ccb6" kind="dir"><name>F:/DAW2</name>
+  </compound>
+  <compound refid="dir_3a581ba30d25676e4b797b1f96d53b45" kind="dir"><name>F:</name>
+  </compound>
+  <compound refid="dir_8e0de03663a3db6cd8738b55b482f381" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses</name>
+  </compound>
+  <compound refid="dir_692f0b9bdaea5ca47238cce1172dd513" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses</name>
+  </compound>
+  <compound refid="dir_ae600e59df88a350783c9487c219d301" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login</name>
+  </compound>
+  <compound refid="dir_2d2b48e7d9d05bc806cba37cf03e55ba" kind="dir"><name>F:/DAW2/M13 Projecte</name>
+  </compound>
+  <compound refid="dir_73a5af8bf1908a1ae4396f41794d7149" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main</name>
+  </compound>
+  <compound refid="dir_a04ee5a872263190539a108bc1f27840" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final</name>
+  </compound>
+  <compound refid="dir_bcf773b7848215fc0eadd361b58bea05" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final</name>
+  </compound>
+  <compound refid="dir_bf80c64ce20f640bc5ff7fcde8957c91" kind="dir"><name>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src</name>
+  </compound>
+</doxygenindex>

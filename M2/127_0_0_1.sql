@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 21-05-2019 a les 21:22:05
+-- Temps de generació: 28-05-2019 a les 21:13:50
 -- Versió del servidor: 5.7.17
 -- Versió de PHP: 7.1.3
 
@@ -45,11 +45,15 @@ CREATE TABLE `cata` (
 --
 
 INSERT INTO `cata` (`id`, `empresa`, `producte`, `estat`, `data`) VALUES
-(3, 15, 11, 1, '2019-05-18 18:00:00'),
-(4, 15, 13, 0, '2019-05-28 00:15:00'),
+(3, 15, 11, 0, '2019-05-31 18:00:00'),
 (5, 14, 8, 0, '2019-05-30 10:00:00'),
-(6, 12, 10, 0, '2019-05-31 16:24:00'),
-(7, 14, 6, 1, '2019-05-21 09:00:00');
+(7, 14, 6, 1, '2019-05-29 09:00:00'),
+(8, 15, 7, 1, '2019-05-23 11:30:00'),
+(9, 15, 11, 0, '2019-05-27 13:33:00'),
+(10, 15, 13, 1, '2019-05-24 12:12:00'),
+(11, 17, 20, 0, '2019-06-07 09:00:00'),
+(12, 15, 7, 1, '2019-05-24 12:12:00'),
+(13, 16, 21, 0, '2019-05-31 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -69,14 +73,14 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`email`, `username`, `password`) VALUES
-('britney@gmail.com', 'BritneySpears', 'Britneyspears+1'),
-('britnney@gmail.com', 'BritneySpears1', 'a1A+sasasa'),
-('dracarys@gmail.com', 'DaenerysTargaryen', 'daenerysdaenerys'),
-('emma_watson@gmail.com', 'EmmaWatson', 'emmaemma'),
-('kkevvin19@gmacil.com', 'KevinMede', '1+1icareBTINH12'),
-('w2.kmedina@infomila.info', 'Kev', 'kevinkevin'),
-('w2.mgomez@infomila.info', 'Miwui11', 'miguelmiguel'),
-('w2.ppuyo@infomila.info', 'Pedronsio', 'pedropedro');
+('britney@gmail.com', 'BritneySpears', '136d0868ca00e163a85a0f2ad78dd1de'),
+('britnney@gmail.com', 'BritneySpears1', '768b590d637df305726dbd9f5528673b'),
+('dracarys@gmail.com', 'DaenerysTargaryen', '3cd6cb7178245ee37bf722396b687add'),
+('emma_watson@gmail.com', 'EmmaWatson', '7461a5abe19aa8202257dd2f874ed234'),
+('kkevvin19@gmail.com', 'KevinMede', 'acf4f333fb00bbe6b5e02d81cfbd395a'),
+('w2.kmedina@infomila.info', 'Kev', '3e677d133fec4b263e4365f9c36dab72'),
+('w2.mgomez@infomila.info', 'Miwui11', '7a6d45d35f0de5c5ba2ffd29958e1495'),
+('w2.ppuyo@infomila.info', 'Pedronsio', '8157e3eb7e6533cf1ed55b44d6cc443a');
 
 -- --------------------------------------------------------
 
@@ -93,7 +97,7 @@ CREATE TABLE `empresa` (
   `direccio` varchar(210) NOT NULL,
   `comarca` varchar(45) NOT NULL,
   `numDireccio` int(11) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `email` varchar(50) NOT NULL,
   `visibilitat` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='password';
@@ -103,13 +107,13 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id`, `username`, `nom`, `tipusVia`, `direccio`, `comarca`, `numDireccio`, `password`, `email`, `visibilitat`) VALUES
-(11, 'Clein', 'Clein Frankfurt', 'Carrer', 'Rambla Sant Isidre', 'Anoia', 26, 'cleinclein', 'clein@clein.es', 0),
-(12, 'Krusty', 'Krusty Burger', 'Avinguda', 'Evergreen Terrace ', 'Neverland', 11, 'krustykrusty', 'krusty@krusty.com', 0),
-(13, 'BobEsponja', 'Crustáceo crujiente', 'Carrer', 'Piña debajo del mar', 'Anoia', 12, 'bobesponja', 'bobesponja@gmail.com', 0),
-(14, 'centralPerk', 'Central Perk Cafe', 'Avinguda', 'la quinta avenida', 'Anoia', 5, 'centralPerk', 'illbethereforyou@friends.com', 0),
-(15, 'Baviera', 'Baviera Frankfurt', 'Carrer', 'Lleida ', 'Anoia', 57, 'bavierabaviera', 'baviera@igualada.com', 0),
-(16, 'sdfsdfsdf', 'dssdfsdfsd', 'Carrer', 'bbb', 'Anoia', 12, 'sdfsdfsdf', 'efdsdfsdfsd', 1),
-(17, 'Fitzgerald', 'Fitzgerald Foods', 'Avinguda', 'whaaat', 'Garraf', 23, '1+1icareB', 'fitzgerald@gmail.com', 0);
+(11, 'Clein', 'Clein Frankfurt', 'Carrer', 'Rambla Sant Isidre', 'Anoia', 26, 'ece65e19890b8bfbf064a31a90b712da', 'clein@clein.es', 0),
+(12, 'Krusty', 'Krusty Burger', 'Avinguda', 'Evergreen Terrace ', 'Neverland', 11, 'fe8285631ba08a82af86a370a37353e4', 'krusty@krusty.com', 0),
+(13, 'BobEsponja', 'Crustáceo crujiente', 'Carrer', 'Piña debajo del mar', 'Anoia', 12, '94336a363c529a5350ce2e50ccb49e5b', 'bobesponja@gmail.com', 0),
+(14, 'centralPerk', 'Central Perk Cafe', 'Avinguda', 'la quinta avenida', 'Anoia', 5, 'ac82193c353f634f291849b03f999c1e', 'illbethereforyou@friends.com', 0),
+(15, 'Baviera', 'Baviera Frankfurt', 'Carrer', 'Lleida ', 'Anoia', 57, '63e3bfc5901e7554ecb6310d16d67bdf', 'baviera@igualada.com', 0),
+(16, 'LongShot', 'LongShot', 'Carrer', 'bbb', 'Anoia', 12, '147b8b0359853701448fb15e01ae1c50', 'longshot@gmail.com', 0),
+(17, 'Fitzgerald', 'Fitzgerald Foods', 'Avinguda', 'whaaat', 'Garraf', 23, '0793acb0c280173c17456f4a1a43abaf', 'fitzgerald@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -121,7 +125,7 @@ DROP TABLE IF EXISTS `participacio`;
 CREATE TABLE `participacio` (
   `cata` int(11) NOT NULL,
   `client` varchar(50) NOT NULL,
-  `valoracio` int(11) NOT NULL
+  `valoracio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -130,12 +134,10 @@ CREATE TABLE `participacio` (
 
 INSERT INTO `participacio` (`cata`, `client`, `valoracio`) VALUES
 (3, 'emma_watson@gmail.com', 5),
-(3, 'w2.kmedina@infomila.info', 5),
-(4, 'dracarys@gmail.com', 4),
-(4, 'emma_watson@gmail.com', 5),
-(6, 'w2.kmedina@infomila.info', 2),
-(6, 'w2.mgomez@infomila.info', 5),
-(7, 'w2.ppuyo@infomila.info', 2);
+(3, 'w2.kmedina@infomila.info', NULL),
+(7, 'w2.kmedina@infomila.info', NULL),
+(7, 'w2.ppuyo@infomila.info', 2),
+(9, 'w2.kmedina@infomila.info', NULL);
 
 -- --------------------------------------------------------
 
@@ -158,18 +160,23 @@ CREATE TABLE `producte` (
 INSERT INTO `producte` (`codi`, `empresa`, `nom`, `descripcio`) VALUES
 (1, 11, 'Patates de Blat de moro', 'Patates de Blat de moro amb salsa brava'),
 (2, 11, 'Pizza de tonyina', 'Pizza de tonyina amb ceba caramelitzada'),
-(3, 11, 'Aigua de pluja', 'Aigua de les pluges de l\'Amazones'),
 (4, 13, 'CangreBurger', 'Hamburguesa realizada for the one and only Señor Patricio'),
 (5, 12, 'KrustyBurger', 'Hamburguesa de animal extinguido hecha por el chico de los granos'),
 (6, 14, 'Café con amigos', 'Nosotros ponemos el café, tú los amigos'),
-(7, 15, 'Aigua de pluja de l\'Amazones', 'Aigua purificada amb propietats curatives'),
+(7, 15, 'Aigua de pluja', 'Aigua purificada amb propietats curatives'),
 (8, 14, 'Magdalena de xocolata gegant', 'Muffin para los amigos'),
 (9, 13, 'Patates fregides', 'Patates fregides sota el mar'),
 (10, 12, 'Bolsa sorpresa', 'Diferents ítems que es troben quan es neteja la fregidora (disponible 2 cops a l\'any)'),
 (11, 15, 'Frankfurt de la casa', 'Frankfurt com el que et fas a casa, però més car'),
 (12, 13, 'Gelat de pinya', '(No és la mateixa pinya que la del Bob)'),
 (13, 15, 'Nuggets de pollastre', 'de que sinó?'),
-(17, 13, 'La concha de arenita', 'La parte salada de una ardilla submarina');
+(17, 13, 'La concha de arenita', 'La parte salada de una ardilla submarina'),
+(20, 17, 'Spoiler', 'Nuevo disco de Aitana'),
+(21, 16, 'Producte 1', 'Descripció asdasdasdsd'),
+(22, 16, 'Liberty Scars', 'yeah yeah '),
+(23, 16, 'Alelelelelele', 'Descripció asdasdasdsd'),
+(24, 16, 'dont call my name', 'yeah yeah '),
+(25, 15, 'Trina', 'Trina de naranja, what else?');
 
 --
 -- Indexos per taules bolcades
@@ -223,7 +230,7 @@ ALTER TABLE `producte`
 -- AUTO_INCREMENT per la taula `cata`
 --
 ALTER TABLE `cata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT per la taula `empresa`
 --
@@ -233,7 +240,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT per la taula `producte`
 --
 ALTER TABLE `producte`
-  MODIFY `codi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `codi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- Restriccions per taules bolcades
 --

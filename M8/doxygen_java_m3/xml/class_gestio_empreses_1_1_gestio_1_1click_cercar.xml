@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_gestio_1_1click_cercar" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Gestio::clickCercar</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1_1click_cercar_1a1cf8698b479518e017048bd31a62305c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.clickCercar.actionPerformed</definition>
+        <argsstring>(ActionEvent e)</argsstring>
+        <name>actionPerformed</name>
+        <param>
+          <type>ActionEvent</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="319" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="319" bodyend="347"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Clase que filtra </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>GestioEmpreses.Gestio.clickCercar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_cercar"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ActionListener</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="14">
+        <label>GestioEmpreses.Gestio.clickCercar</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_cercar"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ActionListener</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="316" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="316" bodyend="348"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_gestio_1_1click_cercar_1a1cf8698b479518e017048bd31a62305c" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio::clickCercar</scope><name>actionPerformed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

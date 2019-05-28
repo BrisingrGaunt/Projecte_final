@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_8e0de03663a3db6cd8738b55b482f381" kind="dir">
+    <compoundname>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses</compoundname>
+    <innerdir refid="dir_bf80c64ce20f640bc5ff7fcde8957c91">F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/"/>
+  </compounddef>
+</doxygen>

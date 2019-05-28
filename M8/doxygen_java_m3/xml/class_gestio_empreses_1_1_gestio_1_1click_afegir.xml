@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_gestio_1_1click_afegir" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Gestio::clickAfegir</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">ActionListener</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1_1click_afegir_1ab398da6d59ddb2275d210cb17a528f7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.clickAfegir.actionPerformed</definition>
+        <argsstring>(ActionEvent e)</argsstring>
+        <name>actionPerformed</name>
+        <param>
+          <type>ActionEvent</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="300" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="300" bodyend="309"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Clase que obre una instància de l&apos;objecte <ref refid="class_gestio_empreses_1_1_afegir___modificar" kindref="compound">Afegir_Modificar</ref> en mode afegir </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>ActionListener</label>
+      </node>
+      <node id="8">
+        <label>GestioEmpreses.Gestio.clickAfegir</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_afegir"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>ActionListener</label>
+      </node>
+      <node id="10">
+        <label>GestioEmpreses.Gestio.clickAfegir</label>
+        <link refid="class_gestio_empreses_1_1_gestio_1_1click_afegir"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="297" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="297" bodyend="310"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_gestio_1_1click_afegir_1ab398da6d59ddb2275d210cb17a528f7c" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio::clickAfegir</scope><name>actionPerformed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

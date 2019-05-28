@@ -5,14 +5,11 @@
  */
 package Main;
 
-import GestioEmpreses.Gestio;
+
 import Login.Login;
-import Connexio.Connexio;
-import GestioEmpreses.Afegir_Modificar;
-import java.sql.Connection;
 
 /**
- *
+ * @brief Clase principal del projecte Gestio_empreses
  * @author Kevin
  */
 public class Gestio_empreses {

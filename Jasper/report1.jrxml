@@ -2,77 +2,169 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c7a4452-f99f-43e2-9537-2091212eabb0">
 	<property name="ireport.zoom" value="1.0000000000000007"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="9"/>
+	<property name="ireport.jasperserver.reportUnit" value="/w2-kmedina/Empreses_cates"/>
+	<property name="ireport.jasperserver.url" value="http://92.222.27.83:8080/jasperserver/services/repository"/>
+	<parameter name="id_empresa" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select * from producte]]>
+		<![CDATA[select e.id, e.nom as "empresa", e.tipusVia, e.direccio, e.numdireccio, e.comarca, c.data, p.nom as "nom_producte", p.descripcio from empresa e left join producte p on p.empresa=e.id left join cata c on p.codi=c.producte  where e.id = $P{id_empresa} || $P{id_empresa} = '' order by e.id;]]>
 	</queryString>
-	<field name="codi" class="java.lang.Integer">
+	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="empresa" class="java.lang.Integer">
+	<field name="empresa" class="java.lang.String"/>
+	<field name="tipusVia" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="nom" class="java.lang.String">
+	<field name="direccio" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="numdireccio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comarca" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_producte" class="java.lang.String"/>
 	<field name="descripcio" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<variable name="id_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{id}]]></variableExpression>
+	</variable>
+	<group name="empreses" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement uuid="c5cacb41-353b-44be-ac44-63c597632067" x="21" y="20" width="100" height="20"/>
+					<textElement/>
+					<text><![CDATA[Data celebració]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ac7cdf39-fc1e-472b-9c2b-b57f81776cdf" x="142" y="20" width="100" height="20"/>
+					<textElement/>
+					<text><![CDATA[Producte]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="858e6c38-19d9-4bd3-a736-8bf56f014a26" x="266" y="20" width="227" height="20"/>
+					<textElement/>
+					<text><![CDATA[Descripció]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="d3720c36-1eae-4fc7-9f83-8f316fa6358c" x="21" y="40" width="472" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="54" splitType="Stretch">
-			<image>
-				<reportElement uuid="481f0ddc-27c5-45a2-833a-91c1232db0e6" x="12" y="0" width="58" height="54"/>
-				<imageExpression><![CDATA["E:\\DAW2\\M13 Projecte\\Projecte_final\\Projecte_final\\Jasper\\logo.png"]]></imageExpression>
-			</image>
+		<band height="75" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="10b4ddf9-bb63-4e1c-9fe7-c033943615ef" x="100" y="0" width="360" height="54"/>
+				<reportElement uuid="fe003aa2-e4d9-4c58-926e-3a96674adff2" x="161" y="12" width="266" height="27"/>
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[Llistat de cates organitzades per empreses]]></text>
+				<text><![CDATA[BrisingrGaunt Productions SL]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="10b4ddf9-bb63-4e1c-9fe7-c033943615ef" x="100" y="0" width="393" height="32"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Llistat de cates i productes ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="07b21d0b-e085-476e-b3bc-98406b93d603" x="21" y="56" width="150" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Empresa seleccionada:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6695ec6f-1393-493e-85d1-ec9d9ecf2cea" x="171" y="56" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{id_empresa}==null || $P{id_empresa}.equals('')?"Totes":$P{id_empresa}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="555d2501-f0e2-41c5-8f70-cace3819ca40" x="21" y="0" width="50" height="42"/>
+				<imageExpression><![CDATA["F:\\DAW2\\M13 Projecte\\Projecte_final\\Projecte_final\\Jasper\\logo.png"]]></imageExpression>
+			</image>
+		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<textField>
-				<reportElement uuid="440a2ec3-8d79-4d3d-af59-95c37e0f7a8a" x="29" y="10" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{codi}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement uuid="6779ab3c-67d9-4ac4-97f3-dbaa768076ce" x="154" y="15" width="100" height="20"/>
-				<textElement/>
+				<reportElement uuid="864dac7a-81f1-4a10-890a-97350d3a427b" x="21" y="38" width="164" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{empresa}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="42a186be-e6e8-4f70-bbd6-86f9c8140c79" x="327" y="22" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+				<reportElement uuid="3dc06579-6b1b-46fd-850a-196f2db2dfc8" x="216" y="38" width="72" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipusVia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="68bff48a-86e8-4682-9d85-28a3e4c3f302" x="485" y="35" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{descripcio}]]></textFieldExpression>
+				<reportElement uuid="2fa9979b-9ad8-49c3-9922-d552127b0ccd" x="288" y="38" width="123" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c23803a2-feb4-4c62-8e69-d4695858ac5b" x="411" y="38" width="30" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numdireccio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8c4abe4f-6934-4bef-925e-508dbaed4734" x="441" y="38" width="114" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+$F{comarca}+")"]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="24" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="71637a14-af01-4c5a-b1f6-4eb31921637a" x="21" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3c8e5460-3069-4314-bf2c-7fd7416eb3ad" x="142" y="0" width="124" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nom_producte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="727289aa-4f33-4e44-8bfd-2d99898e5c8a" x="271" y="0" width="284" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descripcio}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
-			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="72b547b9-a02a-41c3-8c23-069d30bea520" x="0" y="34" width="100" height="20"/>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement uuid="72b547b9-a02a-41c3-8c23-069d30bea520" x="10" y="34" width="100" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -86,9 +178,13 @@
 				<textElement/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement uuid="aa8e6982-2289-48c6-87a8-f523ff421c06" x="216" y="4" width="147" height="50"/>
+				<imageExpression><![CDATA["F:\\DAW2\\M13 Projecte\\Projecte_final\\Projecte_final\\Jasper\\sublogo.png"]]></imageExpression>
+			</image>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</summary>
 </jasperReport>

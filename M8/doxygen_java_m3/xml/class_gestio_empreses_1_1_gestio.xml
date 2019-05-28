@@ -1,0 +1,806 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_gestio_empreses_1_1_gestio" kind="class" language="Java" prot="public">
+    <compoundname>GestioEmpreses::Gestio</compoundname>
+    <innerclass refid="class_gestio_empreses_1_1_gestio_1_1click_afegir" prot="public">GestioEmpreses::Gestio::clickAfegir</innerclass>
+    <innerclass refid="class_gestio_empreses_1_1_gestio_1_1click_cercar" prot="public">GestioEmpreses::Gestio::clickCercar</innerclass>
+    <innerclass refid="class_gestio_empreses_1_1_gestio_1_1click_editar" prot="public">GestioEmpreses::Gestio::clickEditar</innerclass>
+    <innerclass refid="class_gestio_empreses_1_1_gestio_1_1click_esborrar" prot="public">GestioEmpreses::Gestio::clickEsborrar</innerclass>
+    <innerclass refid="class_gestio_empreses_1_1_gestio_1_1click_reset" prot="private">GestioEmpreses::Gestio::clickReset</innerclass>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a1c7e876b0547a6e619f6487921e5a99d" prot="package" static="yes" mutable="no">
+        <type>JFrame</type>
+        <definition>JFrame GestioEmpreses.Gestio.fGestio</definition>
+        <argsstring></argsstring>
+        <name>fGestio</name>
+        <initializer>= new JFrame(&quot;Gestió empreses -- Info empreses&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="53" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ab74de94c20a6adb7d25e3b8339515862" prot="package" static="yes" mutable="no">
+        <type>DefaultTableModel</type>
+        <definition>DefaultTableModel GestioEmpreses.Gestio.modelEmpreses</definition>
+        <argsstring></argsstring>
+        <name>modelEmpreses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="59" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1aa58ca78e43e9904ade39f1bc86f3977f" prot="package" static="yes" mutable="no">
+        <type>DefaultTableModel</type>
+        <definition>DefaultTableModel GestioEmpreses.Gestio.modelTasts</definition>
+        <argsstring></argsstring>
+        <name>modelTasts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="60" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a16c0b2324927380d52dc3df67d869fe7" prot="package" static="yes" mutable="no">
+        <type>JTable</type>
+        <definition>JTable GestioEmpreses.Gestio.taulaEmpreses</definition>
+        <argsstring></argsstring>
+        <name>taulaEmpreses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="61" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a0f30d13a2a3e64a4960c79b2f324d0bc" prot="package" static="yes" mutable="no">
+        <type>Object [][]</type>
+        <definition>Object [][] GestioEmpreses.Gestio.dataEmpreses</definition>
+        <argsstring></argsstring>
+        <name>dataEmpreses</name>
+        <initializer>=null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="65" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a62c07e480bd5132d71b6eabbc8912107" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnEditar</definition>
+        <argsstring></argsstring>
+        <name>btnEditar</name>
+        <initializer>= new JButton(&quot;Editar&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="77" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a2aecace8ce9c1de1e24011014d82ef50" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnModificar</definition>
+        <argsstring></argsstring>
+        <name>btnModificar</name>
+        <initializer>= new JButton(&quot;Modificar&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="78" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a8e4323d9f2cc5aba0a9da907217c3534" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnEsborrar</definition>
+        <argsstring></argsstring>
+        <name>btnEsborrar</name>
+        <initializer>= new JButton(&quot;Esborrar&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="79" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1aa76d65889fcb8f2913fbd4957619bc7e" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnAfegir</definition>
+        <argsstring></argsstring>
+        <name>btnAfegir</name>
+        <initializer>= new JButton(&quot;+&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="80" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a64722d61e52de0c7ff7de9b9595fae19" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnCerca</definition>
+        <argsstring></argsstring>
+        <name>btnCerca</name>
+        <initializer>= new JButton()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="81" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a36601bd5f6a1dfe916f646c2e5ffe152" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnReset</definition>
+        <argsstring></argsstring>
+        <name>btnReset</name>
+        <initializer>= new JButton()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="82" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a04217be0bbec31805217971531e034a5" prot="package" static="yes" mutable="no">
+        <type>JButton</type>
+        <definition>JButton GestioEmpreses.Gestio.btnCercaUbicacio</definition>
+        <argsstring></argsstring>
+        <name>btnCercaUbicacio</name>
+        <initializer>= new JButton()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="83" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ae09b9ecc313afba8c6069a7a5f287a82" prot="package" static="no" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Gestio.pBottom</definition>
+        <argsstring></argsstring>
+        <name>pBottom</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="54" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ab5eb9f8043058b5eac0295452cd8c1ed" prot="package" static="no" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Gestio.pTop</definition>
+        <argsstring></argsstring>
+        <name>pTop</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="55" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ad25baefefe5115546be466c75ae6ed7d" prot="package" static="no" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Gestio.pLeft</definition>
+        <argsstring></argsstring>
+        <name>pLeft</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="56" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a5d70570c72244ee534c6c6c64a69e70e" prot="package" static="no" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel GestioEmpreses.Gestio.pRight</definition>
+        <argsstring></argsstring>
+        <name>pRight</name>
+        <initializer>= new JPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="57" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ada32ad4665cd66e6c424104e68ac4170" prot="package" static="no" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField GestioEmpreses.Gestio.filtre</definition>
+        <argsstring></argsstring>
+        <name>filtre</name>
+        <initializer>=new JTextField(30)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="58" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ac467f952671b10b700d809590f7829ea" prot="package" static="no" mutable="no">
+        <type>JTable</type>
+        <definition>JTable GestioEmpreses.Gestio.taulaTasts</definition>
+        <argsstring></argsstring>
+        <name>taulaTasts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="62" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ad4861e458013070d4d5e50a848fdbd83" prot="package" static="no" mutable="no">
+        <type>String []</type>
+        <definition>String [] GestioEmpreses.Gestio.nomColumEmpreses</definition>
+        <argsstring></argsstring>
+        <name>nomColumEmpreses</name>
+        <initializer>= {&quot;CIF&quot;,&quot;Nom comercial&quot;,&quot;Adreça&quot;,&quot;Tasts realitzats&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="63" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a7047babb3d1309b216c538345fcfc41d" prot="package" static="no" mutable="no">
+        <type>String []</type>
+        <definition>String [] GestioEmpreses.Gestio.nomColumnTasts</definition>
+        <argsstring></argsstring>
+        <name>nomColumnTasts</name>
+        <initializer>={&quot;Empresa&quot;,&quot;Producte&quot;,&quot;Dia i hora&quot;,&quot;Valoració mitja&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="64" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a7e337194f6b0405139f32c9be1abaf10" prot="package" static="no" mutable="no">
+        <type>Object [][]</type>
+        <definition>Object [][] GestioEmpreses.Gestio.dataTasts</definition>
+        <argsstring></argsstring>
+        <name>dataTasts</name>
+        <initializer>=null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="66" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a545766600d3e6f4d0314f360770922f2" prot="package" static="no" mutable="no">
+        <type>Class []</type>
+        <definition>Class [] GestioEmpreses.Gestio.columnClassTasts</definition>
+        <argsstring></argsstring>
+        <name>columnClassTasts</name>
+        <initializer>=new Class[]{
+        String.class,String.class,String.class,String.class
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="68" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ae591dac1014507b85b0bd985fb86eae7" prot="package" static="no" mutable="no">
+        <type>Class []</type>
+        <definition>Class [] GestioEmpreses.Gestio.columnClassEmpreses</definition>
+        <argsstring></argsstring>
+        <name>columnClassEmpreses</name>
+        <initializer>= new Class[] {
+        String.class, String.class, String.class, Integer.class
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="72" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1ac28a2e5944d6dbbdbc30ce213f0835e8" prot="package" static="no" mutable="no">
+        <type>JLabel</type>
+        <definition>JLabel GestioEmpreses.Gestio.cifLabel</definition>
+        <argsstring></argsstring>
+        <name>cifLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="87" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a010492253f2343f566623f4aab5eb465" prot="package" static="no" mutable="no">
+        <type>JLabel</type>
+        <definition>JLabel GestioEmpreses.Gestio.nomLabel</definition>
+        <argsstring></argsstring>
+        <name>nomLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="88" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1a3759c3391eaed82b2803b5c491b94c04" prot="package" static="no" mutable="no">
+        <type>JLabel</type>
+        <definition>JLabel GestioEmpreses.Gestio.adrecaLabel</definition>
+        <argsstring></argsstring>
+        <name>adrecaLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="89" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1adf415de82303f582aca8801cd1fff6e1" prot="package" static="no" mutable="no">
+        <type>JLabel</type>
+        <definition>JLabel GestioEmpreses.Gestio.countLabel</definition>
+        <argsstring></argsstring>
+        <name>countLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="90" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1acee55a3cedd11ca0c6bec0d75837e1cb" prot="package" static="no" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField GestioEmpreses.Gestio.cif</definition>
+        <argsstring></argsstring>
+        <name>cif</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="92" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1abfaf2c69e7220d42f9ad23aef597d06f" prot="package" static="no" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField GestioEmpreses.Gestio.nom</definition>
+        <argsstring></argsstring>
+        <name>nom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="93" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gestio_empreses_1_1_gestio_1af8d9f4840e7e09706a377c33dacc07e0" prot="package" static="no" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField GestioEmpreses.Gestio.adreca</definition>
+        <argsstring></argsstring>
+        <name>adreca</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="94" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a91ba56ea47931cbd57490803f1d4fe9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GestioEmpreses.Gestio.Gestio</definition>
+        <argsstring>()</argsstring>
+        <name>Gestio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor de la clase <ref refid="class_gestio_empreses_1_1_gestio" kindref="compound">Gestio</ref> utilitza els mètodes crear_interficie i set_escoltadors <simplesect kind="see"><para><ref refid="class_gestio_empreses_1_1_gestio_1a7e8574e7ebd38ba4e7ad4dc5076c4754" kindref="member">crear_interficie()</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>set_escoltadors() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="102" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a7e8574e7ebd38ba4e7ad4dc5076c4754" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.crear_interficie</definition>
+        <argsstring>()</argsstring>
+        <name>crear_interficie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que realitza la part gràfica de la clase <ref refid="class_gestio_empreses_1_1_gestio" kindref="compound">Gestio</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="110" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="110" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a172cc64fe5471a5e56a1a631842122ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.crear_taula</definition>
+        <argsstring>(String nom_taula)</argsstring>
+        <name>crear_taula</name>
+        <param>
+          <type>String</type>
+          <declname>nom_taula</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que crea un objecte JTable a partir d&apos;un string <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nom_taula</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>indica el nom que tindrà l&apos;objecte JTable un cop creat </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="155" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="155" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a0c06f01a8b873ec71a0e35ed57dcc572" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.mostrarTasts</definition>
+        <argsstring>()</argsstring>
+        <name>mostrarTasts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que omple la taula taulaEmpreses amb les dades obtingudes a partir de l&apos;empresa seleccionada </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="202" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="202" bodyend="244"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a9c361a8fee75f06bb17bdfb4e681896b" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Gestio.buidar_taula</definition>
+        <argsstring>(DefaultTableModel model)</argsstring>
+        <name>buidar_taula</name>
+        <param>
+          <type>DefaultTableModel</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que esborra l&apos;informació del model que es pasa per paràmetre <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model en el que s&apos;eliminarà les dades </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="250" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="250" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1ac4ca8840e8cd984712c11d4fc6263153" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Gestio.ajustarTaula</definition>
+        <argsstring>(JTable taula)</argsstring>
+        <name>ajustarTaula</name>
+        <param>
+          <type>JTable</type>
+          <declname>taula</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que ajusta el contingut d&apos;una taula en funció al contingut de les seves cel·les <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>taula</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Taula a ajustar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="467" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="467" bodyend="490"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1ad7dc31f78960cac1aab9caa2e6819583" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestioEmpreses.Gestio.set_escoltadors</definition>
+        <argsstring>()</argsstring>
+        <name>set_escoltadors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció privada que assigna els events als botons creats </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="260" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="260" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a57dc2217eb0b6e55bfa3f9ee80bb3f26" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean GestioEmpreses.Gestio.es_buit</definition>
+        <argsstring>(JTextField jt)</argsstring>
+        <name>es_buit</name>
+        <param>
+          <type>JTextField</type>
+          <declname>jt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que determina si un JTextField està buit o no <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>jt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JTextField a comprovar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>false si el JTextField és buit o true si està ple </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="497" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="497" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a8f259e251a5e7fb335da9d4d8d005b19" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String GestioEmpreses.Gestio.valoracio_to_stars</definition>
+        <argsstring>(int valoracio)</argsstring>
+        <name>valoracio_to_stars</name>
+        <param>
+          <type>int</type>
+          <declname>valoracio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que transforma la valoració numèrica en string d&apos;estrelles <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>valoracio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>número d&apos;estrelles que té la valoració mínim 0 màxim 5 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>cadena d&apos;estrelles formada </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="519" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="519" bodyend="528"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a24868c8e57f3dc1b25d863a71080af44" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Gestio.estatInicialTaulaEmpreses</definition>
+        <argsstring>()</argsstring>
+        <name>estatInicialTaulaEmpreses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que deixa l&apos;aplicatiu al seu estat original (sense mostrar la taula de tasts i netejant possibles filtres aplicats a la taula d&apos;empreses) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="425" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="425" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gestio_empreses_1_1_gestio_1a38fd5f7b16dcdfcf9d6ab5fb2e71e607" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void GestioEmpreses.Gestio.crear_missatge</definition>
+        <argsstring>(String missatge, int tipus)</argsstring>
+        <name>crear_missatge</name>
+        <param>
+          <type>String</type>
+          <declname>missatge</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tipus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que crea un popup de missatge <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>missatge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cadena que indica el contingut del missatge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tipus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pot prendre tres valors: 0 Error, 1 Informació, 2 Warning </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="506" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="506" bodyend="512"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Clase que permet realitzar les operaciones CRUD sobre la taula empresa de la Base de dades<linebreak/>
+ mostra també les cates associades a l&apos;empresa. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kevin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="39">
+        <label>JPanel</label>
+      </node>
+      <node id="38">
+        <label>JLabel</label>
+      </node>
+      <node id="32">
+        <label>GestioEmpreses.Gestio</label>
+        <link refid="class_gestio_empreses_1_1_gestio"/>
+        <childnode refid="33" relation="usage">
+          <edgelabel>btnReset</edgelabel>
+          <edgelabel>btnModificar</edgelabel>
+          <edgelabel>btnCerca</edgelabel>
+          <edgelabel>btnAfegir</edgelabel>
+          <edgelabel>btnCercaUbicacio</edgelabel>
+          <edgelabel>btnEsborrar</edgelabel>
+          <edgelabel>btnEditar</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>adreca</edgelabel>
+          <edgelabel>nom</edgelabel>
+          <edgelabel>cif</edgelabel>
+          <edgelabel>filtre</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>fGestio</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>taulaEmpreses</edgelabel>
+          <edgelabel>taulaTasts</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>modelEmpreses</edgelabel>
+          <edgelabel>modelTasts</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>countLabel</edgelabel>
+          <edgelabel>cifLabel</edgelabel>
+          <edgelabel>adrecaLabel</edgelabel>
+          <edgelabel>nomLabel</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>pTop</edgelabel>
+          <edgelabel>pBottom</edgelabel>
+          <edgelabel>pRight</edgelabel>
+          <edgelabel>pLeft</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>JFrame</label>
+      </node>
+      <node id="34">
+        <label>JTextField</label>
+      </node>
+      <node id="33">
+        <label>JButton</label>
+      </node>
+      <node id="36">
+        <label>JTable</label>
+      </node>
+      <node id="37">
+        <label>DefaultTableModel</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" line="52" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses/Gestio.java" bodystart="52" bodyend="529"/>
+    <listofallmembers>
+      <member refid="class_gestio_empreses_1_1_gestio_1af8d9f4840e7e09706a377c33dacc07e0" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>adreca</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a3759c3391eaed82b2803b5c491b94c04" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>adrecaLabel</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ac4ca8840e8cd984712c11d4fc6263153" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>ajustarTaula</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1aa76d65889fcb8f2913fbd4957619bc7e" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnAfegir</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a64722d61e52de0c7ff7de9b9595fae19" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnCerca</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a04217be0bbec31805217971531e034a5" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnCercaUbicacio</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a62c07e480bd5132d71b6eabbc8912107" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnEditar</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a8e4323d9f2cc5aba0a9da907217c3534" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnEsborrar</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a2aecace8ce9c1de1e24011014d82ef50" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnModificar</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a36601bd5f6a1dfe916f646c2e5ffe152" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>btnReset</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a9c361a8fee75f06bb17bdfb4e681896b" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>buidar_taula</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1acee55a3cedd11ca0c6bec0d75837e1cb" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>cif</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ac28a2e5944d6dbbdbc30ce213f0835e8" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>cifLabel</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ae591dac1014507b85b0bd985fb86eae7" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>columnClassEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a545766600d3e6f4d0314f360770922f2" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>columnClassTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1adf415de82303f582aca8801cd1fff6e1" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>countLabel</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a7e8574e7ebd38ba4e7ad4dc5076c4754" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>crear_interficie</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a38fd5f7b16dcdfcf9d6ab5fb2e71e607" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>crear_missatge</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a172cc64fe5471a5e56a1a631842122ba" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>crear_taula</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a0f30d13a2a3e64a4960c79b2f324d0bc" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>dataEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a7e337194f6b0405139f32c9be1abaf10" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>dataTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a57dc2217eb0b6e55bfa3f9ee80bb3f26" prot="private" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>es_buit</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a24868c8e57f3dc1b25d863a71080af44" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>estatInicialTaulaEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a1c7e876b0547a6e619f6487921e5a99d" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>fGestio</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ada32ad4665cd66e6c424104e68ac4170" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>filtre</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a91ba56ea47931cbd57490803f1d4fe9a" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>Gestio</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ab74de94c20a6adb7d25e3b8339515862" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>modelEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1aa58ca78e43e9904ade39f1bc86f3977f" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>modelTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a0c06f01a8b873ec71a0e35ed57dcc572" prot="public" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>mostrarTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1abfaf2c69e7220d42f9ad23aef597d06f" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>nom</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ad4861e458013070d4d5e50a848fdbd83" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>nomColumEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a7047babb3d1309b216c538345fcfc41d" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>nomColumnTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a010492253f2343f566623f4aab5eb465" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>nomLabel</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ae09b9ecc313afba8c6069a7a5f287a82" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>pBottom</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ad25baefefe5115546be466c75ae6ed7d" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>pLeft</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a5d70570c72244ee534c6c6c64a69e70e" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>pRight</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ab5eb9f8043058b5eac0295452cd8c1ed" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>pTop</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ad7dc31f78960cac1aab9caa2e6819583" prot="private" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>set_escoltadors</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a16c0b2324927380d52dc3df67d869fe7" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>taulaEmpreses</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1ac467f952671b10b700d809590f7829ea" prot="package" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>taulaTasts</name></member>
+      <member refid="class_gestio_empreses_1_1_gestio_1a8f259e251a5e7fb335da9d4d8d005b19" prot="private" virt="non-virtual"><scope>GestioEmpreses::Gestio</scope><name>valoracio_to_stars</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

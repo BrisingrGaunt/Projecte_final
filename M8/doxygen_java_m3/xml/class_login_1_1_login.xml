@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_login_1_1_login" kind="class" language="Java" prot="public">
+    <compoundname>Login::Login</compoundname>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="class_login_1_1_login_1a414fe19b8648ac4dce0509fc807bf5f4" prot="package" static="yes" mutable="no">
+        <type>JFrame</type>
+        <definition>JFrame Login.Login.f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Camps que utilitza la classe <ref refid="class_login_1_1_login" kindref="compound">Login</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="37" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1a542c7f413001e2fc158aca1013837d34" prot="package" static="yes" mutable="no">
+        <type>JTextField</type>
+        <definition>JTextField Login.Login.user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="40" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1a731401744bd9989acba67d6823ed04de" prot="package" static="yes" mutable="no">
+        <type>JPasswordField</type>
+        <definition>JPasswordField Login.Login.pass</definition>
+        <argsstring></argsstring>
+        <name>pass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="41" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_login_1_1_login_1a432bb052716b63ba35d5cfc8df2df6f9" prot="package" static="no" mutable="no">
+        <type>LayoutManager</type>
+        <definition>LayoutManager Login.Login.l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="38" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1a6b7f2f87a4d8ca8c56a457209cbedf62" prot="package" static="no" mutable="no">
+        <type>JLabel</type>
+        <definition>JLabel Login.Login.label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="39" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1ad88e0445f948f5a462da633af50d249a" prot="package" static="no" mutable="no">
+        <type>JPanel</type>
+        <definition>JPanel Login.Login.p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="42" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1af786fd64e6f4bad13869ca92cf1440e7" prot="package" static="no" mutable="no">
+        <type>JButton</type>
+        <definition>JButton Login.Login.b_inici</definition>
+        <argsstring></argsstring>
+        <name>b_inici</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="43" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_login_1_1_login_1ae92290e420cb8bcd7f4642b5407d4d49" prot="package" static="no" mutable="no">
+        <type>JButton</type>
+        <definition>JButton Login.Login.b_reset</definition>
+        <argsstring></argsstring>
+        <name>b_reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="44" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_login_1_1_login_1a685e9c305b50efcb21f02403e88a9878" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Login.Login.Login</definition>
+        <argsstring>()</argsstring>
+        <name>Login</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor públic que crea una instància d&apos;un objecte <ref refid="class_login_1_1_login" kindref="compound">Login</ref> <simplesect kind="see"><para>create_login() </para>
+</simplesect>
+<simplesect kind="see"><para>set_escoltadors() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="51" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="51" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_login_1_1_login_1aa9981e21cf8c86768d4b9f0c60ba9d0b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Login.Login.create_login</definition>
+        <argsstring>()</argsstring>
+        <name>create_login</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode privat que crea l&apos;interficie gràfica de l&apos;aplicatiu </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt;Es crea un GridLayout de 2 files, 2 columnes i 10 d&apos;espai&gt;</para>
+<para>&lt;Es crea un borde buit en el panell amb ordre: amunt- esquerra- abaix- dreta&gt; </para>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="60" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="60" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_login_1_1_login_1a7c91c541e711e0c6960e979cbca9762c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Login.Login.set_escoltadors</definition>
+        <argsstring>()</argsstring>
+        <name>set_escoltadors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que col·loca escoltadors als botons que s&apos;han creat prèviament a create_login <simplesect kind="see"><para>create_login() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Al botó b_reset s&apos;aplica la funció neteja</para>
+<para>Al botó b_inici s&apos;aplica la funció validar_camps</para>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="101" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="101" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_login_1_1_login_1ab9a57c87d4e69a7e680e73d3f6493f93" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Login.Login.neteja</definition>
+        <argsstring>(JTextField t)</argsstring>
+        <name>neteja</name>
+        <param>
+          <type>JTextField</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que esborra el contingut d&apos;un JTextField <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>JTextField a esborrar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="128" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_login_1_1_login_1a206a680beeee1f655925c36eeceb231e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Login.Login.validar_camps</definition>
+        <argsstring>()</argsstring>
+        <name>validar_camps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Funció que valida que els camps estiguin plens i siguin correctes si va bé crea un objecte de la clase Gestio si va malament neteja els camps i informa a l&apos;usuari </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="137" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="137" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Clase que comprova que l&apos;usuari tingui accés a l&apos;aplicació </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kevin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="50">
+        <label>JPanel</label>
+      </node>
+      <node id="46">
+        <label>LayoutManager</label>
+      </node>
+      <node id="49">
+        <label>JLabel</label>
+      </node>
+      <node id="43">
+        <label>Login.Login</label>
+        <link refid="class_login_1_1_login"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>b_reset</edgelabel>
+          <edgelabel>b_inici</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>user</edgelabel>
+        </childnode>
+        <childnode refid="46" relation="usage">
+          <edgelabel>l</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>f</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>pass</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>label</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>JFrame</label>
+      </node>
+      <node id="48">
+        <label>JPasswordField</label>
+      </node>
+      <node id="45">
+        <label>JTextField</label>
+      </node>
+      <node id="44">
+        <label>JButton</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" line="33" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login/Login.java" bodystart="33" bodyend="152"/>
+    <listofallmembers>
+      <member refid="class_login_1_1_login_1af786fd64e6f4bad13869ca92cf1440e7" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>b_inici</name></member>
+      <member refid="class_login_1_1_login_1ae92290e420cb8bcd7f4642b5407d4d49" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>b_reset</name></member>
+      <member refid="class_login_1_1_login_1aa9981e21cf8c86768d4b9f0c60ba9d0b" prot="private" virt="non-virtual"><scope>Login::Login</scope><name>create_login</name></member>
+      <member refid="class_login_1_1_login_1a414fe19b8648ac4dce0509fc807bf5f4" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>f</name></member>
+      <member refid="class_login_1_1_login_1a432bb052716b63ba35d5cfc8df2df6f9" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>l</name></member>
+      <member refid="class_login_1_1_login_1a6b7f2f87a4d8ca8c56a457209cbedf62" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>label</name></member>
+      <member refid="class_login_1_1_login_1a685e9c305b50efcb21f02403e88a9878" prot="public" virt="non-virtual"><scope>Login::Login</scope><name>Login</name></member>
+      <member refid="class_login_1_1_login_1ab9a57c87d4e69a7e680e73d3f6493f93" prot="public" virt="non-virtual"><scope>Login::Login</scope><name>neteja</name></member>
+      <member refid="class_login_1_1_login_1ad88e0445f948f5a462da633af50d249a" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>p</name></member>
+      <member refid="class_login_1_1_login_1a731401744bd9989acba67d6823ed04de" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>pass</name></member>
+      <member refid="class_login_1_1_login_1a7c91c541e711e0c6960e979cbca9762c" prot="private" virt="non-virtual"><scope>Login::Login</scope><name>set_escoltadors</name></member>
+      <member refid="class_login_1_1_login_1a542c7f413001e2fc158aca1013837d34" prot="package" virt="non-virtual"><scope>Login::Login</scope><name>user</name></member>
+      <member refid="class_login_1_1_login_1a206a680beeee1f655925c36eeceb231e" prot="public" virt="non-virtual"><scope>Login::Login</scope><name>validar_camps</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

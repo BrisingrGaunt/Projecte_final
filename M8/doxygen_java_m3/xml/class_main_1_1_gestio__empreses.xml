@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_main_1_1_gestio__empreses" kind="class" language="Java" prot="public">
+    <compoundname>Main::Gestio_empreses</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_main_1_1_gestio__empreses_1a42da147e659ca5acb8218e0eb2517589" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Main.Gestio_empreses.main</definition>
+        <argsstring>(String[] args)</argsstring>
+        <name>main</name>
+        <param>
+          <type>String []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the command line arguments </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main/Gestio_empreses.java" line="20" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main/Gestio_empreses.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Clase principal del projecte <ref refid="class_main_1_1_gestio__empreses" kindref="compound">Gestio_empreses</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kevin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main/Gestio_empreses.java" line="15" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main/Gestio_empreses.java" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_main_1_1_gestio__empreses_1a42da147e659ca5acb8218e0eb2517589" prot="public" virt="non-virtual"><scope>Main::Gestio_empreses</scope><name>main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

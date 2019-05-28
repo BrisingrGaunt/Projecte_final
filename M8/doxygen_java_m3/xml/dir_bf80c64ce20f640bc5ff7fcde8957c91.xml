@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_bf80c64ce20f640bc5ff7fcde8957c91" kind="dir">
+    <compoundname>F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src</compoundname>
+    <innerdir refid="dir_6ed21e7335f6f006295e75923a6907c1">F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio</innerdir>
+    <innerdir refid="dir_692f0b9bdaea5ca47238cce1172dd513">F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/GestioEmpreses</innerdir>
+    <innerdir refid="dir_ae600e59df88a350783c9487c219d301">F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Login</innerdir>
+    <innerdir refid="dir_73a5af8bf1908a1ae4396f41794d7149">F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Main</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/"/>
+  </compounddef>
+</doxygen>

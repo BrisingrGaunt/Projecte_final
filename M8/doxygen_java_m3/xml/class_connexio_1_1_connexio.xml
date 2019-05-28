@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_connexio_1_1_connexio" kind="class" language="Java" prot="public">
+    <compoundname>Connexio::Connexio</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_connexio_1_1_connexio_1ae021c74ea52f4f9a5b9fd3b08b5228d9" prot="package" static="no" mutable="no">
+        <type>Connection</type>
+        <definition>Connection Connexio.Connexio.con</definition>
+        <argsstring></argsstring>
+        <name>con</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" line="17" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_connexio_1_1_connexio_1af54a589e94ff116f56c3a0d308c0b158" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Connexio.Connexio.Connexio</definition>
+        <argsstring>()</argsstring>
+        <name>Connexio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor de l&apos;objecte <ref refid="class_connexio_1_1_connexio" kindref="compound">Connexio</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" line="21" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" bodystart="21" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_connexio_1_1_connexio_1a32d5077179258391ba99699a87a4cff2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Connection</type>
+        <definition>Connection Connexio.Connexio.getConnexio</definition>
+        <argsstring>()</argsstring>
+        <name>getConnexio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Mètode que retorna un objecte amb la connexió establerta <simplesect kind="return"><para>l&apos;objecte de tipus Connection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" line="34" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" bodystart="34" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Clase que facilita la connexió a la Base de dades projecte_kevin. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Kevin Medina </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="29">
+        <label>Connexio.Connexio</label>
+        <link refid="class_connexio_1_1_connexio"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>con</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Connection</label>
+      </node>
+    </collaborationgraph>
+    <location file="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" line="16" column="1" bodyfile="F:/DAW2/M13 Projecte/Projecte_final/Projecte_final/Gestio_empreses/src/Connexio/Connexio.java" bodystart="16" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_connexio_1_1_connexio_1ae021c74ea52f4f9a5b9fd3b08b5228d9" prot="package" virt="non-virtual"><scope>Connexio::Connexio</scope><name>con</name></member>
+      <member refid="class_connexio_1_1_connexio_1af54a589e94ff116f56c3a0d308c0b158" prot="public" virt="non-virtual"><scope>Connexio::Connexio</scope><name>Connexio</name></member>
+      <member refid="class_connexio_1_1_connexio_1a32d5077179258391ba99699a87a4cff2" prot="public" virt="non-virtual"><scope>Connexio::Connexio</scope><name>getConnexio</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

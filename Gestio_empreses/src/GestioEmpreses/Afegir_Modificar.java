@@ -35,6 +35,7 @@ import javax.swing.border.EmptyBorder;
 /**
  *
  * @author Kevin
+ * @brief Clase Afegir_Modificar on s'implementen les funcions d'afegir o editar depenent de com ha siguit cridat en la clase Gestio
  */
 public class Afegir_Modificar {
     static JFrame fAccio = null;
@@ -48,11 +49,19 @@ public class Afegir_Modificar {
     static String [] valorsLabel={"Nom","Tipus via","Adreça","Número","Població","Correu electrònic","Usuari","Contrasenya"};
     static JTextField filtres[]=new JTextField[valorsLabel.length-1];
     
+    /**
+     * Constructor de la clase Afegir_Modificar 
+     * @param empresa si el valor és diferent a 0 entra en mode 'Editar' en cas contrari, el mètode es 'Afegir'
+     */
     public Afegir_Modificar(int empresa) {
         crear_interficie(empresa);
         set_escoltador();
     }
-
+    
+    /**
+     * Mètode que crea l'interficie gràfica de la clase Afegir_Modificar
+     * @param empresa si té valor 0 els camps seràn buits sinó, seran plens amb l'informació obtinguda a la BDD a través de l'id empresa pasat per paràmetre
+     */
     public void crear_interficie(int empresa) {
         if(fAccio==null){
             fAccio=new JFrame();
@@ -91,12 +100,10 @@ public class Afegir_Modificar {
         JLabel titol=new JLabel("BrisingrGaunt Productions, SL");
         titol.setFont(new Font(titol.getFont().getFontName(),Font.PLAIN,16));
         pTop.add(titol);
-        //label.setFont(new Font(label.getFont().getFontName(),Font.PLAIN,16));
         fAccio.add(pTop,BorderLayout.NORTH);
         pTop.setBorder(new EmptyBorder(20,100,20,100));
         pCenter.setBorder(new EmptyBorder(20,100,20,100));
         fAccio.add(pCenter,BorderLayout.CENTER);
-        
         pBottom.add(btnAccio);
         pBottom.setBorder(new EmptyBorder(20,100,20,100));
         fAccio.add(pBottom,BorderLayout.SOUTH);
@@ -107,7 +114,10 @@ public class Afegir_Modificar {
         fAccio.setVisible(true);
         fAccio.setResizable(false);
     }
-
+    
+    /**
+     * Col·loca un escoltador a l'únic botó de l'aplicació
+     */
     private void set_escoltador() {
         btnAccio.addActionListener(new ActionListener(){
             @Override
@@ -152,13 +162,9 @@ public class Afegir_Modificar {
                         else{
                             Gestio.crear_missatge("Error al realitzar "+accio+".", 0);
                         }
-                        //f.dispose();
-                        //System.exit(0);
                        fAccio.setVisible(false);
                        Gestio.estatInicialTaulaEmpreses();
                        Gestio.fGestio.setVisible(true);
-                       //fAccio.dispose();
-                        //Gestio g=new Gestio();
                     } catch (SQLException ex) {
                         Logger.getLogger(Afegir_Modificar.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -167,6 +173,10 @@ public class Afegir_Modificar {
         });
     }
     
+    /**
+     * Mètode que comprova que el contingut dels JTextFields siguin els adequats
+     * @return true si el contingut dels JTextField ha pasat per les expressions regulars amb èxit o fals si no s'ha trobat cap coincidència
+     */
     private boolean comprovar_camps(){
         String expressions[]={"^\\w{5,}","^\\d","^[\\w\\.]{6,}@\\w{4,}\\.[a-z]{2,5}$","^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"};
         String errors[]={"Nom","Adreça","Número","Població","Correu electrònic","Usuari","La contrasenya ha d'incloure 1 majúscula, 1 minúscula, 1 número, 1 símbol, no pot tenir espais i llargària mínima de 8 caràcters"};
@@ -195,6 +205,10 @@ public class Afegir_Modificar {
         return correcte;
     }
     
+    /**
+     * Mètode que carrega l'informació d'una empresa en els JTextField en cas que s'entri per mètode 'Editar'
+     * @param empresa id de l'empresa a recuperar les dades
+     */
     public static void carregarDades(int empresa){
         try {
                 //editar empresa
@@ -231,6 +245,10 @@ public class Afegir_Modificar {
             }
     }
     
+    /**
+     * Canvia l'estat de l'instància de la clase Afegir_Modificar, és un mètode emprat en la clase Gestió
+     * @param empresa 
+     */
     public static void setEstat(int empresa){
         id_empresa=empresa;
         if(empresa==0){
