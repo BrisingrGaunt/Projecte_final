@@ -208,7 +208,7 @@ public final class Gestio {
             //Ens quedem amb l'empresa seleccionada
             String empresa=(String)taulaEmpreses.getModel().getValueAt(fila_seleccionada, 0);            
             Connection con=new Connexio().getConnexio();
-            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.cata=c.id and c.empresa like ? and pa.valoracio is not null group by c.empresa, p.nom, c.data";
+            String s2="select c.empresa, p.nom, c.data, avg(pa.valoracio) from producte p, cata c, participacio pa where p.codi=c.producte and pa.cata=c.id and c.empresa like ? group by c.empresa, p.nom, c.data";
             PreparedStatement st = con.prepareStatement(s2);
             st.setString(1,empresa);
             ResultSet rs = st.executeQuery();

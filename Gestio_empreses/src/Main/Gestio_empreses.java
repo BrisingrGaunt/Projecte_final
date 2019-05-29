@@ -20,5 +20,4 @@ public class Gestio_empreses {
     public static void main(String[] args) {
         Login l=new Login();
     }
-    
 }

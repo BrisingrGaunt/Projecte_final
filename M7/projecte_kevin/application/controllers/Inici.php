@@ -14,11 +14,20 @@ class Inici extends CI_Controller {
 		$resultat=json_decode(curl_exec($curl),true);
 		curl_close($curl);
         $data['cates']=$resultat;
+        
         $this->load->view('index',$data);
 	}
     
     public function login(){
-        $this->load->view('inici');
+        if(isset($_GET['idioma'])){
+            $idioma=$_GET['idioma'];
+        }
+        else{
+             $idioma='english';
+        }
+        $this->lang->load('projecte',$idioma);
+        $data['lang']=$this->lang;
+        $this->load->view('inici',$data);
     }
     
         
@@ -33,6 +42,19 @@ class Inici extends CI_Controller {
             $this->load->view('mapa',$data);
         }
     }
+    
+    public function idioma($idioma="catalan"){
+        $idioma=$this->input->get('id');
+        $this->lang->load('projecte',$idioma);
+        
+    }
+    
+    /*public function idioma($idioma="english"){
+		$idioma=$this->input->get('id');
+        $this->lang->load('form_val', $idioma);
+        $data['lang']=$this->lang;
+        $this->load->view('form_val',$data);
+    }*/
     
     function getCoordinates($address){
         $address = str_replace(" ", "+", $address); // replace all the white space with "+" sign to match with google search pattern
