@@ -3,16 +3,6 @@
 class Participacio extends CI_Model {
     
     public function getValoracionsUna($filtre){
-        //Consulta desitjada
-        /*select p.nom, c.data, c.estat, e.tipusVia, e.direccio, e.numDireccio, e.comarca, pa.valoracio, cl.username 
-        from participacio pa, cata c, client cl, producte p, empresa e 
-        where p.codi=c.producte and pa.cata=c.id and e.id=c.empresa and cl.email=pa.client and pa.cata=3*/
-        /*$this->db->select('p.nom,e.tipusVia, e.direccio, e.numDireccio, e.comarca,pa.valoracio,cl.username, c.data, c.estat');
-        $this->db->from('participacio pa');
-        $this->db->join('cata c', 'c.id = pa.cata');
-        $this->db->join('client cl','cl.email=pa.client');
-        $this->db->join('producte p','p.codi=c.producte');
-        $this->db->join('empresa e','e.id=c.empresa');*/
         $this->db->select('p.nom, pa.valoracio, cl.username, c.estat,c.data, pa.cata, pa.client, e.nom as empresa');
         $this->db->from('participacio pa');
         $this->db->join('cata c', 'c.id = pa.cata');

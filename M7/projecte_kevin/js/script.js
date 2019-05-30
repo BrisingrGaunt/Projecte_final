@@ -4,34 +4,33 @@ window.addEventListener('load', function () {
         inputs[i].addEventListener('keyup', comprovarMajuscula);
         inputs[i].addEventListener('keyup', comprovarSeguretat);
     }
-    
-    let opcions_acces=document.getElementsByClassName("opcions");
-    //console.info(tabs);
-    for(let i=0;i<opcions_acces.length;i++){
+
+    //pestanyes del formulari
+    let opcions_acces = document.getElementsByClassName("opcions");
+    for (let i = 0; i < opcions_acces.length; i++) {
         opcions_acces[i].addEventListener('click', canviarAmbit);
     }
-    
+
+    //es mostra per defecte sempre el formulari de login de l'usuari
     document.getElementById('home-tab').addEventListener('click', function () {
         login_usuari.style.display = 'block';
     });
-    
-    let botons=document.getElementsByClassName('btnRegister');
-    
-    for(let i=0;i<botons.length;i++){
+
+    let botons = document.getElementsByClassName('btnRegister');
+
+    for (let i = 0; i < botons.length; i++) {
         botons[i].addEventListener('click', validarCamps);
     }
-    
+
     document.getElementById('profile-tab').addEventListener('click', function () {
         login_empresa.style.display = 'block';
     });
-    
+
     checks = document.getElementsByName("mostrarPass");
     for (let i = 0; i < checks.length; i++) {
         checks[i].addEventListener('click', mostrarContrasenya);
     }
-    //mostrarPass.addEventListener('click', mostrarContrasenya);
-    // contrasenya.addEventListener('keyup', comprovarSeguretat);
-    //cred.addEventListener('click',desarCredencials);
+    //Petició AJAX amb la que obtenim un llistat de municipis de Catalunya
     let ruta = 'https://api.idescat.cat/emex/v1/nodes.json?tipus=mun';
     let peticio = $.post(ruta);
     peticio.done(exit);
@@ -46,82 +45,69 @@ window.addEventListener('load', function () {
     }
 });
 
-function canviarAmbit(){
-    let opcions=document.getElementsByClassName("opcio_inici");
-    let tipusAcces=this.innerHTML.toLowerCase();
-    /*if(this.innerHTML=="Empresa"){
-        tipusAcces="empresa";
-    }
-    else{
-        tipusAcces="usuari";
-    }*/
-    opcions[0].href="#login_"+tipusAcces;
-    opcions[1].href="#registre_"+tipusAcces;
-    console.info(opcions[0].href);
-    console.info(this);
-    console.info(this.innerHTML);
+function canviarAmbit() {
+    let opcions = document.getElementsByClassName("opcio_inici");
+    let tipusAcces = this.innerHTML.toLowerCase();
+    opcions[0].href = "#login_" + tipusAcces;
+    opcions[1].href = "#registre_" + tipusAcces;
 }
 
-function validarCamps(){
+function validarCamps() {
     //Ens quedem amb el formulari al qual pertany el botó que ha sigut clicat
     let form;
-    if(this.name=="registre_emp"){
-        form=this.parentElement.parentElement.parentElement.parentElement.parentElement;
-    }
-    else{
-        form=this.parentElement.parentElement.parentElement;         
+    if (this.name == "registre_emp") {
+        form = this.parentElement.parentElement.parentElement.parentElement.parentElement;
+    } else {
+        form = this.parentElement.parentElement.parentElement;
     }
     //El nom del formulari ens indicarà el tipus de validació que aplicarem:
     // Valors:
     // 0 - Login (només es comprovarà que els inputs no siguin buits)
     // 1 - Registre d'usuari (es comprova llargades, seguretat de password, i email correcte)
     // 2 - Registre d'empresa (es comprova llargades, seguretat de password, email correcte i la resta de dades del formulari)
-    
-    let validacions=[[/\w{6,}/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/],[/\w{6,}/,/^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/,/\w{6,}/,/^((?!Tipus via).)*$/,/\w{6,}/,/^\d{1,}$/,/^((?!Població).)*$/]];
-    
-    let errors_text=['Camp usuari',"Camp email","Camp nom", "Camp tipusVia", "Camp direccio","Camp num", "Camp comarca",'Contrasenya: mínim 8 caràcters, 1 núm, 1 majus, 1 minus i 1 símbol'];
 
-    let elements_form=form.elements;
-    let valid=true;
-    let index=0;
-    let errors=[];
-    for(let i=0;i<elements_form.length;i++){
-        if(elements_form[i].type!='button' && elements_form[i].type!='checkbox' && elements_form[i].type!="hidden"){
-            if(elements_form[i].type=="password"){
+    let validacions = [[/\w{6,}/], [/\w{6,}/, /^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/], [/\w{6,}/, /^[\w\.]{6,}@\w{4,}\.[a-z]{2,5}$/, /\w{6,}/, /^((?!Tipus via).)*$/, /\w{6,}/, /^\d{1,}$/, /^((?!Població).)*$/]];
+
+    let errors_text = ['Camp usuari', "Camp email", "Camp nom", "Camp tipusVia", "Camp direccio", "Camp num", "Camp comarca", 'Contrasenya: mínim 8 caràcters, 1 núm, 1 majus, 1 minus i 1 símbol'];
+
+    let elements_form = form.elements;
+    let valid = true;
+    let index = 0;
+    let errors = [];
+    for (let i = 0; i < elements_form.length; i++) {
+        if (elements_form[i].type != 'button' && elements_form[i].type != 'checkbox' && elements_form[i].type != "hidden") {
+            if (elements_form[i].type == "password") {
                 //si existeix la barra de progrés
-                let pass_correcte=true;
-                if(typeof form.getElementsByTagName('progress')[0]!="undefined"){
-                    form.getElementsByTagName('progress')[0].value==5?pass_correcte=pass_correcte:pass_correcte=false;
-                }
-                else{
+                let pass_correcte = true;
+                if (typeof form.getElementsByTagName('progress')[0] != "undefined") {
+                    form.getElementsByTagName('progress')[0].value == 5 ? pass_correcte = pass_correcte : pass_correcte = false;
+                } else {
                     //si no existeix barra de progrés només es comprova que el camp no vingui buit ja que la contrasenya que
                     //s'entra ha de ser vàlida (ja que ha passat previament pel formulari de registre)
-                    elements_form[i].value.length>6?pass_correcte=pass_correcte:pass_correcte=false;
+                    elements_form[i].value.length > 6 ? pass_correcte = pass_correcte : pass_correcte = false;
                 }
-                if(pass_correcte==false){
-                    valid=false;
+                if (pass_correcte == false) {
+                    valid = false;
                     errors.push(7);
                 }
-            }
-            else{
-                if(validacions[form.name][index].test(elements_form[i].value)==false){
-                    valid=false;
+            } else {
+                if (validacions[form.name][index].test(elements_form[i].value) == false) {
+                    valid = false;
                     errors.push(index);
                 }
                 index++;
             }
         }
     }
-    if(valid){
+    if (valid) {
         form.submit();
-    }
-    else{
-        let cadena="Revisa els següents camps:<br>"
-        for(let i=0;i<errors.length;i++){
+    } else {
+        let cadena = "Revisa els següents camps:<br>"
+        for (let i = 0; i < errors.length; i++) {
             //es recorren tots els errors
-            cadena+="- "+errors_text[errors[i]]+"<br>";
+            cadena += "- " + errors_text[errors[i]] + "<br>";
         }
-        info.innerHTML=cadena;
+        info.innerHTML = cadena;
     }
 }
 
@@ -138,10 +124,8 @@ function obrirPestanya(evt) {
         barres[i].value = 0;
     }
     let id = evt.currentTarget.href.split("#")[1];
-   // console.info(evt.currentTarget);
-    console.info(id);
     let opcions = document.getElementsByClassName("content");
-//console.info(opcions);
+
     for (let i = 0; i < opcions.length; i++) {
         opcions[i].style.display = 'none';
     }

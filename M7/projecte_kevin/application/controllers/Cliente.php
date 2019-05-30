@@ -18,7 +18,6 @@ class Cliente extends CI_Controller {
         //Obtenim la propera cata per mostrar en la pàgina principal
         $data['propera_cata']=$this->client->getProperEvent(array('c.data >'=>date('Y-m-d H:i')));
         $data['info_client']=$info;
-        //exit;
 		$this->load->view('client',$data);
 	}
     

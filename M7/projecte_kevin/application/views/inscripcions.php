@@ -31,23 +31,37 @@
                         <h1>Totes les cates</h1>
                         <?php
                             $i=0;
+                    $qt=0;
                         echo "<div class='row'>";
-                            foreach($cates as $c){
+                            for($j=0;$j<sizeof($cates);$j++){
+                                $trobat=false;
                                 if($i==2){
                                     echo "</div><br><div class='row'>";
                                     $i=0;
                                 }
+                                if(isset($filtre)){
+                                    while($j!=sizeof($cates) && gettype(array_search($cates[$j]['id'], explode(":",$participacions['cates'])))!="integer"){
+                                        $j++;
+                                    }
+                                    if($j!=sizeof($cates)){
+                                        //hi ha alguna coincidència
+                                        $trobat=true;
+                                    }
+                                }
+                                if(isset($filtre) && $trobat==true || !isset($filtre)){
+                                    $qt++;
+                                    //només es mostran les cates en cas que sigui el general o que sigui per usuari i hi hagen coincidències
                         ?>
                         <div class="col-md-1 col-1"></div>
                         <div class="cata col-md-4 col-10 nota">
                             <i class="pin"></i>
-                            <h2><?php echo $c['nom'];?></h2>
-                            <p class="descripcio">"<?php echo $c['descripcio'];?>"</p>
-                            <p><b>On?</b> <?php echo $c['tipusVia']." ".$c['direccio'].", ".$c['numDireccio']." (".$c['comarca'].")";?></p>
-                            <p><b>Quan?</b> <?php $newDate = date("d/m/Y H:i", strtotime($c['data'])); echo $newDate;?></p>
+                            <h2><?php echo $cates[$j]['nom'];?></h2>
+                            <p class="descripcio">"<?php echo $cates[$j]['descripcio'];?>"</p>
+                            <p><b>On?</b> <?php echo $cates[$j]['tipusVia']." ".$cates[$j]['direccio'].", ".$cates[$j]['numDireccio']." (".$cates[$j]['comarca'].")";?></p>
+                            <p><b>Quan?</b> <?php $newDate = date("d/m/Y H:i", strtotime($cates[$j]['data'])); echo $newDate;?></p>
 
                             <p><?php 
-                                if($c['estat']==0){
+                                if($cates[$j]['estat']==0){
                                     $estat="Oberta";
                                 }
                                 else{
@@ -58,21 +72,21 @@
 
                                 <?php
                                     echo "<a href='";
-                                   if($c['estat']==1 && gettype(array_search($c['id'],explode(":",$participacions['cates'])))=="integer"){
+                                   if($cates[$j]['estat']==1 && gettype(array_search($cates[$j]['id'],explode(":",$participacions['cates'])))=="integer"){
                                        //si la cata està finalitzada i l'usuari ha participat
-                                        echo site_url('Cliente/valora/?id='.$c['id'])."'>Valorar cata</a>";
+                                        echo site_url('Cliente/valora/?id='.$cates[$j]['id'])."'>Valorar cata</a>";
                                     }
-                                    else if($c['estat']==1 && array_search($c['id'],explode(":",$participacions['cates']))==false){
+                                    else if($cates[$j]['estat']==1 && array_search($cates[$j]['id'],explode(":",$participacions['cates']))==false){
                                         //si la cata està tancada i l'usuari NO ha participat
                                          echo site_url('Cliente')."'></a>";
                                     }
-                                    else if($c['estat']==0 && gettype(array_search($c['id'],explode(":",$participacions['cates'])))=="integer"){
+                                    else if($cates[$j]['estat']==0 && gettype(array_search($cates[$j]['id'],explode(":",$participacions['cates'])))=="integer"){
                                        //últim cas contemplat en el que l'usuari està registrat a una cata oberta i es pot desapuntar
-                                        echo site_url('Cliente/gestio_inscripcio/?id='.$c['id'].'&accio=desapuntar')."'>Desapuntar-se</a>";
+                                        echo site_url('Cliente/gestio_inscripcio/?id='.$cates[$j]['id'].'&accio=desapuntar')."'>Desapuntar-se</a>";
                                     }
                                     else{
                                          //cata oberta usari NO apuntat 
-                                        echo site_url('Cliente/gestio_inscripcio/?id='.$c['id'].'&accio=apuntar')."'>Apuntar-se</a>";
+                                        echo site_url('Cliente/gestio_inscripcio/?id='.$cates[$j]['id'].'&accio=apuntar')."'>Apuntar-se</a>";
                                     }
 
                                     ?>
@@ -82,9 +96,12 @@
                         <div class="col-md-1 col-1"></div>
 
                         <?php 
-                             $i++;   
+                                 $i++;   
+                                }
                             }
-        
+                            if($qt==0){
+                                echo "<h2>Encara no estàs apuntat a cap cata.</h2>";
+                            }
                             echo " </div>";
                         ?>
 

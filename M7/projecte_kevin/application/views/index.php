@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv=”Content-Language” content=”es”/>
     <meta name="viewport" content="width=device-width">
     <title>BrisingrGaunt Productions</title>
     <link rel="shortcut icon" href="<?php base_url();?>/pics/B.svg" />
@@ -16,7 +17,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="<?php echo site_url('Inici');?>"><img src="<?php echo base_url();?>/pics/B.svg" class="logo"></a>
+            <a class="navbar-brand" href="<?php echo site_url('Inici');?>"><img src="<?php echo base_url();?>/pics/B.svg" class="logo" alt="logo empresa"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,9 +26,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">BrisingrGaunt Productions SL <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item d-none">
-                        <a class="nav-link" href="#">&nbsp;</a>
-                    </li>
+          
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Accés empresa
@@ -49,10 +48,10 @@
                 </ul>
             </div>
             <div class="animacio d-none d-sm-block">
-                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella">
-                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella">
-                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella">
-                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella">
+                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella" alt="botella">
+                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella" alt="botella">
+                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella" alt="botella">
+                <img src="<?php echo base_url()."/pics/botella.png";?>" class="botella" alt="botella">
             </div>
         </nav>
     </header>
@@ -104,7 +103,6 @@
                 <div class="d-md-none col-1 d-block"></div>
                     <div class="col-md-1"></div>
                     <?php
-                       // var_dump($c);echo "<br>";
                         $i++;
                         if($i==2){
                                 $i=0;

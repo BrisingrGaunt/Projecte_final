@@ -22,23 +22,23 @@
 
 <body>
     <header>
-          <?php echo $barra_empresa;?>  
+        <?php echo $barra_empresa;?>
     </header>
     <main class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-12 order-2 order-md-1">
-                    <?php echo $esquerra;?>
-                </div>
-                <div class="col-md-9 register-right principal order-md-2 order-1">
-                    <div id="contingut">
-                        <div class="row">
-                            <div class="col-md-3 d-sm-block d-none"></div>
-                            <div class="col-md-6 col-12">
+        <div class="row">
+            <div class="col-md-3 col-12 order-2 order-md-1">
+                <?php echo $esquerra;?>
+            </div>
+            <div class="col-md-9 register-right principal order-md-2 order-1">
+                <div id="contingut">
+                    <div class="row">
+                        <div class="col-md-3 d-sm-block d-none"></div>
+                        <div class="col-md-6 col-12">
                             <h1>Els teus events...</h1>
-                            </div>
-                            <div class="col-md-3 d-sm-block d-none"></div>
                         </div>
-                        <?php
+                        <div class="col-md-3 d-sm-block d-none"></div>
+                    </div>
+                    <?php
                             if(isset($cates)){
                                $i=0;
                                 echo "<div class='row'>";
@@ -47,15 +47,15 @@
                                             echo "</div><div class='row'>";
                                         }
                         ?>
-                        <div class="col-md-1 col-1"></div>
-                        <div class="cata col-md-4 col-10 nota">
-                            <i class="pin"></i>
-                            <h2><?php echo $c['nom'];?></h2>
-                            <p class="descripcio">"<?php echo $c['descripcio'];?>"</p>
-                            <p><b>On?</b> <?php echo $info_empresa['tipusVia']." ".$info_empresa['direccio'].", ".$info_empresa['numDireccio']." (".$info_empresa['comarca'].")";?></p>
-                            <p><b>Quan?</b> <?php $newDate = date("d/m/Y H:i", strtotime($c['data'])); echo $newDate;?></p>
+                    <div class="col-md-1 col-1"></div>
+                    <div class="cata col-md-4 col-10 nota">
+                        <i class="pin"></i>
+                        <h2><?php echo $c['nom'];?></h2>
+                        <p class="descripcio">"<?php echo $c['descripcio'];?>"</p>
+                        <p><b>On?</b> <?php echo $info_empresa['tipusVia']." ".$info_empresa['direccio'].", ".$info_empresa['numDireccio']." (".$info_empresa['comarca'].")";?></p>
+                        <p><b>Quan?</b> <?php $newDate = date("d/m/Y H:i", strtotime($c['data'])); echo $newDate;?></p>
 
-                            <p><?php 
+                        <p><?php 
                                 if($c['estat']==0){
                                     $estat="Oberta";
                                 }
@@ -63,9 +63,9 @@
                                     $estat="Tancada";
                                 }
                                 echo "<b>Estat: </b>".$estat;?></p>
-                            <p class="peu">
-                                
-                                <?php
+                        <p class="peu">
+
+                            <?php
                                     echo "<a href='";
                                    if($c['estat']==0){
                                         echo site_url('Empresa/modificar_cata/?id='.$c['id'])."'>Modificar cata</a>";
@@ -75,26 +75,26 @@
                                     }     
 
                                     ?>
-                            
-                            </p>
-                                
-                        </div>
-                        <div class="col-md-1 col-1"></div>
-                        <?php
+
+                        </p>
+
+                    </div>
+                    <div class="col-md-1 col-1"></div>
+                    <?php
                                     $i++;
                                     }
 
                                 echo "</div>";
                             }
                             else{
-                                echo "No tens cap event programat, planifica algun!!! >-<";
+                                echo "<h2>Benvolgut ".$info_empresa['nom'].", encara no tens cap event programat, planifica algun";
                             }
                         
                         ?>
-                    </div>
-                    
                 </div>
+
             </div>
+        </div>
 
     </main>
     <footer class="page-footer font-small">

@@ -1,6 +1,7 @@
 @mida: 45px;
 
-.logo {//imatge del logo
+.logo {
+    //imatge del logo
     width: @mida;
     height: @mida;
 }
@@ -9,7 +10,6 @@ body {
     position: relative;
     overflow-x: hidden;
     min-height: 100vh;
-    //height: 100%;
 }
 
 h1 {
@@ -17,18 +17,18 @@ h1 {
     margin-bottom: 25px;
 }
 
-.visualitzacio{
+.visualitzacio {
     //h2 de la vista visualitzar_valoracions
     font-size: 18px;
-    text-align:left;
-    span{
+    text-align: left;
+
+    span {
         font-weight: normal;
         font-size: 16px;
-        //color: green;
     }
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
@@ -40,7 +40,6 @@ footer {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    //left: 0px;
     background-color: lightgrey;
     width: 100%;
     height: 10vh;
@@ -56,8 +55,7 @@ footer {
         text-align: center;
     }
 
-    //border: 1px solid black;
-    background-color: #f5f549;
+    background-color: #ebeb7f;
     box-shadow: -6px 26px 13px 9px rgba(0, 0, 0, 0.47);
 
     .amagat {
@@ -71,7 +69,7 @@ footer {
     &:not(.desactivat):hover {
         transform: scale(1.2) rotate(5deg);
         background-color: aliceblue;
-        transition: transform 0.5s ;
+        transition: transform 0.5s;
         z-index: 15;
 
         .amagat {
@@ -134,30 +132,25 @@ footer {
     }
 }
 
-.desactivat{
-    //pointer-events: none;
+.desactivat {
     margin-bottom: 60px;
 }
 
-.estrelles{
+.estrelles {
     text-align: center;
-    //border: 1px solid red;
     font-size: 3em;
 }
 
-.formulari_element{
-    //border: 1px solid blue;
+.formulari_element {
     width: 50%;
     margin: auto;
-    
-    input{
+
+    input {
         width: 150px;
-        //margin-left: 50%;
         margin-bottom: 35px;
-        //transform: translateX(-50%);
     }
-    
-    textarea{
+
+    textarea {
         width: inherit;
     }
 }
@@ -176,205 +169,130 @@ td {
     padding: 10px;
 }
 
-.chooser{
-     margin-top: 3%;
+.chooser {
+    margin-top: 3%;
     border: none;
     background: #0062cc;
     border-radius: 1.5rem;
     width: 28%;
     float: right;
-    a{
-        //color: red;
-    }
 }
 
 // ANIMACIONS
-@temps_total:1s;
+@temps_total: 1s;
 
-.botella{
+.botella {
     width: 25px;
     margin-left: 10px;
     transform-origin: bottom;
     animation-name: caiguda;
     animation-fill-mode: forwards;
     animation-duration: 2s;
-    
-    &:nth-child(3){
+
+    &:nth-child(3) {
         animation-delay: 0.5s;
     }
-    
-    &:nth-child(2){
+
+    &:nth-child(2) {
         animation-delay: 1s;
     }
-    
-    &:nth-child(1){
+
+    &:nth-child(1) {
         animation-delay: 1.5s;
     }
-    
+
 }
 
-@keyframes caiguda{
-    from{
+@keyframes caiguda {
+    from {
         transform: rotate(0deg);
     }
-    to{
+
+    to {
         transform: rotate(-90deg);
     }
 }
 
-.pestanya{
-   // border: 1px solid red;
+.pestanya {
     height: 10vh;
     position: absolute;
-    right:-550px;
-    width:100%;
+    right: -550px;
+    width: 100%;
 }
 
-body{
-        background-image: url(../pics/background.png);
-    }
+body {
+    background-image: url(../pics/background.png);
+}
 
-.col-md-9{
+.col-md-9 {
     margin-top: 15px;
     padding: 45px;
 }
 
-.banderes{
-    margin-left:75%;
-    width: 550px;    
+.banderes {
+    margin-left: 75%;
+    width: 550px;
 }
 
-.flag{
-        width: 30px;
-        margin-right: 15px;
-        height: 20px;
-    }
-   
+.flag {
+    width: 30px;
+    margin-right: 15px;
+    height: 20px;
+}
 
+@media (max-width:700px) {
 
-@media (max-width:700px){
-    
-    #afegirProd, #eliminarCata{
+    #afegirProd,
+    #eliminarCata {
         margin-bottom: 25px;
     }
-    
-    body{
+
+    body {
         //overflow-x: hidden;
     }
-    .flag{
+
+    .flag {
         margin-bottom: 15px;
     }
-    
-    .banderes{
+
+    .banderes {
         margin-left: 0px;
         width: 0px;
     }
-    
-    /*.col-12, #avisos, .register-form, .col-3{
-        padding-right: 0px;
-        margin-right: 0px;
+
+    .especialito {
+
+        //es el postit de la pàgina de registre
+        #avisos {
+            margin-top: 135px;
+        }
     }
-    
-    .bg-dark{
-        //width: 110%;
-    }
-    */
-    nav{
-        //width: 110%;
-        //margin-bottom: 30px;
-    }
-    
-    #myTab{
+
+    #myTab {
         margin-top: 30px;
         margin-left: 15px;
     }
-    .pestanya{
+
+    .pestanya {
         left: -30px;
         margin-top: 40px;
         margin-right: 45px;
     }
-    
-    .col-md-9{
-        background-color: rgba(255,255,255,0);
+
+    .col-md-9 {
+        background-color: rgba(255, 255, 255, 0);
         padding: 15px;
     }
-    
-    footer{
+
+    footer {
         height: inherit;
         margin-top: 15px;
         font-size: 14px;
         font-weight: bolder;
     }
-    
-    #avisos{
-        //hay que modificarlo
+
+    #avisos {
         margin-top: 35px;
         margin-bottom: 25px;
     }
 }
-
-// CSS QUE APLICA A L'ARXIU inici.php
-/*
-.register{
-    background-color: beige;
-    height:80vh;
-}
-
-.register-form{
-    padding: 5%;
-    padding-bottom: 0;
-    //margin-top: 1%;
-}
-
-.botoFormulari{
-    //float: right;
-    //margin-top: 10%;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 4%;
-    background: #0062cc;
-    color: #fff;
-    font-weight: 600;
-    width: 100%;
-    cursor: pointer;
-}
-
-.pestanya{
-    margin-top: 3%;
-    border: none;
-    background: #0062cc;
-    border-radius: 1.5rem;
-    width: 28%;
-    
-    .nav-link{
-         padding: 2%;
-        height: 34px;
-        font-weight: 600;
-        color: #fff;
-        border-top-right-radius: 1.5rem;
-        border-bottom-right-radius: 1.5rem;
-        &:hover{
-            //background-color: green;
-        }
-        &:active{
-            width: 120px;
-            color: #0062cc;
-            background-color: white;
-            //color: red;
-            border: 2px solid #0062cc;
-            border-top-left-radius: 1.5rem;
-            border-bottom-left-radius: 1.5rem;
-        }
-    }
-    //float: right;
-}
-
-@-webkit-keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-
-@keyframes mover {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}*/

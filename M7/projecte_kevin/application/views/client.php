@@ -22,16 +22,20 @@
 </head>
 
 <body>
-     <header>
-          <?php echo $barra_client;?>  
+    <header>
+        <?php echo $barra_client;?>
     </header>
     <main class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-12 order-2 order-md-1">
-                    <?php echo $esquerra;?>
-                </div>
-                <div class="col-md-9 register-right principal order-md-2 order-1">
-                    <div id='contingut' class="nota">
+        <div class="row">
+            <div class="col-md-3 col-12 order-2 order-md-1">
+                <?php echo $esquerra;?>
+            </div>
+            <?php //var_dump($propera_cata);exit?>
+            <div class="col-md-9  order-md-2 order-1">
+                <div class="row">
+                    <div class="col-md-2 col-1"></div>
+                    <div class="col-md-8 col-10 nota">
+                        <i class="pin"></i>
                         <h1>Benvolgut <?php echo $info_client['username']; ?></h1>
                         <h2>Estàs inscrit a <?php echo $qt_participacions; ?> events.</h2>
                         <h2>Pròxim event: </h2>
@@ -41,19 +45,22 @@
                                     echo $propera_cata['tipusVia']." ".$propera_cata['direccio'].", ".$propera_cata['numDireccio']." (".$propera_cata['comarca'].")";
                            ?></h2>
                         <h2>Qui ho organitza? <?php echo $propera_cata['empresa'];?></h2>
+
                     </div>
+                    <div class="col-md-2 col-1"></div>
                 </div>
             </div>
+        </div>
     </main>
     <!-- Footer -->
-                    <footer class="page-footer font-small">
-                        <!-- Copyright -->
-                        <div class="footer-copyright text-center">© 2019 Copyright --
-                            BrisingrGaunt Productions
-                        </div>
-                        <!-- Copyright -->
-                    </footer>
-                    <!-- Footer -->
+    <footer class="page-footer font-small">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center">© 2019 Copyright --
+            BrisingrGaunt Productions
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
 </body>
 

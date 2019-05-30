@@ -48,19 +48,11 @@ class Inici extends CI_Controller {
         
     }
     
-    /*public function idioma($idioma="english"){
-		$idioma=$this->input->get('id');
-        $this->lang->load('form_val', $idioma);
-        $data['lang']=$this->lang;
-        $this->load->view('form_val',$data);
-    }*/
-    
     function getCoordinates($address){
-        $address = str_replace(" ", "+", $address); // replace all the white space with "+" sign to match with google search pattern
-        //echo $address;
+        $address = str_replace(" ", "+", $address);
         $url = "https://maps.google.com/maps/api/geocode/json?sensor=false&key=AIzaSyBhIshCfsCDpxZj2EmDQcyRUw3sczEiTJE&address=$address";
         $response = file_get_contents($url);
-        $json = json_decode($response,TRUE); //generate array object from the response from the web
+        $json = json_decode($response,TRUE); 
         return ($json['results'][0]['geometry']['location']['lat'].",".$json['results'][0]['geometry']['location']['lng']);
 }
     

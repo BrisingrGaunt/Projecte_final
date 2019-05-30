@@ -23,7 +23,7 @@ $esquerra.="</div><div class='bottle2'>".$ampolla."</div>
 $esquerra.="</div><div class='col-md-1 col-2'></div></div>";
 if(isset($info_empresa)){
 $barra_empresa="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-                        <a class='navbar-brand' href='".site_url('Empresa')."'><img src='".base_url()."/pics/Bwhite.svg' class='logo'></a>
+                        <a class='navbar-brand' href='".site_url('Empresa')."'><img src='".base_url()."/pics/Bwhite.svg' class='logo' alt='logo'></a>
                         <a class='navbar-brand' href='#'></a>
                         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation'>
                             <span class='navbar-toggler-icon'></span>
@@ -50,7 +50,7 @@ $barra_empresa="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
 
 if(isset($info_client)){
     $barra_client="<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-                        <a class='navbar-brand' href='".site_url('Cliente')."'><img src='".base_url()."/pics/Bwhite.svg' class='logo'></a>
+                        <a class='navbar-brand' href='".site_url('Cliente')."'><img src='".base_url()."/pics/Bwhite.svg' class='logo' alt='logo'></a>
                         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation'>
                             <span class='navbar-toggler-icon'></span>
                         </button><div class='collapse navbar-collapse' id='navbarText'>

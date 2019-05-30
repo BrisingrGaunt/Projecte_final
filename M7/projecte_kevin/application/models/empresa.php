@@ -48,20 +48,11 @@ class Empresa extends CI_Model {
     
     public function login($post){
         $taula=$this->preparar($post);
-        //var_dump($taula);
-        $query=$this->db->get_where('empresa',array('password'=>$taula['password']));
-        $this->db->or_where('username' ,$taula['username']);
-        $this->db->or_where('email', $taula['username']);
+        $query=$this->db->query("select * from empresa where password like '".$taula['password']."' and (email like '".$taula['username']."' or username like '".$taula['username']."')");
         if($query->num_rows()==0){
             return 0;
         }
         return $query->result_array()[0];
-       /* var_dump($query->num_rows());
-        exit;
-		/*if(count($query->result_array())==0){
-            return null;
-        }
-		return $query->result_array()[0];*/
     }	
 }
 

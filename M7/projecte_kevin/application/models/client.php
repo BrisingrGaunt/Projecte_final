@@ -17,13 +17,7 @@
     
     public function login($post) {
         $taula=$this->preparar($post);
-        //var_dump($taula);
         $query=$this->db->query("select * from client where password like '".$taula['password']."' and (email like '".$taula['username']."' or username like '".$taula['username']."')");
-       /* $query = $this->db->query("SELECT * FROM users;");
-
-        $query=$this->db->get_where('client',array('password'=>$taula['password']));
-        $this->db->or_where('username' ,$taula['username']);
-        $this->db->or_where('email', $taula['username']);*/
         if($query->num_rows()==0){
             return 0;
         }
