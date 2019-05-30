@@ -8,41 +8,33 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Programar cata</title>
+    <title>Visualitzar cata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="<?php echo base_url();?>/js/script_prod.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/barra_nav.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/generic.css">
 </head>
-
 <body>
-    <div id="container">
-        <div class="container register" style="max-width:100%">
-            <div class="row">
-                <?php echo $esquerra;?>
-                <div class="col-md-9 register-right principal">
-                    <?php echo $barra_empresa;?>
-                    <div id="contingut" class="participacio">
-                        <br><br>
+    <header>
+          <?php echo $barra_empresa;?>  
+    </header>
+    <main class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
+        </div>
+        <div class="col-md-9 principal order-md-2 order-1">
                         <div class="row">
                             <?php
                                     if(isset($info_cata_individual) && sizeof($info_cata_individual)>0){
                                 ?>
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8">
-                                
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-8 info_cata">
+                            <div class="col-md-2 d-none d-sm-block"></div>
+                            <div class="col-md-8 col-12">
                                 <?php 
                                     $cata=$info_cata_individual[0]['cata'];
                                     echo "<div class='valoracio'><h1>Valoració de la cata # ".$cata."</h1>";
@@ -54,10 +46,10 @@
                                         }
                                         if($aux==1){
                                         ?>
-                                <h2>Producte: <?php echo $i['nom'];?></h2>
-                                <h2>Data: <?php $newDate = date("d/m/Y H:i", strtotime($i['data'])); echo $newDate;?></h2>
-                                <h2>Adreça: <?php echo $info_empresa['tipusVia']." ".$info_empresa['direccio'].", ".$info_empresa['numDireccio']." (".$info_empresa['comarca'].")";?></h2>
-                                <h2>Estat: <?php $cadena=""; $i['estat']==0?$cadena="Oberta":$cadena="Finalitzada"; echo $cadena;?></h2>
+                                <h2 class="visualitzacio">Producte: <span><?php echo $i['nom'];?></span></h2>
+                                <h2 class="visualitzacio">Data: <span><?php $newDate = date("d/m/Y H:i", strtotime($i['data'])); echo $newDate;?></span></h2>
+                                <h2 class="visualitzacio">Adreça: <span><?php echo $info_empresa['tipusVia']." ".$info_empresa['direccio'].", ".$info_empresa['numDireccio']." (".$info_empresa['comarca'].")";?></span></h2>
+                                <h2 class="visualitzacio">Estat: <span><?php $cadena=""; $i['estat']==0?$cadena="Oberta":$cadena="Finalitzada"; echo $cadena;?></span></h2>
                                 <h2>Participants</h2>
                                 <table class="valoracions" colspan="3">
                                     <th>&nbsp;&nbsp;</th>
@@ -93,9 +85,13 @@
                                         echo "<h1>No tens events disponibles o no hi ha cap usuari interesat</h1>";
                                     } ?>
                             
-                            <div class="col-md-2"></div>
+                            <div class="col-md-2 d-none d-sm-block"></div>
                         </div>
-                        <!-- Footer -->
+                       
+                    </div>
+                </div>
+    </main>
+     <!-- Footer -->
                         <footer class="page-footer font-small">
                             <!-- Copyright -->
                             <div class="footer-copyright text-center">© 2019 Copyright --
@@ -103,12 +99,7 @@
                             </div>
                             <!-- Copyright -->
                         </footer>
-                        <!-- Footer -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 </body>
 

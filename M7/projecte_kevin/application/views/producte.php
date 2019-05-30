@@ -9,6 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title>Empresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -17,30 +18,29 @@
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/barra_nav.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/generic.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
+    
 </head>
-
 <body>
-    <div id="container">
-        <div class="container register" style="max-width:100%">
-            <div class="row">
-                <?php echo $esquerra;?>
-                <div class="col-md-9 register-right principal">
-                    <?php echo $barra_empresa;?>
-                    <div id="contingut">
-                        <br><br>
+    <header>
+          <?php echo $barra_empresa;?>  
+    </header>
+    <main class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
+        </div>
+        <div class="col-md-9 order-md-2 order-1">
+                        <div class="row">
+                            <div class="col-md-2 d-none d-sm-block"></div>
+                            <div class="col-md-8 col-12">
+                                <h1>Amplia la teva selecció de productes...</h1>
+                            </div>
+                            <div class="col-md-2 d-none d-sm-block"></div>
+                        </div>
                         <div class="row">
                             <div class="col-md-2"></div>
                             <div class="col-md-8">
-                                <h1>Amplia la teva selecció de productes...</h1>
-                            </div>
-                            <div class="col-md-2"></div>
-                        </div>
-                        <br><br>
-                        <div class="row producte">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
                                 <form method="post" action="<?php echo site_url('Empresa/pujar_producte');?>">
                                     <input type="hidden" name="empresa" value="<?php echo $info_empresa['id']?>" />
                                     <div class="form-group">
@@ -51,15 +51,23 @@
                                         <label for="descripcio_producte">Descripció *</label>
                                         <textarea class="form-control" name="descripcio" id="descripcio_producte" rows="3" placeholder="Descripció del producte"></textarea>
                                     </div>
-                                    <input type="button" id="afegirProd" class="btnRegister" value="Afegir producte" style="margin-left:5px;width:150px;" />
-                                    <input type="submit" id="carregaMassiva" name="xml" class="btnRegister" value="Realitzar carrega XML" />
+                                    <div class="row">
+                                        <div class="col-md-1 d-sm-block d-none"></div>
+                                        <div class="col-md-5 col-12"><input type="button" id="afegirProd" class="btnRegister" value="Afegir producte" /></div>
+                                        <div class="col-md-5 col-12">
+                                        <input type="submit" id="carregaMassiva" name="xml" class="btnRegister" value="Realitzar carrega XML" /></div>
+                                        <div class="col-md-1 d-sm-block d-none"></div>
+                                    </div>
+                                    
+                                    
                                 </form>
                                 
                             </div>
-                            <div class="col-md-3"></div>
+                            <div class="col-md-2"></div>
                         </div>
                     </div>
-                    <!-- Footer -->
+                </div>
+    </main>             <!-- Footer -->
                     <footer class="page-footer font-small">
                         <!-- Copyright -->
                         <div class="footer-copyright text-center">© 2019 Copyright --
@@ -68,10 +76,6 @@
                         <!-- Copyright -->
                     </footer>
                     <!-- Footer -->
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

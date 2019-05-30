@@ -24,7 +24,7 @@ class Participacio extends CI_Model {
         if($query->num_rows()==0){
             return 0;
         }
-        return $query->result_array()[0];
+        return $query->result_array();
     }
     
     public function getAllEmpresa($empresa){
@@ -69,6 +69,7 @@ class Participacio extends CI_Model {
         $this->db->select('pa.cata, pa.valoracio');
         $this->db->from('participacio pa');
         $this->db->where($user);
+        $this->db->order_by("pa.cata","asc");
         $query=$this->db->get();
         $cates="";
         $valoracions="";
@@ -78,7 +79,6 @@ class Participacio extends CI_Model {
         }
         $resultat['cates']=$cates;
         $resultat['valoracions']=$valoracions;
-        //exit;
         return $resultat;
     }
 

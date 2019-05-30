@@ -14,7 +14,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
 </head>
 
@@ -22,16 +22,12 @@
     <header>
         <?php echo $barra_client;?>
     </header>
-    <main>
-        <div class="container-fluid">
+    <main class="container-fluid">
             <div class="row">
-                <div class="col-md-1 col-12">
-                    <?php if(isset($info)){
-    echo $info;
-}?>
-                
+                 <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
                 </div>
-                <div class="col-md-11 col-12">
+                <div class="col-md-9 col-12 order-1 order-md-2">
                         <h1>Totes les cates</h1>
                         <?php
                             $i=0;
@@ -94,7 +90,6 @@
 
                     </div>
                 </div>
-            </div>
     </main>
 
     <!-- Footer -->

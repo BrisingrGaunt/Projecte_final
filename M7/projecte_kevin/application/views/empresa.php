@@ -9,47 +9,46 @@
 <head>
     <meta charset="utf-8">
     <title>Empresa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="<?php echo base_url();?>/js/script.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/barra_nav.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/generic.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
 </head>
 
 <body>
-    <div id="container">
-        <div class="container register" style="max-width:100%">
+    <header>
+          <?php echo $barra_empresa;?>  
+    </header>
+    <main class="container-fluid">
             <div class="row">
-                <?php echo $esquerra;?>
-                <div class="col-md-9 register-right principal">
-                    <?php echo $barra_empresa;?>
+                <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
+                </div>
+                <div class="col-md-9 register-right principal order-md-2 order-1">
                     <div id="contingut">
                         <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-6">
+                            <div class="col-md-3 d-sm-block d-none"></div>
+                            <div class="col-md-6 col-12">
                             <h1>Els teus events...</h1>
                             </div>
-                            <div class="col-md-3"></div>
+                            <div class="col-md-3 d-sm-block d-none"></div>
                         </div>
                         <?php
                             if(isset($cates)){
-                                
-                                $i=0;
+                               $i=0;
                                 echo "<div class='row'>";
                                 foreach($cates as $c){
-                                    
-                                    if($i<4){
                                         if($i==2){
                                             echo "</div><div class='row'>";
                                         }
                         ?>
-                        <div class="col-md-1"></div>
-                        <div class="cata col-md-4 avisos">
+                        <div class="col-md-1 col-1"></div>
+                        <div class="cata col-md-4 col-10 nota">
                             <i class="pin"></i>
                             <h2><?php echo $c['nom'];?></h2>
                             <p class="descripcio">"<?php echo $c['descripcio'];?>"</p>
@@ -80,11 +79,11 @@
                             </p>
                                 
                         </div>
-                        <div class="col-md-1"></div>
+                        <div class="col-md-1 col-1"></div>
                         <?php
-                                    }
                                     $i++;
-                                }
+                                    }
+
                                 echo "</div>";
                             }
                             else{
@@ -93,19 +92,16 @@
                         
                         ?>
                     </div>
-                    <!-- Footer -->
-                    <footer class="page-footer font-small">
-                        <!-- Copyright -->
-                        <div class="footer-copyright text-center">© 2019 Copyright --
-                            BrisingrGaunt Productions
-                        </div>
-                        <!-- Copyright -->
-                    </footer>
-                    <!-- Footer -->
+                    
                 </div>
             </div>
+
+    </main>
+    <footer class="page-footer font-small">
+        <div class="footer-copyright text-center">© 2019 Copyright --
+            BrisingrGaunt Productions
         </div>
-    </div>
+    </footer>
 </body>
 
 </html>

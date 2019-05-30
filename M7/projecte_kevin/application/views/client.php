@@ -9,6 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title>Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -17,44 +18,20 @@
     <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>/css/barra_nav.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
 </head>
 
 <body>
-    <div id="container">
-        <div class="container register" style="max-width:100%">
+     <header>
+          <?php echo $barra_client;?>  
+    </header>
+    <main class="container-fluid">
             <div class="row">
-                <div class="col-md-3 register-left">
-                    <div class="row ampolles">
-                        <div class="bottle1">
-                            <?php
-                            echo $ampolla;
-                            ?>
-                        </div>
-                        <div class="bottle2">
-                            <?php 
-                            echo $ampolla;
-                        ?>
-                        </div>
-                    </div>
-                    <div class="row" id="avisos">
-                        <i class="pin"></i>
-                        <p id='info'></p>
-                        <?php 
-                            if(isset($info)){
-                                echo $info;
-                            }
-                        ?>
-                    </div>
-                    <div class="row">
-                        <div class="missatge">
-                            <?php echo $welcome;?>
-                        </div>
-                    </div>
+                <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
                 </div>
-                <div class="col-md-9 register-right">
-                    <?php echo $barra_client; ?>
-                    <div id='contingut'>
+                <div class="col-md-9 register-right principal order-md-2 order-1">
+                    <div id='contingut' class="nota">
                         <h1>Benvolgut <?php echo $info_client['username']; ?></h1>
                         <h2>Estàs inscrit a <?php echo $qt_participacions; ?> events.</h2>
                         <h2>Pròxim event: </h2>
@@ -65,7 +42,10 @@
                            ?></h2>
                         <h2>Qui ho organitza? <?php echo $propera_cata['empresa'];?></h2>
                     </div>
-                    <!-- Footer -->
+                </div>
+            </div>
+    </main>
+    <!-- Footer -->
                     <footer class="page-footer font-small">
                         <!-- Copyright -->
                         <div class="footer-copyright text-center">© 2019 Copyright --
@@ -74,10 +54,7 @@
                         <!-- Copyright -->
                     </footer>
                     <!-- Footer -->
-                </div>
-            </div>
-        </div>
-    </div>
+
 </body>
 
 </html>

@@ -54,7 +54,6 @@
                             <label for="hidden_valoracio">Puntua la cata</label>
                             <p class="estrelles">
                                 <?php 
-                    //var_dump($info);
     for($i=1;$i<6;$i++){
         echo "<span name='".$i."' class='estrella'>★</span>";
     }  

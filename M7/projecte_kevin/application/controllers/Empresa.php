@@ -78,7 +78,6 @@ class Empresa extends CI_Controller {
             if(isset($_POST['xml'])){
                 redirect('Empresa/carregaXML');
             }
-            //exit;
             $this->load->model('producte');
             $resultat=$this->producte->afegir($_POST);
             $data['info']=$resultat;
@@ -98,6 +97,8 @@ class Empresa extends CI_Controller {
             $dades=$this->participacio->getAllEmpresa($_SESSION['info_empresa']['id']);
             $data['esGeneral']=true;
         }
+        //var_dump($dades);
+        //exit;
         $data['info_cata_individual']=$dades;
         $data['info_empresa']=$_SESSION['info_empresa'];
         $this->load->view('visualitzar_valoracions',$data);

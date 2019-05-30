@@ -19,7 +19,7 @@ class Cata extends CI_Model {
         $this->db->from('cata c');
         $this->db->join('producte p', 'p.codi = c.producte'); 
         $this->db->join('empresa e','e.id=c.empresa');
-        $this->db->order_by('c.data','desc');
+        $this->db->order_by('c.id','asc');
         $query=$this->db->get();
         return $query->result_array();
     }

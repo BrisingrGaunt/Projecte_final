@@ -14,7 +14,6 @@ class Inici extends CI_Controller {
 		$resultat=json_decode(curl_exec($curl),true);
 		curl_close($curl);
         $data['cates']=$resultat;
-        
         $this->load->view('index',$data);
 	}
     
@@ -76,11 +75,8 @@ class Inici extends CI_Controller {
             if($info==0){
                 //Si no hi ha cap usuari amb aquests credencials
                 $data['info']="Credencials errònies, comprova les dades";
-                //$this->load->view
             }
             else{
-                //var_dump($info);
-                //exit;
                 $this->session->set_flashdata('informacio', $info);
                 if(sizeof($info)==3){
                     // Part client
@@ -98,11 +94,9 @@ class Inici extends CI_Controller {
             $missatge=$this->$model->registre($_POST);
             $data['info']=$missatge;
         }
+        $this->lang->load('projecte',"english");
+        $data['lang']=$this->lang;
         $this->load->view('inici',$data);
-        /*var_dump($missatge);
-        foreach($_POST as $clau => $valor){
-            echo $clau." ".$valor."<br>";
-        }*/
     }
     
     public function logout(){

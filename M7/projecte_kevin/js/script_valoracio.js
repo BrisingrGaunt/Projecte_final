@@ -32,7 +32,7 @@ function canvi_color(){
     
     console.info("estas entrant "+maxim);
     for(let i=0;i<maxim;i++){
-        spans[i].style.color='red';
+        spans[i].style.color='orange';
     }
     //console.info(this.getAttribute('name'));
 }
@@ -43,7 +43,7 @@ function seleccionar_valor(){
     for(let i=0;i<spans.length;i++){
         spans[i].style.color='black';
         if(i<maxim){
-            spans[i].style.color='red';
+            spans[i].style.color='orange';
         }
         spans[i].removeEventListener('mouseenter',canvi_color);
         spans[i].removeEventListener('mouseout',desmarcar);

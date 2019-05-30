@@ -1,6 +1,6 @@
 @mida: 45px;
 
-img {
+.logo {//imatge del logo
     width: @mida;
     height: @mida;
 }
@@ -17,13 +17,23 @@ h1 {
     margin-bottom: 25px;
 }
 
+.visualitzacio{
+    //h2 de la vista visualitzar_valoracions
+    font-size: 18px;
+    text-align:left;
+    span{
+        font-weight: normal;
+        font-size: 16px;
+        //color: green;
+    }
+}
+
 h2{
     text-align: center;
 }
 
 table {
     margin-left: 2%;
-    //box-sizing: border-box;
 }
 
 footer {
@@ -178,6 +188,7 @@ td {
     }
 }
 
+// ANIMACIONS
 @temps_total:1s;
 
 .botella{
@@ -225,17 +236,52 @@ body{
 
 .col-md-9{
     margin-top: 15px;
-    padding: 65px;
-    
-    background-color: rgba(255, 255, 255, 0.46);
+    padding: 45px;
 }
+
+.banderes{
+    margin-left:75%;
+    width: 550px;    
+}
+
+.flag{
+        width: 30px;
+        margin-right: 15px;
+        height: 20px;
+    }
+   
 
 
 @media (max-width:700px){
     
+    #afegirProd, #eliminarCata{
+        margin-bottom: 25px;
+    }
+    
+    body{
+        //overflow-x: hidden;
+    }
+    .flag{
+        margin-bottom: 15px;
+    }
+    
+    .banderes{
+        margin-left: 0px;
+        width: 0px;
+    }
+    
+    /*.col-12, #avisos, .register-form, .col-3{
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+    
+    .bg-dark{
+        //width: 110%;
+    }
+    */
     nav{
         //width: 110%;
-        margin-bottom: 30px;
+        //margin-bottom: 30px;
     }
     
     #myTab{
@@ -253,10 +299,6 @@ body{
         padding: 15px;
     }
     
-    main{
-        //margin-bottom: 35px;
-    }
-    
     footer{
         height: inherit;
         margin-top: 15px;
@@ -265,11 +307,9 @@ body{
     }
     
     #avisos{
-        //preguntar
-        //position: absolute;
-        //top: 100vh;
-        //display: flex;
-        //order:2;
+        //hay que modificarlo
+        margin-top: 35px;
+        margin-bottom: 25px;
     }
 }
 

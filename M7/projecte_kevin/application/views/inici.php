@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <title>Inici</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -19,12 +19,11 @@
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estil.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/estilo.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/css/base.css">
-</head>
-
+</head>   
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="<?php echo site_url('Inici/login');?>"><img src="<?php echo base_url();?>/pics/Bwhite.svg"></a>
+            <a class="navbar-brand" href="<?php echo site_url('Inici');?>"><img src="<?php echo base_url();?>/pics/Bwhite.svg" class="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,48 +53,32 @@
                             <a class="dropdown-item" href="<?php echo site_url('Inici/login');?>">Iniciar Sessió</a>
                         </div>
                     </li>
-                    <li nav-item active>
-                        <a href="<?php site_url('Inici/login/');?>?idioma=spanish">
+                    <li>
+                        <div class="banderes">
+                        <li class="nav-item flag">
+                        <a href="<?php echo site_url('Inici/login');?>?idioma=spanish">
                             <img src="../../pics/espanya.jpg" class="flag">
                         </a>
-                    </li>
-                    <li nav-item active>
-                        <a href="<?php site_url('Inici/login/');?>?idioma=english">
+                            </li>
+                        <li class="nav-item">
+                        <a href="<?php echo site_url('Inici/login');?>?idioma=english">
                             <img src="../../pics/catalunya.png" class="flag">
                         </a>
+                        </li>
+                        </div>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <main>
+    <main class="container-fluid">
         <div>
             <div class="register">
                 <div class="row">
-                    <div class="col-md-3 col-12">
-                        <div class="row ampolles d-none d-md-flex">
-                            <div class="bottle1">
-                                <?php
-                            echo $ampolla;
-                            ?>
-                            </div>
-                            <div class="bottle2">
-                                <?php 
-                            echo $ampolla;
-                        ?>
-                            </div>
-                        </div>
-                        <div class="row nota" id="avisos">
-                            <i class="pin"></i>
-                            <p id='info'></p>
-                            <?php 
-                            if(isset($info)){
-                                echo $info;
-                            }
-                        ?>
-                        </div>
+                    <div class="col-md-3 col-12 order-2 order-md-1">
+                    <?php echo $esquerra;?>
                     </div>
-                    <div class="col-md-9 col-12">
+                    <div class="col-md-9 col-12 order-1 order-md-2">
                         <div class="row">
                             <div class="col-md-1 d-none d-sm-block"></div>
                             <div class="col-md-10 col-12">

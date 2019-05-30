@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 28-05-2019 a les 21:13:50
+-- Temps de generació: 30-05-2019 a les 20:24:18
 -- Versió del servidor: 5.7.17
 -- Versió de PHP: 7.1.3
 
@@ -53,7 +53,8 @@ INSERT INTO `cata` (`id`, `empresa`, `producte`, `estat`, `data`) VALUES
 (10, 15, 13, 1, '2019-05-24 12:12:00'),
 (11, 17, 20, 0, '2019-06-07 09:00:00'),
 (12, 15, 7, 1, '2019-05-24 12:12:00'),
-(13, 16, 21, 0, '2019-05-31 00:00:00');
+(13, 16, 21, 0, '2019-05-31 00:00:00'),
+(14, 15, 26, 0, '2019-05-31 12:30:00');
 
 -- --------------------------------------------------------
 
@@ -134,10 +135,11 @@ CREATE TABLE `participacio` (
 
 INSERT INTO `participacio` (`cata`, `client`, `valoracio`) VALUES
 (3, 'emma_watson@gmail.com', 5),
-(3, 'w2.kmedina@infomila.info', NULL),
-(7, 'w2.kmedina@infomila.info', NULL),
+(3, 'w2.kmedina@infomila.info', 3),
+(7, 'w2.kmedina@infomila.info', 5),
 (7, 'w2.ppuyo@infomila.info', 2),
-(9, 'w2.kmedina@infomila.info', NULL);
+(9, 'w2.kmedina@infomila.info', 0),
+(14, 'dracarys@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -176,7 +178,8 @@ INSERT INTO `producte` (`codi`, `empresa`, `nom`, `descripcio`) VALUES
 (22, 16, 'Liberty Scars', 'yeah yeah '),
 (23, 16, 'Alelelelelele', 'Descripció asdasdasdsd'),
 (24, 16, 'dont call my name', 'yeah yeah '),
-(25, 15, 'Trina', 'Trina de naranja, what else?');
+(25, 15, 'Trina', 'Trina de naranja, what else?'),
+(26, 15, 'Vino Amy Winehouse', 'Vino Amy y se fue jejejejeje');
 
 --
 -- Indexos per taules bolcades
@@ -230,7 +233,7 @@ ALTER TABLE `producte`
 -- AUTO_INCREMENT per la taula `cata`
 --
 ALTER TABLE `cata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT per la taula `empresa`
 --
@@ -240,7 +243,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT per la taula `producte`
 --
 ALTER TABLE `producte`
-  MODIFY `codi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `codi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- Restriccions per taules bolcades
 --

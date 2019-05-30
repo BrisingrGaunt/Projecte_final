@@ -29,6 +29,9 @@ class Cliente extends CI_Controller {
     }
     
     public function apuntar(){
+        if(isset($_GET['filtre'])){
+            $data['filtre']=true;
+        }
         $this->comprovacions_client();
         $data['info_client']=$_SESSION['info_client'];
         $data['info']="";
@@ -39,6 +42,8 @@ class Cliente extends CI_Controller {
         $this->load->model("participacio");
         $data['cates']=$this->cata->getAllDetallat();
         $data['participacions']=$this->participacio->getAllUsuari(array('pa.client'=>$_SESSION['info_client']['email']));
+        //var_dump($data['participacions']);
+        //exit;
         $this->load->view('inscripcions',$data);
     }
     
@@ -54,7 +59,6 @@ class Cliente extends CI_Controller {
                 $resultat=$this->participacio->desapuntar($dades);
             }
             $this->session->set_flashdata('info',$resultat);
-            //exit;
             redirect('Cliente/apuntar');
         }
         redirect('Cliente');
@@ -65,28 +69,17 @@ class Cliente extends CI_Controller {
         $data['info_client']=$_SESSION['info_client'];
         $this->load->model('participacio');
         if($this->input->post()){
-            //echo "jeje";
-                //$this->load->model('participacio');
-                $resultat=$this->participacio->valorar($_POST);
-                $data['info']=$resultat;
-                $filtre=array('pa.cata'=>$_POST['cata'],'pa.client'=>$_SESSION['info_client']['email']);
-                $data['valoracio']=$this->participacio->getValoracionsUna($filtre);
-            //var_dump($resultat);
-                //exit;
+            $resultat=$this->participacio->valorar($_POST);
+            $data['info']=$resultat;
+            $filtre=array('pa.cata'=>$_POST['cata'],'pa.client'=>$_SESSION['info_client']['email']);
         }
         else{
             if(isset($_GET)){
                 $filtre=array('pa.cata'=>$_GET['id'],'pa.client'=>$_SESSION['info_client']['email']);
-                $data['valoracio']=$this->participacio->getValoracionsUna($filtre);
-                //var_dump( $data['valoracio']);
-                //exit;
-                //$this->load->model('cata');
-                //$this->cata->getOne($_GET['id']);
-                //$this->load->view('valoracio',$data);
-                
             }            
         }
-         $this->load->view('valoracio',$data);
+        $data['valoracio']=$this->participacio->getValoracionsUna($filtre)[0];
+        $this->load->view('valoracio',$data);
     }
 }
 

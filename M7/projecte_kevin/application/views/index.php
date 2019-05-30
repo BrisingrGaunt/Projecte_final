@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="<?php echo site_url('Inici');?>"><img src="<?php echo base_url();?>/pics/B.svg"></a>
+            <a class="navbar-brand" href="<?php echo site_url('Inici');?>"><img src="<?php echo base_url();?>/pics/B.svg" class="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
